@@ -9,10 +9,11 @@ import reportWebVitals from './reportWebVitals';
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    {/* <App />  */}
-    { <DialobDoc /> }
-  </React.StrictMode>,
+  /*<React.StrictMode>
+    { <App />  }
+    {  }
+  </React.StrictMode>*/
+  <DialobDoc />,
   document.getElementById('root')
 );
 

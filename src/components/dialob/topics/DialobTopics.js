@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
+
 import List from '@material-ui/core/List';
 import MenuGF from './topic-gf/MenuGF';
 import MenuDEL from './topic-del/MenuDEL';
@@ -14,8 +15,14 @@ const useStyles = makeStyles((theme) => ({
   },
   nested: {
     paddingLeft: theme.spacing(4),
+    color: 'blue',
+    textDecoration: 'underline'
   },
+  nestedText: {
+    fontWeight: 900
+  }
 }));
+
 
 export default function DialobTopics({setTopicContent}) {
   const classes = useStyles();
