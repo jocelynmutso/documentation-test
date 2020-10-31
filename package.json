@@ -1,5 +1,6 @@
-{ "homepage": "https://jocelynmutso.github.io/documentation-test/",
-  "name": "dialob-documentation",
+{
+  "homepage": "https://jocelynmutso.github.io/documentation-test/",
+  "name": "documentation-test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +11,7 @@
     "@testing-library/user-event": "^12.1.10",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
+    "react-markdown": "^5.0.2",
     "react-scripts": "4.0.0",
     "web-vitals": "^0.2.4"
   },
