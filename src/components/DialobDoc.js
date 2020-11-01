@@ -1,16 +1,18 @@
 import React from 'react';
 
 import { withStyles } from '@material-ui/core/styles';
-
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
-import DialobNav from './navigation/DialobNav'
-import DialobTopics from './topics/DialobTopics'
-import DialobIntro from './DialobIntro'
+
+import DialobNav from './DialobNav';
+import DialobIntro from './DialobIntro';
+
+import { Site } from './styles';
+import { Subs } from './doc';
+
 
 const drawerWidth = 240;
-
 const styles = (theme) => ({
   root: {
     display: 'flex',
@@ -31,8 +33,7 @@ const styles = (theme) => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
-  },
-  
+  }
 });
 
 class DialobDoc extends React.Component {
@@ -49,7 +50,6 @@ class DialobDoc extends React.Component {
     });
   }
 
-
   render() {
     const {classes} = this.props;
     const { nowShowing } = this.state;
@@ -60,17 +60,21 @@ class DialobDoc extends React.Component {
       <CssBaseline />
       <DialobNav classes={classes}/>
       
-      <Drawer
-        className={classes.drawer}
-        variant="permanent"
-        classes={{
-          paper: classes.drawerPaper,
-        }}>
-
+      <Drawer className={classes.drawer} variant="permanent" classes={{paper: classes.drawerPaper}}>
         <Toolbar />
-        <div className={classes.drawerContainer}><DialobTopics setTopicContent={setNowShowing} /></div>
-      </Drawer>
+        <div className={classes.drawerContainer}>
 
+          <Site.Navi>
+            <Site.List name="General Features">
+              <Site.Sub onClick={() => setNowShowing(<Subs.LifeCycle />)}>Lifecycle Management and Versioning</Site.Sub>
+              <Site.Sub onClick={() => setNowShowing(<Subs.GlobalList />)}>Global and Local Lists</Site.Sub>
+              <Site.Sub onClick={() => setNowShowing(<Subs.RegEx />)}>Working with Regular Expressions</Site.Sub>
+            </Site.List>
+
+          </Site.Navi>
+
+        </div>
+      </Drawer>
       <main className={classes.content}>
         <Toolbar />
         {topicContent}

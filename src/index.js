@@ -2,17 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-// import App from './components/basket/App';
-import DialobDoc from './components/dialob/DialobDoc';
+import DialobDoc from './components/DialobDoc';
 
 import reportWebVitals from './reportWebVitals';
 
 
 ReactDOM.render(
-  /*<React.StrictMode>
-    { <App />  }
-    {  }
-  </React.StrictMode>*/
   <DialobDoc />,
   document.getElementById('root')
 );
