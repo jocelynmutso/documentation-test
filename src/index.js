@@ -1,14 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { ThemeProvider } from '@material-ui/core/styles';
 
 import DialobDoc from './components/DialobDoc';
+import DefaultTheme from './themes';
 
 import reportWebVitals from './reportWebVitals';
-import * as x from './grid'
+
 
 ReactDOM.render(
-  <DialobDoc />,
+  <ThemeProvider theme={DefaultTheme}>
+    <DialobDoc />
+  </ThemeProvider>
+  ,
   document.getElementById('root')
 );
 
