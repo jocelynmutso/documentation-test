@@ -36,6 +36,7 @@ const styles = (theme) => ({
   }
 });
 
+
 class DialobDoc extends React.Component {
 
   constructor(props) {
@@ -58,7 +59,7 @@ class DialobDoc extends React.Component {
 
     return (<div className={classes.root}>
       <CssBaseline />
-      <DialobNav classes={classes}/>
+      <DialobNav classes={classes} thisWillHappenOnClickingTheTextInTheNavBar={() => setNowShowing(<DialobIntro/>) }/>
       
       <Drawer className={classes.drawer} variant="permanent" classes={{paper: classes.drawerPaper}}>
         <Toolbar />
@@ -70,7 +71,6 @@ class DialobDoc extends React.Component {
               <Site.Sub onClick={() => setNowShowing(<Subs.GlobalList />)}>Global and Local Lists</Site.Sub>
               <Site.Sub onClick={() => setNowShowing(<Subs.RegEx />)}>Working with Regular Expressions</Site.Sub>
             </Site.List>
-
           </Site.Navi>
 
         </div>

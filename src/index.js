@@ -5,7 +5,7 @@ import './index.css';
 import DialobDoc from './components/DialobDoc';
 
 import reportWebVitals from './reportWebVitals';
-
+import * as x from './grid'
 
 ReactDOM.render(
   <DialobDoc />,
