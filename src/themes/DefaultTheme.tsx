@@ -4,7 +4,7 @@ import { PaletteOptions } from '@material-ui/core/styles/createPalette';
 const palette: PaletteOptions = {
     type: 'light',
     primary: {
-      main: '#3E92CC',
+      main: '#114B8E',
     },
     secondary: {
       main: '#ff8600',
