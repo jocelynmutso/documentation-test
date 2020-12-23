@@ -19,7 +19,7 @@ export const DocHeading1 = withStyles(styles)(
     render() {
       const {children, classes} = this.props;
       return (<div className={classes.root}>
-        <Typography variant="h4" gutterBottom>{children}</Typography>
+        <Typography variant="h3" gutterBottom>{children}</Typography>
         <Divider/>
       </div>);
     }
@@ -31,7 +31,7 @@ export class DocHeading2 extends React.Component {
   render() {
     const {children} = this.props;
     return (<div>
-      <Typography variant="h6" gutterBottom>{children}</Typography>
+      <Typography variant="h5" gutterBottom>{children}</Typography>
     </div>);
   }
 }
@@ -50,7 +50,9 @@ export class DocCodeBlock extends React.Component {
 export class DocParagraph extends React.Component {
 
   render() {
+    const {children} = this.props;
     return (<div>
+    <Typography variant="body1">{children}</Typography>
     </div>);
   }
 }

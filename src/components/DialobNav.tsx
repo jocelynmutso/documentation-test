@@ -3,6 +3,10 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { createStyles, fade, Theme, makeStyles } from '@material-ui/core/styles';
+import InputBase from '@material-ui/core/InputBase';
+import SearchIcon from '@material-ui/icons/Search';
+import Button from '@material-ui/core/Button';
+import HomeIcon from '@material-ui/icons/Home';
 
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -29,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
-    marginLeft: 0,
+    marginLeft: 1,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(1),
@@ -37,7 +41,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   searchIcon: {
-    padding: theme.spacing(0, 2),
+    padding: theme.spacing(1),
     height: '100%',
     position: 'absolute',
     pointerEvents: 'none',
@@ -55,26 +59,46 @@ const useStyles = makeStyles((theme: Theme) => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      width: '12ch',
+      width: '15ch',
       '&:focus': {
-        width: '20ch',
+        width: '25ch',
       },
     },
   },
 }));
 
 
-export default function DialobNav() {
+interface DialobNavProps {
+  onClick: () => void
+}
+
+const DialobNav: React.FC<DialobNavProps> = ({onClick}) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
     <AppBar position="fixed" className={classes.appBar}>
       <Toolbar>
-        <Typography variant="h6" noWrap>
-          Composer Documentation
-          </Typography>
+        <Typography variant="h6" noWrap onClick={onClick}>
+          <Button variant="contained" color="primary" disableElevation startIcon={<HomeIcon />}>
+            Dialob Composer: User Documentation     
+          </Button>
+        </Typography>
+
+        <div className={classes.search}>
+          <div className={classes.searchIcon}><SearchIcon /></div>
+          <InputBase
+            placeholder="Search…"
+            classes={{
+              root: classes.inputRoot,
+              input: classes.inputInput,
+            }}
+            inputProps={{ 'aria-label': 'search' }}
+          />
+        </div>
       </Toolbar>
     </AppBar>
     </div>
   );
 }
+
+export default DialobNav;

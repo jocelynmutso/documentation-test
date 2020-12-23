@@ -40,7 +40,7 @@ const DialobDoc = () => {
 
   return (<div className={classes.root}>
     <CssBaseline />
-    <DialobNav thisWillHappenOnClickingTheTextInTheNavBar={() => setNowShowing(<DialobIntro/>) }/>
+    <DialobNav onClick={() => setNowShowing(<DialobIntro/>) }/>
     <Drawer className={classes.drawer} variant="permanent" classes={{paper: classes.drawerPaper}}>
       <Toolbar />
       <div className={classes.drawerContainer}>
