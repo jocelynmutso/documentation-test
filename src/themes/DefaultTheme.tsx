@@ -14,7 +14,7 @@ const palette: PaletteOptions = {
   text: {
     primary: 'rgba(9,9,59,0.87)',
     secondary: 'rgba(44,75,148,0.75)',
-  }
+  },
 }
 
 const DefaultTheme = createMuiTheme({
@@ -25,7 +25,7 @@ const DefaultTheme = createMuiTheme({
   },
   
   overrides: {
-
+  
   },
 
 typography: {
@@ -74,7 +74,9 @@ typography: {
   },
   body2: {
     fontFamily: '"Mulish", sans-serif',
-    fontWeight: 200
+    fontWeight: 400,
+    fontSize: '1rem',
+    paddingBottom: 20,
    }
   }
 })

@@ -46,6 +46,7 @@ const DialobDoc = () => {
       <div className={classes.drawerContainer}>
         <Site.Navi>
           <Site.List name="General Features">
+            <Site.Sub onClick={() => setNowShowing(<Subs.Note />)}>Note type</Site.Sub>
             <Site.Sub onClick={() => setNowShowing(<Subs.LifeCycle />)}>Lifecycle Management and Versioning</Site.Sub>
             <Site.Sub onClick={() => setNowShowing(<Subs.GlobalList />)}>Global and Local Lists</Site.Sub>
             <Site.Sub onClick={() => setNowShowing(<Subs.RegEx />)}>Working with Regular Expressions</Site.Sub>

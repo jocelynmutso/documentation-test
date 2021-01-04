@@ -4,6 +4,7 @@ export {
 
   DocCodeBlock as Code,
   DocParagraph as P1,
+  DocNote as Note,
 
 } from './Doc'
 
@@ -20,3 +21,4 @@ export {
   DocTableCol as Col,
 
 } from './DocTable'
+

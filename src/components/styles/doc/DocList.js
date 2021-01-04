@@ -10,7 +10,6 @@ export class DocListO extends React.Component {
 }
 
 export class DocListU extends React.Component {
-
   render() {
     return (<div>
     </div>);
