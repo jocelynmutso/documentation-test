@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
 
-import DialobDoc from './components/DialobDoc';
+import App from './/App';
 import DefaultTheme from './themes';
 
 import reportWebVitals from './reportWebVitals';
@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <ThemeProvider theme={DefaultTheme}>
-    <DialobDoc />
+    <App />
   </ThemeProvider>
   ,
   document.getElementById('root')
