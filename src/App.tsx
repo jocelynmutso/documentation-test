@@ -57,7 +57,6 @@ const App = () => {
       <Toolbar />
       <div className={classes.drawerContainer}>
         <List component="nav" className={classes.list}>
-          <ShowMeText></ShowMeText>
           <Topic onClick={(content) => setNowShowing(content)} items={BasicOperations} />
           <Topic onClick={(content) => setNowShowing(content)} items={AdvancedOperations} />
           <Topic onClick={(content) => setNowShowing(content)} items={Expressions} />
