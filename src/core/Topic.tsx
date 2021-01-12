@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 
 interface TopicProps {
   items: {
-    name: string, path: string,
+    name: string,
     subs: {name: string, path: string}[];
   },
   onClick: (node: React.ReactNode) => void
@@ -53,7 +53,7 @@ const Topic: React.FC<TopicProps> = ({items, onClick}) => {
 
   return (<React.Fragment>
     <ListItem button onClick={() => setOpen(!open)} className={classes.nested}>
-      <ListItemText primary={items.name} onClick={() => loadTopic(items.name, items.path)} />
+      <ListItemText primary={items.name} />
       {open ? <ExpandLess /> : <ExpandMore />}
     </ListItem>
     <Collapse in={open} timeout="auto" unmountOnExit>

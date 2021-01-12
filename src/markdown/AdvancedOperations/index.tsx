@@ -8,8 +8,9 @@ import options from './options.md'
 
 
 const AdvancedOperations = {
-  name: 'Advanced Operations', path: main,
+  name: 'Advanced Operations',
   subs: [
+    { name: 'Intro', path: main },
     { name: 'Tagging', path: tags },
     { name: 'CSV', path: csv },
     { name: 'Global local lists', path: globallocallists },
