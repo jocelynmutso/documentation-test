@@ -1,10 +1,3 @@
----
-title: "Basic Operators"
-draft: false
-weight: 1100
----
-
-
 Below is an explanation of the basic DEL operators, which includes comparison operators, logical operators, and basic operations to be used with input types and default, built-in DEL functions.
 
 ### Comparison Operators

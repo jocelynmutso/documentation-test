@@ -1,12 +1,8 @@
----
-title: "Response Types, Output Types, and Grouping Structures"
-draft: false
-weight: 1800
----
+# Response Types, Output Types, and Grouping Structures
+
+Dialob supports a variety of response types out of the box. The following default input types have these response types:
 
 ### Response types
-
-Dialob supports a variety of response types out of the box. The following default input types have the these response types:
 
 * **Survey item**: Return type will be a key
 

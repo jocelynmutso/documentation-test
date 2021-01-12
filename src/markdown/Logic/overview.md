@@ -1,8 +1,4 @@
----
-title: "Basic Logic Building and Rule Writing"
-draft: false
-weight: 1200
----
+# Logic building overview
 
 ##### What's on this page:
 

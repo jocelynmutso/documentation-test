@@ -1,9 +1,3 @@
----
-title: "General Logic Building Keywords in Action"
-draft: false
-weight: 1700
----
-
 **DEL** comes with a set of inbuilt functions that help in the creation of dialog logic. These functions are built via Java and Groovy and are automatically loaded into the dialog context when creating a new dialog.
 
 The following examples feature various logic-building keywords used across common use cases and should provide a basic working reference. The examples feature groups of words that are commonly used together.

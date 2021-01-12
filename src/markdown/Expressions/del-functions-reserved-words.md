@@ -1,9 +1,3 @@
----
-title: "Functions and Reserved Words"
-draft: true
-weight: 210
----
-
 ##### What's on this page?  
 
 [Existing DEL functions](#existing-functions)  

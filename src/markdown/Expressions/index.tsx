@@ -1,10 +1,11 @@
-import indexLocation from './_index.md';
+import main from './_index.md';
+
 
 
 const Expressions = {
-  name: 'Expressions', path: indexLocation,
+  name: 'Expressions', path: main,
   subs: [
-    //{ name: 'Dialob Expression Language (DEL)', path: main },
+    { name: 'Dialob Expression Language (DEL)', path: main }
   ]
 }
 

@@ -1,9 +1,3 @@
----
-title: "Time and Date Keywords and Functions"
-draft: false
-weight: 1500
----
-
 **Time and date keywords** can be used to write logic connected to the following:
 
 * [**Time durations**](#time) (time in hours, minutes, seconds)

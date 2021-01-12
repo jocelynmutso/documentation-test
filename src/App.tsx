@@ -9,10 +9,14 @@ import List from '@material-ui/core/List';
 import Navigation from './core/Navigation';
 import Topic from './core/Topic';
 
-
-import GeneralFeatures from './markdown/GeneralFeatures';
-import Expressions from './markdown/Expressions';
 import ResponseTypes from './markdown/ResponseTypes';
+import Expressions from './markdown/Expressions';
+import Logic from './markdown/Logic';
+
+import ShowMeText from './lab';
+import BasicOperations from './markdown/BasicOperations';
+import AdvancedOperations from './markdown/AdvancedOperations';
+import Reference from './markdown/Reference';
 
 
 const drawerWidth = 240;
@@ -53,9 +57,13 @@ const App = () => {
       <Toolbar />
       <div className={classes.drawerContainer}>
         <List component="nav" className={classes.list}>
-          <Topic onClick={(content) => setNowShowing(content)} items={GeneralFeatures} />
+          <ShowMeText></ShowMeText>
+          <Topic onClick={(content) => setNowShowing(content)} items={BasicOperations} />
+          <Topic onClick={(content) => setNowShowing(content)} items={AdvancedOperations} />
           <Topic onClick={(content) => setNowShowing(content)} items={Expressions} />
           <Topic onClick={(content) => setNowShowing(content)} items={ResponseTypes} />
+          <Topic onClick={(content) => setNowShowing(content)} items={Logic} />
+          <Topic onClick={(content) => setNowShowing(content)} items={Reference} />
         </List>
       </div>
     </Drawer>

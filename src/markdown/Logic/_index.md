@@ -1,9 +1,4 @@
----
-title: "DEL Functions and Reserved Words"
-draft: false
-weight: 1300
----
-
+## DEL functions and reserved words
 
 The following sections will explain and give details on the use of DEL keywords and functions across multiple use cases.
 

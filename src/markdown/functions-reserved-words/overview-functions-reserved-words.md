@@ -1,9 +1,3 @@
----
-title: "Overview: DEL Functions and Reserved Words"
-draft: false
-weight: 1400
----
-
 ### Introduction
 
 **DEL** comes with a set of inbuilt functions that help in the creation of dialog logic. These functions are built via Java and Groovy and are automatically loaded into the dialog context when creating a new dialog.

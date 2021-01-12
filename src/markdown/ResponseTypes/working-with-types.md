@@ -1,9 +1,3 @@
----
-title: "Working with Types and Structures"
-draft: false
-weight: 1900
----
-
 The following types come built-in with Dialob:
 
 #### Response types
