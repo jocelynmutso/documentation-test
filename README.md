@@ -8,4 +8,5 @@
 Viewable here: https://jocelynmutso.github.io/documentation-test/ 
 
 ## Deploy
-npm run deploy
+* branch: gh-pages
+* npm run deploy
