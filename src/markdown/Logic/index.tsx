@@ -1,4 +1,4 @@
-import main from './_index.md';
+import intro from './intro.md';
 import overview from './overview.md';
 import regularexpressions from './regularexpressions.md'
 import basicdel from './basicdel.md'
@@ -8,8 +8,9 @@ import visibility from './visibility.md'
 
 
 const Logic = {
-  name: 'Logic', path: main,
+  name: 'Logic',
   subs: [
+    { name: "Intro", path: intro },
     { name: 'Overview', path: overview },
     { name: 'Basic DEL', path: basicdel},
     { name: 'Requirement Rules', path: required},

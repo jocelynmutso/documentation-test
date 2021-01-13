@@ -1,4 +1,4 @@
-import main from './_index.md';
+import intro from './intro.md';
 import page from './page.md'
 import groups from './groups.md'
 import inputtypes from './inputtypes.md'
@@ -8,8 +8,9 @@ import addingitems from './addingitems.md'
 import reordering from './reordering.md'
 
 const BasicOperations = {
-  name: 'Basic Operations', path: main,
+  name: 'Basic Operations',
   subs: [
+    { name: 'Intro', path: intro },
     { name: 'Pages', path: page },
     { name: 'Groups', path: groups },
     { name: 'Adding Items', path: addingitems },
