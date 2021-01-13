@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/documentation-test/static/js/main.ed938d34.chunk.js",
-    "main.js.map": "/documentation-test/static/js/main.ed938d34.chunk.js.map",
+    "main.js": "/documentation-test/static/js/main.96b022ad.chunk.js",
+    "main.js.map": "/documentation-test/static/js/main.96b022ad.chunk.js.map",
     "runtime-main.js": "/documentation-test/static/js/runtime-main.98d45889.js",
     "runtime-main.js.map": "/documentation-test/static/js/runtime-main.98d45889.js.map",
     "static/js/2.7820d596.chunk.js": "/documentation-test/static/js/2.7820d596.chunk.js",
@@ -10,9 +10,6 @@
     "static/js/3.894a72e3.chunk.js.map": "/documentation-test/static/js/3.894a72e3.chunk.js.map",
     "index.html": "/documentation-test/index.html",
     "static/js/2.7820d596.chunk.js.LICENSE.txt": "/documentation-test/static/js/2.7820d596.chunk.js.LICENSE.txt",
-    "static/media/_index.057d8ab4.md": "/documentation-test/static/media/_index.057d8ab4.md",
-    "static/media/_index.50bcdb30.md": "/documentation-test/static/media/_index.50bcdb30.md",
-    "static/media/_index.52529008.md": "/documentation-test/static/media/_index.52529008.md",
     "static/media/_index.7112a0b7.md": "/documentation-test/static/media/_index.7112a0b7.md",
     "static/media/addingitems.59184e40.md": "/documentation-test/static/media/addingitems.59184e40.md",
     "static/media/basicdel.e5b6c9bd.md": "/documentation-test/static/media/basicdel.e5b6c9bd.md",
@@ -20,6 +17,9 @@
     "static/media/global-local-lists.48d9eda4.md": "/documentation-test/static/media/global-local-lists.48d9eda4.md",
     "static/media/groups.0177fd8e.md": "/documentation-test/static/media/groups.0177fd8e.md",
     "static/media/inputtypes.2481ca7d.md": "/documentation-test/static/media/inputtypes.2481ca7d.md",
+    "static/media/intro.057d8ab4.md": "/documentation-test/static/media/intro.057d8ab4.md",
+    "static/media/intro.50bcdb30.md": "/documentation-test/static/media/intro.50bcdb30.md",
+    "static/media/intro.52529008.md": "/documentation-test/static/media/intro.52529008.md",
     "static/media/intro.c9c3cadb.md": "/documentation-test/static/media/intro.c9c3cadb.md",
     "static/media/lifecycle-management.52c16d57.md": "/documentation-test/static/media/lifecycle-management.52c16d57.md",
     "static/media/options.6cf78b58.md": "/documentation-test/static/media/options.6cf78b58.md",
@@ -41,6 +41,6 @@
   "entrypoints": [
     "static/js/runtime-main.98d45889.js",
     "static/js/2.7820d596.chunk.js",
-    "static/js/main.ed938d34.chunk.js"
+    "static/js/main.96b022ad.chunk.js"
   ]
 }
