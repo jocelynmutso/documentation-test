@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { createStyles, fade, Theme, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -15,23 +15,26 @@ import Note from './Note';
 const useStyles = makeStyles((theme) => ({
   nested: {
     paddingLeft: theme.spacing(4),
-   // color: 'blue',
+    fontWeight: 'bold',
+    // backgroundColor: 'blue',
     //textDecoration: 'underline'
   },
   nestedText: {
-//      fontWeight: 900,
+    fontWeight: 400,
     fontSize: '0.9rem',
     paddingLeft: theme.spacing(1), 
     display: 'block',  
-  }
+  },
 }));
 
 
+interface TopicItem {
+  name: string,
+  subs: {name: string, path: string}[];
+}
+
 interface TopicProps {
-  items: {
-    name: string,
-    subs: {name: string, path: string}[];
-  },
+  items: TopicItem,
   onClick: (node: React.ReactNode) => void
 }
 
@@ -65,4 +68,5 @@ const Topic: React.FC<TopicProps> = ({items, onClick}) => {
   </React.Fragment>);
 }
 
-export default Topic;
+export type {TopicItem};
+export {Topic};

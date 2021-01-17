@@ -1,7 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import { PaletteOptions } from '@material-ui/core/styles/createPalette';
-import Typography from '@material-ui/core/Typography';
-
 
 const palette: PaletteOptions = {
   type: 'light',
@@ -25,6 +23,7 @@ const DefaultTheme = createMuiTheme({
   },
   
   overrides: {
+    
   
   },
 

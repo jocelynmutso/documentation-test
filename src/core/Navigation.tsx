@@ -1,23 +1,23 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
+import clsx from 'clsx';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { fade, Theme, makeStyles } from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-import Button from '@material-ui/core/Button';
-import HomeIcon from '@material-ui/icons/Home';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    flexGrow: 1,
+    // flexGrow: 1,
   },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
+  hide: {
+    display: 'none',
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(4),
   },
   title: {
     flexGrow: 1,
@@ -25,6 +25,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
+  },
+  iconLink:{
+    '&:hover': {
+      color: 'yellow',
+      cursor: 'pointer',
+    }
   },
   search: {
     position: 'relative',
@@ -36,9 +42,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginLeft: 1,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
+      marginLeft: theme.spacing(5),
       width: 'auto',
-    },
+    }
   },
   searchIcon: {
     padding: theme.spacing(1),
@@ -69,19 +75,28 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 
 interface NavigationProps {
-  onClick: () => void
+  onTitleClick: () => void;
+  drawer: {
+    onClick: () => void;
+    open: boolean;
+  }
 }
 
-const Navigation: React.FC<NavigationProps> = ({onClick}) => {
+const Navigation: React.FC<NavigationProps> = ({onTitleClick, drawer}) => {
   const classes = useStyles();
-  return (
-    <div className={classes.root}>
-    <AppBar position="fixed" className={classes.appBar}>
+  return (<div className={classes.root}>    
       <Toolbar>
-        <Typography variant="h6" noWrap onClick={onClick}>
-          <Button variant="contained" color="primary" disableElevation startIcon={<HomeIcon />}>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          onClick={drawer.onClick}
+          edge="start"
+          className={clsx(classes.menuButton, drawer.open && classes.hide)}>
+          <MenuIcon />
+        </IconButton>
+
+        <Typography variant="h5" noWrap onClick={onTitleClick} className={classes.iconLink} style={{ flex: 1 }} >
             Dialob Composer: User Documentation     
-          </Button>
         </Typography>
 
         <div className={classes.search}>
@@ -95,8 +110,9 @@ const Navigation: React.FC<NavigationProps> = ({onClick}) => {
             inputProps={{ 'aria-label': 'search' }}
           />
         </div>
+
+
       </Toolbar>
-    </AppBar>
     </div>
   );
 }

@@ -3,7 +3,7 @@
 * Typescript
 * Material UI
 * React
-* react-markdown https://github.com/remarkjs/react-markdown
+* Markdown parsing: react-markdown https://github.com/remarkjs/react-markdown
 
 Viewable here: https://jocelynmutso.github.io/documentation-test/ 
 

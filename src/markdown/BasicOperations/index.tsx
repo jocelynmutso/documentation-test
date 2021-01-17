@@ -6,8 +6,11 @@ import outputtypes from './outputtypes.md'
 import testing from './testing.md'
 import addingitems from './addingitems.md'
 import reordering from './reordering.md'
+import { TopicItem } from '../../core/Topic';
 
-const BasicOperations = {
+
+
+const BasicOperations: TopicItem = {
   name: 'Basic Operations',
   subs: [
     { name: 'Intro', path: intro },
