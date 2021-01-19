@@ -59,6 +59,8 @@ const useStyles = makeStyles((theme: Theme) =>
       ...theme.mixins.toolbar,
       justifyContent: 'flex-end',
     },
+    iconButton: {
+    },
     content: {
       flexGrow: 1,
       padding: theme.spacing(3),
@@ -75,11 +77,9 @@ const useStyles = makeStyles((theme: Theme) =>
       }),
       marginLeft: 0,
     },
-
     list: {
       width: '100%',
       maxWidth: 360,
-      backgroundColor: theme.palette.background.paper,
       padding: 5,
     }
   }),
@@ -122,7 +122,7 @@ const Shell: React.FC<ShellProps> = ({items, width}) => {
       classes={{paper: classes.drawerPaper}}>
 
       <div className={classes.drawerHeader}>
-        <IconButton onClick={handleDrawerClose}>
+        <IconButton onClick={handleDrawerClose} className={classes.iconButton}>
           {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
         </IconButton>
       </div>

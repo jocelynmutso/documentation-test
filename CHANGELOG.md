@@ -16,6 +16,18 @@
 * MUI Styles updates for various components
 
 ---
+## v2.0 (2020-MM-DD)
+
+### Added
+
+* Image resizing for react-markdown
+* Content:
+  * pages.md
+  * groups.md
+  * addingitems.md
+
+---
+
 ## v.1.5 (2021-01-17)
 
 ### Added

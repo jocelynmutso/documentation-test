@@ -28,16 +28,17 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   iconLink:{
     '&:hover': {
-      color: 'yellow',
       cursor: 'pointer',
-    }
+    },
+    color: theme.palette.text.primary,
+    alignContent: 'center',
   },
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    backgroundColor: fade(theme.palette.common.black, 0.10),
     '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
+      backgroundColor: fade(theme.palette.common.black, 0.05),
     },
     marginLeft: 1,
     width: '100%',
@@ -56,7 +57,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: 'center',
   },
   inputRoot: {
-    color: 'inherit',
+    // backgroundColor: theme.palette.text.secondary,
+    // borderColor: theme.palette.text.primary,
+    // fontWeight: 'bold',
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
@@ -84,6 +87,7 @@ interface NavigationProps {
 
 const Navigation: React.FC<NavigationProps> = ({onTitleClick, drawer}) => {
   const classes = useStyles();
+  const img = `${process.env.PUBLIC_URL}/images/logo.png`
   return (<div className={classes.root}>    
       <Toolbar>
         <IconButton
@@ -95,8 +99,8 @@ const Navigation: React.FC<NavigationProps> = ({onTitleClick, drawer}) => {
           <MenuIcon />
         </IconButton>
 
-        <Typography variant="h5" noWrap onClick={onTitleClick} className={classes.iconLink} style={{ flex: 1 }} >
-            Dialob Composer: User Documentation     
+        <Typography variant="body1" noWrap onClick={onTitleClick} className={classes.iconLink} style={{ flex: 1 }} >
+          <img src={img} className={classes.iconLink} /> Dialob Composer: User Documentation     
         </Typography>
 
         <div className={classes.search}>

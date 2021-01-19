@@ -10,7 +10,7 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Divider from '@material-ui/core/Divider';
 
-import Note from './Note';
+import MarkdownRenderer from './MarkdownRenderer';
 
 const useStyles = makeStyles((theme) => ({
   nested: {
@@ -43,7 +43,7 @@ const Topic: React.FC<TopicProps> = ({items, onClick}) => {
   const [open, setOpen] = React.useState(false);
 
   const loadTopic = (name: string, path: string) => {
-    return onClick(<Note path={path}/>)
+    return onClick(<MarkdownRenderer path={path}/>)
   }
 
   const createSub = (name: string, path: string, id: number) => (
