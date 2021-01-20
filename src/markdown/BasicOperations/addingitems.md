@@ -3,6 +3,8 @@
 ## Quick Summary
 
 * There are two ways to add new items: Via the hamburger icon + 'Insert New' in the top right, or 'Add Item' button on the bottom left.
+* Adding an item via the hamburger icon creates the item outside of a group.
+* Adding an item via the 'Add Item' button creates the item within the active group.
 
 ---
 
