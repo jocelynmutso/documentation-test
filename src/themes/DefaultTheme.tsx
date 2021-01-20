@@ -102,7 +102,7 @@ const DrawerTheme = createMuiTheme({
 
     MuiPaper: {
       root: {
-        backgroundColor: '#4d2f75',
+        backgroundColor: '#4d2f75', //dialob purple
       }
     },
 

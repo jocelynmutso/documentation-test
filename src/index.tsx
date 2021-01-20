@@ -4,6 +4,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 
 import App from './App';
 import DefaultTheme from './themes';
+import { markdownLoader } from './core'
 
 import reportWebVitals from './reportWebVitals';
 
@@ -22,6 +23,13 @@ requireModule.keys().forEach((fileName: string) => {
 })
 console.log(api);
 */
+
+
+const markdowns: string[] = [];
+const requireModule = require.context("./markdown/", true, /\.md$/)
+requireModule.keys().forEach((fileName: string) => markdowns.push(requireModule(fileName).default))
+markdownLoader(markdowns, (content) => console.log(content));
+
 
 ReactDOM.render(
   <ThemeProvider theme={DefaultTheme}>

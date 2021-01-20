@@ -1,7 +1,7 @@
 import intro from './intro.md';
 import page from './page.md'
 import groups from './groups.md'
-import inputtypes from './inputtypes.md'
+import responsetypes from './responsetypes.md'
 import outputtypes from './outputtypes.md'
 import testing from './testing.md'
 import addingitems from './addingitems.md'
@@ -18,7 +18,7 @@ const BasicOperations: TopicItem = {
     { name: 'Pages', path: page },
     { name: 'Groups', path: groups },
     { name: 'Adding Items', path: addingitems },
-    { name: 'Input Types', path: inputtypes },
+    { name: 'Response Types', path: responsetypes },
     { name: 'Output Types', path: outputtypes },
     { name: 'Identifiers', path: ids},
     { name: 'Testing', path: testing },
