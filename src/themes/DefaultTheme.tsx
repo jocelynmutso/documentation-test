@@ -70,6 +70,7 @@ const palette: PaletteOptions = {
 
 const DefaultTheme = createMuiTheme({
   typography: typography,
+  palette: palette,
 
   props: { 
 
@@ -85,25 +86,31 @@ const DefaultTheme = createMuiTheme({
 
 const DrawerTheme = createMuiTheme({
   palette: {
-
-  },
-
-  props: { 
-
+    type: 'dark',
+    primary: {
+      main: '#114B8E',
+    },
+    secondary: {
+      main: '#ff8600',
+    },
+    text: {
+      primary: '#F2F1EF',
+      secondary: '#EEEEEE',
+    }
   },
   overrides: {
 
     MuiPaper: {
       root: {
-
+        backgroundColor: '#4d2f75',
       }
     },
 
-    MuiToolbar: {
+    MuiDivider: {
       root: {
-        backgroundColor: "white"
+        backgroundColor: 'rgb(174,168,211, .3)',
       }
-    }
+    },
   }
 })
 

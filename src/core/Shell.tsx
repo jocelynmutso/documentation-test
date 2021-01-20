@@ -18,7 +18,7 @@ import { DrawerTheme } from '../themes';
 import Navigation from './Navigation';
 import {Topic, TopicItem} from './Topic';
 
-const drawerWidth = 240;
+const drawerWidth = 260;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -126,7 +126,7 @@ const Shell: React.FC<ShellProps> = ({items, width}) => {
 
       <div className={classes.drawerHeader}>
         <IconButton onClick={handleDrawerClose} className={classes.iconButton}>
-          {theme.direction === 'ltr' ? <ChevronLeftIcon color="secondary" /> : <ChevronRightIcon />}
+          {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
         </IconButton>
       </div>      
       <Divider />

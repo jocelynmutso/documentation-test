@@ -102,7 +102,6 @@ const Navigation: React.FC<NavigationProps> = ({onTitleClick, drawer}) => {
 
         <img src={img} />
         <Typography variant="body1" noWrap onClick={onTitleClick} className={classes.iconLink} style={{ flex: 1 }} >
-          User Documentation
         </Typography>
 
         <div className={classes.search}>

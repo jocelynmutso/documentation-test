@@ -15,15 +15,15 @@ import MarkdownRenderer from './MarkdownRenderer';
 const useStyles = makeStyles((theme) => ({
   nested: {
     paddingLeft: theme.spacing(4),
-    fontWeight: 'bold',
-    // backgroundColor: 'blue',
-    //textDecoration: 'underline'
   },
-  nestedText: {
-    fontWeight: 400,
+  primaryText: {
+    fontWeight: 600,
+  },
+  secondaryText: {
     fontSize: '0.9rem',
     paddingLeft: theme.spacing(1), 
-    display: 'block',  
+    display: 'block', 
+    color: theme.palette.text.secondary,
   },
 }));
 
@@ -49,14 +49,16 @@ const Topic: React.FC<TopicProps> = ({items, onClick}) => {
   const createSub = (name: string, path: string, id: number) => (
     <ListItem key={id} button className={classes.nested} onClick={() => loadTopic(name, path)}>
       <ListItemText>
-        <span className={classes.nestedText}>{name}</span>
+        <span className={classes.secondaryText}>{name}</span>
       </ListItemText>
     </ListItem>
   );
 
   return (<React.Fragment>
     <ListItem button onClick={() => setOpen(!open)} className={classes.nested}>
-      <ListItemText primary={items.name} />
+      <ListItemText>
+        <span className={classes.primaryText}>{items.name}</span>
+      </ListItemText>
       {open ? <ExpandLess /> : <ExpandMore />}
     </ListItem>
     <Collapse in={open} timeout="auto" unmountOnExit>
