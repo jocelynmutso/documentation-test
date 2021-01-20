@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "typeRoots": [
-      "node_modules/@types","./typings.d.ts"
+      "node_modules/@types"
+    ],
+    "types": [
+      "node",
+      "webpack-env"
     ],
     "target": "es5",
     "lib": [
@@ -23,7 +27,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-, "public/images/index.d.ts"  ]
+  "include": ["src"]
 }

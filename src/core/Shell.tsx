@@ -3,7 +3,7 @@ import React from 'react';
 import clsx from 'clsx';
 import withWidth from '@material-ui/core/withWidth';
 
-import { Theme, makeStyles, createStyles, useTheme } from '@material-ui/core/styles';
+import { Theme, makeStyles, createStyles, useTheme, ThemeProvider } from '@material-ui/core/styles';
 import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
 import AppBar from '@material-ui/core/AppBar';
 import Drawer from '@material-ui/core/Drawer';
@@ -14,6 +14,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Divider from '@material-ui/core/Divider';
 
+import { DrawerTheme } from '../themes';
 import Navigation from './Navigation';
 import {Topic, TopicItem} from './Topic';
 
@@ -59,6 +60,7 @@ const useStyles = makeStyles((theme: Theme) =>
       ...theme.mixins.toolbar,
       justifyContent: 'flex-end',
     },
+
     iconButton: {
     },
     content: {
@@ -121,11 +123,12 @@ const Shell: React.FC<ShellProps> = ({items, width}) => {
       open={open}
       classes={{paper: classes.drawerPaper}}>
 
+
       <div className={classes.drawerHeader}>
         <IconButton onClick={handleDrawerClose} className={classes.iconButton}>
-          {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+          {theme.direction === 'ltr' ? <ChevronLeftIcon color="secondary" /> : <ChevronRightIcon />}
         </IconButton>
-      </div>
+      </div>      
       <Divider />
       <List component="nav" className={classes.list}>{topics}</List>
     </Drawer>);
@@ -133,7 +136,12 @@ const Shell: React.FC<ShellProps> = ({items, width}) => {
   return (<div className={classes.root}>
     <CssBaseline />
 
-    {appBar}{drawer}
+    {appBar}
+    
+    <ThemeProvider theme={(outer) => ({...outer, ...DrawerTheme})}>
+      {drawer}
+    </ThemeProvider>
+
     <main className={clsx(classes.content, { [classes.contentShift]: open}) }>
       <div className={classes.drawerHeader} />
       {nowShowing}

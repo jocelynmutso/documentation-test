@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown'
 
+
 //import mdLocation from './markdown/test1.md';
 //import img from './images/note-variables.png'
 
@@ -21,7 +22,7 @@ const MarkdownRenderer: React.FC<NoteProps> = ({path}) => {
       src={`${process.env.PUBLIC_URL}/images/${props.src}`}
       style={ {maxWidth: '75%'} } /> 
   }
-  
+
   return (<div><ReactMarkdown 
       source={input}
       renderers={{

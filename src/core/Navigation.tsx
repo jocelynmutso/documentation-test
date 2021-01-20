@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     color: theme.palette.text.primary,
     alignContent: 'center',
+    paddingLeft: theme.spacing(5)
   },
   search: {
     position: 'relative',
@@ -96,15 +97,16 @@ const Navigation: React.FC<NavigationProps> = ({onTitleClick, drawer}) => {
           onClick={drawer.onClick}
           edge="start"
           className={clsx(classes.menuButton, drawer.open && classes.hide)}>
-          <MenuIcon />
+          <MenuIcon color="primary"/>
         </IconButton>
 
+        <img src={img} />
         <Typography variant="body1" noWrap onClick={onTitleClick} className={classes.iconLink} style={{ flex: 1 }} >
-          <img src={img} className={classes.iconLink} /> Dialob Composer: User Documentation     
+          User Documentation
         </Typography>
 
         <div className={classes.search}>
-          <div className={classes.searchIcon}><SearchIcon /></div>
+          <div className={classes.searchIcon}><SearchIcon color="primary" /></div>
           <InputBase
             placeholder="Search…"
             classes={{

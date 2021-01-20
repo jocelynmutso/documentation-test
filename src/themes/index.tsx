@@ -1,1 +1,1 @@
-export { default } from './DefaultTheme';
+export { default, DrawerTheme } from './DefaultTheme';
