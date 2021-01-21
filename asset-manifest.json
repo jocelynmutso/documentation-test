@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.js": "/documentation-test/static/js/main.3245550f.chunk.js",
-    "main.js.map": "/documentation-test/static/js/main.3245550f.chunk.js.map",
-    "runtime-main.js": "/documentation-test/static/js/runtime-main.bb01b868.js",
-    "runtime-main.js.map": "/documentation-test/static/js/runtime-main.bb01b868.js.map",
-    "static/js/2.c75720c8.chunk.js": "/documentation-test/static/js/2.c75720c8.chunk.js",
-    "static/js/2.c75720c8.chunk.js.map": "/documentation-test/static/js/2.c75720c8.chunk.js.map",
-    "static/js/3.e06bbf60.chunk.js": "/documentation-test/static/js/3.e06bbf60.chunk.js",
-    "static/js/3.e06bbf60.chunk.js.map": "/documentation-test/static/js/3.e06bbf60.chunk.js.map",
+    "main.js": "/documentation-test/static/js/main.9bedca68.chunk.js",
+    "main.js.map": "/documentation-test/static/js/main.9bedca68.chunk.js.map",
+    "runtime-main.js": "/documentation-test/static/js/runtime-main.dba37da6.js",
+    "runtime-main.js.map": "/documentation-test/static/js/runtime-main.dba37da6.js.map",
+    "static/js/2.b8113b71.chunk.js": "/documentation-test/static/js/2.b8113b71.chunk.js",
+    "static/js/2.b8113b71.chunk.js.map": "/documentation-test/static/js/2.b8113b71.chunk.js.map",
+    "static/js/3.7677fde4.chunk.js": "/documentation-test/static/js/3.7677fde4.chunk.js",
+    "static/js/3.7677fde4.chunk.js.map": "/documentation-test/static/js/3.7677fde4.chunk.js.map",
     "index.html": "/documentation-test/index.html",
-    "static/js/2.c75720c8.chunk.js.LICENSE.txt": "/documentation-test/static/js/2.c75720c8.chunk.js.LICENSE.txt",
+    "static/js/2.b8113b71.chunk.js.LICENSE.txt": "/documentation-test/static/js/2.b8113b71.chunk.js.LICENSE.txt",
     "static/media/_index.md": "/documentation-test/static/media/_index.7112a0b7.md",
     "static/media/addingitems.md": "/documentation-test/static/media/addingitems.ad1eeea1.md",
     "static/media/basic-del-operators.md": "/documentation-test/static/media/basic-del-operators.6a727be5.md",
     "static/media/basic-del-syntax.md": "/documentation-test/static/media/basic-del-syntax.f295bc47.md",
     "static/media/basicdel.md": "/documentation-test/static/media/basicdel.e5b6c9bd.md",
-    "static/media/csv.md": "/documentation-test/static/media/csv.55637fa9.md",
+    "static/media/csv.md": "/documentation-test/static/media/csv.d0f73360.md",
     "static/media/del-functions-reserved-words.md": "/documentation-test/static/media/del-functions-reserved-words.dec7cbb3.md",
     "static/media/global-local-lists.md": "/documentation-test/static/media/global-local-lists.48d9eda4.md",
     "static/media/groups.md": "/documentation-test/static/media/groups.056a2793.md",
@@ -47,8 +47,8 @@
     "static/media/working-with-types.md": "/documentation-test/static/media/working-with-types.4ad7ee0e.md"
   },
   "entrypoints": [
-    "static/js/runtime-main.bb01b868.js",
-    "static/js/2.c75720c8.chunk.js",
-    "static/js/main.3245550f.chunk.js"
+    "static/js/runtime-main.dba37da6.js",
+    "static/js/2.b8113b71.chunk.js",
+    "static/js/main.9bedca68.chunk.js"
   ]
 }
