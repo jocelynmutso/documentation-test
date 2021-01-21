@@ -17,9 +17,9 @@ const loader = (setService: (service: Service.Content) => void) => {
 };
 
 
-ReactDOM.render(
+ReactDOM.render( 
   <ThemeProvider theme={DefaultTheme}>
-    <App loader={loader}/>
+    <App loader={loader} />
   </ThemeProvider>
   ,
   document.getElementById('root')

@@ -31,7 +31,7 @@ declare namespace Service {
     pageId: string;
 		name: string;
 		src: string;
-		content: React.ReactNode;
+		content: (anchor?: string) => React.ReactNode;
 	}
 }
 

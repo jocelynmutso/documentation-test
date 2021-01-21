@@ -16,15 +16,13 @@
 * MUI Styles updates for various components
 
 ---
-## v2.0 (2020-MM-DD)
+## v2.0 (2020-01-21)
 
 ### Added
 
+* Anchor link / scroll functionality 
 * Image resizing for react-markdown
-* Content:
-  * pages.md
-  * groups.md
-  * addingitems.md
+* Test dontent to various pages
 
 ---
 

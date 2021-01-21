@@ -54,9 +54,9 @@ class ImmutablePageItem implements Service.PageItem {
   private _pageId: string;
   private _name: string;
   private _src: string;
-  private _content: React.ReactNode;
+  private _content: (anchor?: string) => React.ReactNode;
   
-  constructor(id: string, pageId: string, name: string, src: string, content: React.ReactNode) {
+  constructor(id: string, pageId: string, name: string, src: string, content: (anchor?: string) => React.ReactNode) {
     this._id = id;
     this._pageId = pageId;
     this._name = name;
@@ -76,7 +76,7 @@ class ImmutablePageItem implements Service.PageItem {
   get src(): string {
     return this._src
   }
-  get content(): React.ReactNode {
+  get content(): (anchor?: string) => React.ReactNode {
     return this._content;
   }
 }

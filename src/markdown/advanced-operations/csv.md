@@ -14,7 +14,7 @@ You can also download any list valuesets as a CSV file.
 
 ---
 
-### What is a valueset? {#valueset}
+### What is a valueset?{#valueset}
 
  A valueset is the key-value pair for a list item (unique id + item text/description). See this example from a list entitled "animals":
 

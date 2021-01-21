@@ -1,4 +1,14 @@
 import React from 'react';
+import JsxParser from "react-jsx-parser";
+
+import { Plugin, Attacher, Transformer } from "unified";
+import { useRoute, useLocation } from "wouter";
+
+import { Node } from 'unist';
+import visit from 'unist-util-visit';
+
+import ReactMarkdown from 'react-markdown'
+
 import { Service } from './Service';
 import { ImmutableModule, ImmutablePage, ImmutablePageItem } from './Immutables';
 
@@ -33,8 +43,69 @@ class MarkdownServiceContent implements Service.Content {
   }
 }
 
+interface TextNode extends Node {
+  value: string;
+  anchor?: string;
+}
 
 const parseModules = (modules: ImmutableModule[]): Service.Content => {
+  const anchorPlugin: Plugin = (options) => {
+    
+    const transformer: Transformer = (tree, _file) => {
+      const anchors: TextNode[] = [];
+      visit(tree, 'text', (node: TextNode) => {
+        const start = node.value.indexOf("{#");
+        if(start < 0) {
+          return;
+        }
+
+        const end = node.value.indexOf("}", start);
+        node.anchor = node.value.substring(start, end + 1);
+        node.value = node.value.replace(node.anchor, "");
+        anchors.push(node);
+      })
+      return tree;
+    };
+    
+    return transformer;
+  };
+  
+  const Image = (props: any) => {
+    return <img {...props} 
+      src={`${process.env.PUBLIC_URL}/images/${props.src}`}
+      style={ {maxWidth: '75%'} } /> 
+  }
+  
+  const Link = (onClick: (anchor: string) => void, props: any) => {
+    console.log(props);
+    if(props.href.indexOf("#") === 0) {
+      return <a href="" onClick={(e) => {
+        e.preventDefault();
+        onClick(props.href.substring(1)); }
+      }>{props.node.children[0].value}</a>        
+    }
+    return <a href="" onClick={(e) => {e.preventDefault();}}>link</a>
+  }
+  
+  type AnchorRef = {
+    name: string;
+    value: React.RefObject<HTMLSpanElement>;
+  }
+  
+
+  const Text = (anchorRefs: AnchorRef[], props: any) => {
+    const textNode = props.node as TextNode;
+    if(textNode.anchor) {
+      const ref: React.RefObject<HTMLSpanElement> = React.createRef();
+      
+      anchorRefs.push({name: textNode.anchor, value: ref});
+      console.log("anchor node", props.node);
+      return (<span ref={ref}>{props.value}</span>)
+    }
+    return props.value; 
+  }
+  
+  
   const groups: Record<string, Service.PageItem[]> = {};
   
   const items: Service.PageItem[] = modules.map((module: ImmutableModule, index: number) => {
@@ -51,7 +122,60 @@ const parseModules = (modules: ImmutableModule[]): Service.Content => {
       
     const id: string = moduleSrc;
     const src: string = module.markdown;
-    const content: React.ReactNode = (<span>smth</span>);
+    
+    
+    interface RenderMarkdownProps {
+      anchor?: string
+    }
+    
+    
+    interface PageParams {
+      pageId: string;
+      itemId: string;
+      anchor?: string;
+    }
+
+    
+    const RenderMarkdown: React.FC<RenderMarkdownProps> = ({anchor}) => {
+      const [location, setLocation] = useLocation();
+      const anchorRefs: AnchorRef[] = [];
+      const [match, params] = useRoute("/documentation-test/pages/:pageId/:itemId/:anchor?");
+      const openPage: PageParams | null = match ? params as unknown as PageParams : null;
+      const pageItem = openPage ? `${openPage.pageId}/${openPage.itemId}` : undefined;
+      
+  
+  
+  
+      React.useEffect(() => {
+        
+        if(anchor) {
+          anchorRefs.filter(r => r.name === anchor)[0]
+            .value.current?.scrollIntoView({behavior: "smooth", block: "start"});
+            
+        }
+        console.log("time to load", anchorRefs, anchor);
+      }, [anchorRefs, anchor])
+
+      return (<div>
+        <ReactMarkdown 
+          source={src}
+          plugins={[anchorPlugin]} 
+          renderers={{ 
+            image: Image,
+            link: (props) => Link((anchor) => {
+              setLocation("/documentation-test/pages/" + pageItem + "/" + anchor);
+              
+            }, props),
+            text: (props) => Text(anchorRefs, props) 
+          }}/>
+      </div>);
+    }
+    
+    
+    
+    const content: (anchor?: string) => React.ReactNode = (anchor?: string) => {
+      return <RenderMarkdown anchor={anchor} />
+    };
     
     if(!groups[pageId]) {
       groups[pageId] = [];
@@ -67,8 +191,7 @@ const parseModules = (modules: ImmutableModule[]): Service.Content => {
     return new ImmutablePage(pageId, name, groups[pageId]);
   });
   
-  
-  
+ console.log("items loaded");
  return new MarkdownServiceContent(items, pages);
 };
 
@@ -98,11 +221,4 @@ const markdownLoader = (modules: {key: string, value: string}[], onReady: (modul
   });
 }
 export { markdownLoader };
-
-/*
-class MarkdownService implements Service.Content {
-  
-}
-*/
-
 

@@ -2,7 +2,6 @@ import React from 'react';
 
 import clsx from 'clsx';
 import withWidth from '@material-ui/core/withWidth';
-
 import { Theme, makeStyles, createStyles, useTheme, ThemeProvider } from '@material-ui/core/styles';
 import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
 import AppBar from '@material-ui/core/AppBar';
@@ -92,22 +91,35 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface ShellProps {
   service: Service.Content;
+  location: {
+    pageItem?: string;
+    anchor?: string;
+    onClick: (anchor: string) => void;
+  };
   width: Breakpoint;
 }
 
-const Shell: React.FC<ShellProps> = ({service, width}) => {
+const Shell: React.FC<ShellProps> = ({service, location, width}) => {
   const theme = useTheme();
   const classes = useStyles();
-
-  const [nowShowing, setNowShowing] = React.useState<React.ReactNode>(<div></div>);
+  
+  const [nowShowing, setNowShowing] = React.useState<React.ReactNode>();
   const [open, setOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if(location.pageItem) {
+      setNowShowing(service.getPageItem(location.pageItem).content(location.anchor));
+    }
+  }, [service, location.pageItem, location.anchor, setNowShowing])
+
   const handleDrawerOpen = () => setOpen(true);
   const handleDrawerClose = () => setOpen(false);
-  const openTopicSub = (node: React.ReactNode) => {
+  const openTopicSub = (pageItem: Service.PageItem) => {
     if(width === 'xs' || width === 'sm') {
       handleDrawerClose();
     }
-    setNowShowing(node);
+    
+    location.onClick(pageItem.id);
   }
 
   const topics = service.findPages().map((page, index) => <Topic key={index} page={page} onClick={openTopicSub} />)

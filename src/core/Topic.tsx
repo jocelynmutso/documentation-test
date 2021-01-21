@@ -11,8 +11,6 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import Divider from '@material-ui/core/Divider';
 
 import { Service } from './';
-import MarkdownRenderer from './MarkdownRenderer';
-
 
 
 const useStyles = makeStyles((theme) => ({
@@ -38,7 +36,7 @@ interface TopicItem {
 
 interface TopicProps {
   page: Service.Page,
-  onClick: (node: React.ReactNode) => void
+  onClick: (pageItem: Service.PageItem) => void
 }
 
 const Topic: React.FC<TopicProps> = ({page, onClick}) => {
@@ -48,7 +46,7 @@ const Topic: React.FC<TopicProps> = ({page, onClick}) => {
   const createSub = (pageItem: Service.PageItem) => (
     <ListItem key={pageItem.id} button 
       className={classes.nested} 
-      onClick={() => onClick(<MarkdownRenderer pageItem={pageItem}/>)}>
+      onClick={() => onClick(pageItem)}>
       
       <ListItemText>
         <span className={classes.secondaryText}>{pageItem.name}</span>
