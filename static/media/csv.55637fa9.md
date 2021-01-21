@@ -1,5 +1,5 @@
 Uploading CSV files is a quick and easy way to create list valuesets with localisations, using your CSV editor of choice.  The uploaded file can then populate an empty list created within Composer, which you can apply to individual questions just like any Composer-created list.  
-
+ 
 You can also download any list valuesets as a CSV file.
 
 **NOTE**: If you plan to use CSV files for multi-language valueset creation, first check out [Important notes on list-building with localisations in CSV](#multilanguage)
