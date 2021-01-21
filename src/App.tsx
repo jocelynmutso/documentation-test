@@ -1,28 +1,24 @@
 import React from 'react';
 
-
-import { TopicItem } from './core/Topic';
-
-import ResponseTypes from './markdown/ResponseTypes';
-import Expressions from './markdown/Expressions';
-import Logic from './markdown/Logic';
-
-import BasicOperations from './markdown/BasicOperations';
-import AdvancedOperations from './markdown/AdvancedOperations';
-import Reference from './markdown/Reference';
 import Shell from './core/Shell';
+import { Service } from './core';
 
 
-const App = () => {
+interface AppProps {
+  loader: (setService: (service: Service.Content) => void) => void; 
+}
 
-  const topics: TopicItem[] = [
-    BasicOperations,
-    AdvancedOperations,
-    Expressions,
-    ResponseTypes,
-    Logic,
-    Reference
-  ];
-  return <Shell items={topics} />
+const App: React.FC<AppProps> = ({loader}) => {
+  const [service, setService] = React.useState<Service.Content | undefined>();
+
+  React.useEffect(() => {
+    loader(setService);
+  }, [loader, setService]);
+
+  if(!service) {
+    return <div>Loading documentation...</div>
+  }
+
+  return <Shell service={service} />
 }
 export default App;

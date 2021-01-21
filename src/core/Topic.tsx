@@ -10,7 +10,10 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Divider from '@material-ui/core/Divider';
 
+import { Service } from './';
 import MarkdownRenderer from './MarkdownRenderer';
+
+
 
 const useStyles = makeStyles((theme) => ({
   nested: {
@@ -34,22 +37,21 @@ interface TopicItem {
 }
 
 interface TopicProps {
-  items: TopicItem,
+  page: Service.Page,
   onClick: (node: React.ReactNode) => void
 }
 
-const Topic: React.FC<TopicProps> = ({items, onClick}) => {
+const Topic: React.FC<TopicProps> = ({page, onClick}) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
-  const loadTopic = (name: string, path: string) => {
-    return onClick(<MarkdownRenderer path={path}/>)
-  }
-
-  const createSub = (name: string, path: string, id: number) => (
-    <ListItem key={id} button className={classes.nested} onClick={() => loadTopic(name, path)}>
+  const createSub = (pageItem: Service.PageItem) => (
+    <ListItem key={pageItem.id} button 
+      className={classes.nested} 
+      onClick={() => onClick(<MarkdownRenderer pageItem={pageItem}/>)}>
+      
       <ListItemText>
-        <span className={classes.secondaryText}>{name}</span>
+        <span className={classes.secondaryText}>{pageItem.name}</span>
       </ListItemText>
     </ListItem>
   );
@@ -57,13 +59,13 @@ const Topic: React.FC<TopicProps> = ({items, onClick}) => {
   return (<React.Fragment>
     <ListItem button onClick={() => setOpen(!open)} className={classes.nested}>
       <ListItemText>
-        <span className={classes.primaryText}>{items.name}</span>
+        <span className={classes.primaryText}>{page.name}</span>
       </ListItemText>
       {open ? <ExpandLess /> : <ExpandMore />}
     </ListItem>
     <Collapse in={open} timeout="auto" unmountOnExit>
       <List component="div" disablePadding>
-        {items.subs.map((sub, id) => createSub(sub.name, sub.path, id))}
+        {page.items.map(createSub)}
       </List>
     </Collapse>
     <Divider />

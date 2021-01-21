@@ -2,13 +2,20 @@ import React from 'react';
 
 declare namespace Service {
   interface Content {
-    find(): Page[];
-    get(id: string): Page;
-    search(keyword: string): SearchResult[];    
+    
+    findPages(): Page[];
+    getPage(id: string): Page;
+    getPageItem(id: string): PageItem;
+        
+    search(keyword: string): SearchResult[];
 	}
 	
+  enum SearchResultType {
+    page, pageItem, pageItemContent
+  }
+    
 	interface SearchResult {
-		type: "page" | "pageItem" | "pageItemContent";
+		type: SearchResultType;
 		value: Page | PageItem;
 		preview: string;
 	}
@@ -27,4 +34,5 @@ declare namespace Service {
 		content: React.ReactNode;
 	}
 }
- export type { Service }
+
+export type { Service }

@@ -1,22 +1,15 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown'
 
+import { Service } from './';
 
-//import mdLocation from './markdown/test1.md';
-//import img from './images/note-variables.png'
 
 interface NoteProps {
-  path: string
+  pageItem: Service.PageItem
 }
 
-const MarkdownRenderer: React.FC<NoteProps> = ({path}) => {
-
-  const [input, setInput] = React.useState<string>("MD loading...");
+const MarkdownRenderer: React.FC<NoteProps> = ({pageItem}) => {
   
-  fetch(path)
-    .then(response => response.text())
-    .then((text) => setInput(text));
-
   const Image = (props: any) => {
     return <img {...props} 
       src={`${process.env.PUBLIC_URL}/images/${props.src}`}
@@ -24,7 +17,7 @@ const MarkdownRenderer: React.FC<NoteProps> = ({path}) => {
   }
 
   return (<div><ReactMarkdown 
-      source={input}
+      source={pageItem.src}
       renderers={{
         image: Image
       }}/>

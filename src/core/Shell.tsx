@@ -16,7 +16,10 @@ import Divider from '@material-ui/core/Divider';
 
 import { DrawerTheme } from '../themes';
 import Navigation from './Navigation';
-import {Topic, TopicItem} from './Topic';
+import { Topic } from './Topic';
+import { Service } from './';
+
+
 
 const drawerWidth = 260;
 
@@ -88,11 +91,11 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface ShellProps {
-  items: TopicItem[];
+  service: Service.Content;
   width: Breakpoint;
 }
 
-const Shell: React.FC<ShellProps> = ({items, width}) => {
+const Shell: React.FC<ShellProps> = ({service, width}) => {
   const theme = useTheme();
   const classes = useStyles();
 
@@ -107,7 +110,7 @@ const Shell: React.FC<ShellProps> = ({items, width}) => {
     setNowShowing(node);
   }
 
-  const topics = items.map((item, index) => <Topic key={index} items={item} onClick={openTopicSub} />)
+  const topics = service.findPages().map((page, index) => <Topic key={index} page={page} onClick={openTopicSub} />)
 
   const appBar = (<AppBar position="fixed" 
       className={clsx(classes.appBar, { [classes.appBarShift]: open })}>

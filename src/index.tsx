@@ -4,36 +4,22 @@ import { ThemeProvider } from '@material-ui/core/styles';
 
 import App from './App';
 import DefaultTheme from './themes';
-import { markdownLoader } from './core'
+import { markdownLoader, Service } from './core'
 
 import reportWebVitals from './reportWebVitals';
 
-/*
-const requireModule = require.context("./markdown/AdvancedOperations", false, /\.md$/)
-interface LooseObject {
-  [key: string]: any
-}
-const api: LooseObject = {}
-
-requireModule.keys().forEach((fileName: string) => {
-  if (fileName === "./index.ts") return
-  api[fileName] = {
-    ...requireModule(fileName).default,
-  }
-})
-console.log(api);
-*/
-
-
-const markdowns: string[] = [];
+const markdowns: {key: string, value: string}[] = [];
 const requireModule = require.context("./markdown/", true, /\.md$/)
-requireModule.keys().forEach((fileName: string) => markdowns.push(requireModule(fileName).default))
-markdownLoader(markdowns, (content) => console.log(content));
+requireModule.keys().forEach((fileName: string) => markdowns.push({key: requireModule(fileName).default, value: fileName }))
+
+const loader = (setService: (service: Service.Content) => void) => {
+  markdownLoader(markdowns, setService)
+};
 
 
 ReactDOM.render(
   <ThemeProvider theme={DefaultTheme}>
-    <App />
+    <App loader={loader}/>
   </ThemeProvider>
   ,
   document.getElementById('root')
