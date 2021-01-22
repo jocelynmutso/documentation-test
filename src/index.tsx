@@ -1,26 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ThemeProvider } from '@material-ui/core/styles';
 
 import App from './App';
-import DefaultTheme from './themes';
-import { markdownLoader, Service } from './core'
+import { DefaultTheme, DrawerTheme } from './themes';
+import { ServiceLoader } from './core'
 
 import reportWebVitals from './reportWebVitals';
 
-const markdowns: {key: string, value: string}[] = [];
-const requireModule = require.context("./markdown/", true, /\.md$/)
-requireModule.keys().forEach((fileName: string) => markdowns.push({key: requireModule(fileName).default, value: fileName }))
 
-const loader = (setService: (service: Service.Content) => void) => {
-  markdownLoader(markdowns, setService)
-};
-
+const serviceLoader: ServiceLoader = new ServiceLoader(() => {
+  const markdowns: { url: string, value: string }[] = [];
+  const requireModule = require.context("./markdown/", true, /\.md$/)
+  requireModule.keys().forEach((fileName: string) => markdowns.push({url: requireModule(fileName).default, value: fileName }))
+  return markdowns;
+});
 
 ReactDOM.render( 
-  <ThemeProvider theme={DefaultTheme}>
-    <App loader={loader} />
-  </ThemeProvider>
+  <App loader={serviceLoader.onReady} theme={{
+      primary: DefaultTheme, 
+      secondary: DrawerTheme
+    }}/>
   ,
   document.getElementById('root')
 );

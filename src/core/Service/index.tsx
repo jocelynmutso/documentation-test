@@ -1,2 +1,2 @@
-export { markdownLoader } from './MarkdownService';
-export  { Service } from './Service';
+export { ServiceLoader } from './ServiceLoader';
+export { Service } from './Service';

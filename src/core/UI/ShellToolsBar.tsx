@@ -78,48 +78,44 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 
-interface NavigationProps {
-  onTitleClick: () => void;
+interface ShellToolsBarProps {
   drawer: {
-    onClick: () => void;
     open: boolean;
+    onOpen: () => void;
   }
 }
 
-const Navigation: React.FC<NavigationProps> = ({onTitleClick, drawer}) => {
+const ShellToolsBar: React.FC<ShellToolsBarProps> = ({drawer}) => {
   const classes = useStyles();
   const img = `${process.env.PUBLIC_URL}/images/logo.png`
   return (<div className={classes.root}>    
-      <Toolbar>
-        <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          onClick={drawer.onClick}
-          edge="start"
-          className={clsx(classes.menuButton, drawer.open && classes.hide)}>
-          <MenuIcon color="primary"/>
-        </IconButton>
+    <Toolbar>
+      <IconButton
+        color="inherit"
+        aria-label="open drawer"
+        onClick={drawer.onOpen}
+        edge="start"
+        className={clsx(classes.menuButton, drawer.open && classes.hide)}>
+        <MenuIcon color="primary"/>
+      </IconButton>
 
-        <img src={img} />
-        <Typography variant="body1" noWrap onClick={onTitleClick} className={classes.iconLink} style={{ flex: 1 }} >
-        </Typography>
+      <img src={img} alt="logo"/>
+      <Typography variant="body1" noWrap className={classes.iconLink} style={{ flex: 1 }} >
+      </Typography>
 
-        <div className={classes.search}>
-          <div className={classes.searchIcon}><SearchIcon color="primary" /></div>
-          <InputBase
-            placeholder="Search…"
-            classes={{
-              root: classes.inputRoot,
-              input: classes.inputInput,
-            }}
-            inputProps={{ 'aria-label': 'search' }}
-          />
-        </div>
-
-
-      </Toolbar>
-    </div>
-  );
+      <div className={classes.search}>
+        <div className={classes.searchIcon}><SearchIcon color="primary" /></div>
+        <InputBase
+          placeholder="Search…"
+          classes={{
+            root: classes.inputRoot,
+            input: classes.inputInput,
+          }}
+          inputProps={{ 'aria-label': 'search' }}
+        />
+      </div>
+    </Toolbar>
+  </div>);
 }
 
-export default Navigation;
+export default ShellToolsBar;

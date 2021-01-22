@@ -10,7 +10,7 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Divider from '@material-ui/core/Divider';
 
-import { Service } from './';
+import { Service } from '../Service';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -28,47 +28,39 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-interface TopicItem {
-  name: string,
-  subs: {name: string, path: string}[];
+interface ShellMenuItemProps {
+  page: Service.Page;
+  open: boolean;
+  onOpen: (target: Service.NewLocation) => void;
 }
 
-interface TopicProps {
-  page: Service.Page,
-  onClick: (pageItem: Service.PageItem) => void
-}
-
-const Topic: React.FC<TopicProps> = ({page, onClick}) => {
+const ShellMenuItem: React.FC<ShellMenuItemProps> = ({page, open, onOpen}) => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-
-  const createSub = (pageItem: Service.PageItem) => (
-    <ListItem key={pageItem.id} button 
-      className={classes.nested} 
-      onClick={() => onClick(pageItem)}>
-      
-      <ListItemText>
-        <span className={classes.secondaryText}>{pageItem.name}</span>
-      </ListItemText>
-    </ListItem>
-  );
 
   return (<React.Fragment>
-    <ListItem button onClick={() => setOpen(!open)} className={classes.nested}>
+    <ListItem button onClick={() => onOpen({to: open ? undefined : page})} className={classes.nested}>
       <ListItemText>
         <span className={classes.primaryText}>{page.name}</span>
       </ListItemText>
       {open ? <ExpandLess /> : <ExpandMore />}
     </ListItem>
+    
     <Collapse in={open} timeout="auto" unmountOnExit>
       <List component="div" disablePadding>
-        {page.items.map(createSub)}
+        {page.items.map(pageItem => (
+          <ListItem button 
+            key={pageItem.id}
+            className={classes.nested} 
+            onClick={() => onOpen({from: page, to: pageItem})}>
+            <ListItemText>
+              <span className={classes.secondaryText}>{pageItem.name}</span>
+            </ListItemText>
+          </ListItem>
+        ))}
       </List>
     </Collapse>
     <Divider />
   </React.Fragment>);
 }
 
-export type {TopicItem};
-export {Topic};
+export default ShellMenuItem;

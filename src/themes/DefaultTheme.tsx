@@ -114,5 +114,4 @@ const DrawerTheme = createMuiTheme({
   }
 })
 
-export {DrawerTheme};
-export default DefaultTheme;
+export {DefaultTheme, DrawerTheme};

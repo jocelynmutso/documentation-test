@@ -1,6 +1,5 @@
-import { markdownLoader } from './Service/MarkdownService';
-import { Service } from './Service/Service';
+import { Service, ServiceLoader } from './Service';
 
 
 export type { Service };
-export { markdownLoader };
+export { ServiceLoader };

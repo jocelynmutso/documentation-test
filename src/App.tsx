@@ -1,47 +1,80 @@
 import React from 'react';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 import { useRoute, useLocation } from "wouter";
 
 import Shell from './core/Shell';
 import { Service } from './core';
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      width: '100%',
+      '& > * + *': {
+        marginTop: theme.spacing(2),
+      },
+    },
+  }),
+);
 
-interface PageParams {
-  pageId: string;
-  itemId: string;
-  anchor?: string;
+const getCurrentLocation = (match: boolean, params: any): Service.Location => {
+  const current: Service.Location | null = match ? params as unknown as Service.Location : {};
+  
+  if(current.pageItem) {
+    return { 
+      page: current.page, 
+      pageItem: `${current.page}/${current.pageItem}`, 
+      anchor: current.anchor };
+  }
+  
+  return current;
 }
 
 interface AppProps {
-  loader: (setService: (service: Service.Content) => void) => void; 
+  theme: { primary: Theme, secondary?: Theme };
+  loader: (setService: (service: Service.Content) => void) => void;
 }
 
-const App: React.FC<AppProps> = ({loader}) => {
+const App: React.FC<AppProps> = ({loader, theme}) => {
+  const classes = useStyles();
+
   const [location, setLocation] = useLocation();
   const [service, setService] = React.useState<Service.Content | undefined>();
-  const [match, params] = useRoute("/documentation-test/pages/:pageId/:itemId/:anchor?");
-  const openPage: PageParams | null = match ? params as unknown as PageParams : null;
+ 
+  const [match, params] = useRoute(process.env.PUBLIC_URL + "/:page/:pageItem?/:anchor?");
+  const current = getCurrentLocation(match, params);
+  console.log("Loading location", location);
 
   React.useEffect(() => {
     loader(setService);
-    console.log("loading service", location);
-  }, [loader, setService, location]);
+  }, [loader, setService]);
+
 
   if(!service) {
-    return <div>Loading documentation...</div>
+    return (<div className={classes.root}>Loading...</div>);
   };
   
-  console.log(openPage);
+  const loadPageItem = (oldItem: Service.PageItem) => {
+    fetch(oldItem.url)
+    .then(response => {
+      console.log("fetching markdown")
+      return response.text();
+    })
+    .then((markdown) => setService(service.setMarkdown(oldItem, markdown)))
+    .catch(err => console.log(err));
+  }
   
-  const pageItem = openPage ? `${openPage.pageId}/${openPage.itemId}` : undefined;
-  const anchor = openPage && openPage.anchor ? `{#${openPage.anchor}}`: undefined
+  const setNewLocation = (path: string, target: Service.NewLocation) => {
+    const newUrl = `${process.env.PUBLIC_URL}/${path}`;
+    console.log("change location", newUrl);
+    setLocation(newUrl);
+  }
   
-  return <Shell service={service} location={{
-    pageItem: pageItem,
-    anchor: anchor,
-    onClick: (newLink: string) => {
-      setLocation("/documentation-test/pages/" + newLink);
-    } 
-  }}/>
+  return <Shell theme={theme}
+    service={service}
+    loadPageItem={loadPageItem}
+    location={{current, onClick: setNewLocation}} />
 }
+
+
 export default App;
