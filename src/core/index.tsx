@@ -1,5 +1,5 @@
-import { Service, ServiceLoader } from './Service';
+import { Service, createMarkdownService } from './Service';
 
 
 export type { Service };
-export { ServiceLoader };
+export { createMarkdownService };

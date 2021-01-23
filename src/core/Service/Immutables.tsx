@@ -150,23 +150,4 @@ class ImmutablePageItem implements Service.PageItem {
 }
 
 
-
-class ImmutableModule {
-  private _src: string;
-  private _url: string;
-  
-  constructor(url: string, src: string) {
-    this._url = url;
-    this._src = src;
-  }
-  
-  get url(): string {
-    return this._url;
-  }
-  get src(): string {
-    return this._src;
-  }
-}
-
-
-export { ImmutableModule, ImmutablePageItem, ImmutablePage, ImmutableSearchResult, ImmutableContent };
+export { ImmutablePageItem, ImmutablePage, ImmutableSearchResult, ImmutableContent };
