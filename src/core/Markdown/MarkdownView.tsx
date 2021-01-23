@@ -1,9 +1,23 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown'
+import LinearProgress from '@material-ui/core/LinearProgress';
+import { Theme, makeStyles, createStyles } from '@material-ui/core/styles';
+import Fade from '@material-ui/core/Fade';
 
 import Renderers from './Renderers';
-import { Service } from '../Service';
+import { Service, ShellContext } from '../';
 
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      width: '100%',
+      '& > * + *': {
+        marginTop: theme.spacing(2),
+      },
+    },
+  }),
+);
 
 type AnchorRef = {
   name: string;
@@ -11,13 +25,14 @@ type AnchorRef = {
 }
 
 interface MarkdownViewProps {
-  source: Service.PageItem; // markdown source code 
-  anchor?: string; // scroll to anchor
-  setLocation: (newLocation: Service.NewLocation) => void;
+  pageItem: Service.PageItem;
 }
 
-const MarkdownView: React.FC<MarkdownViewProps> = ({source, anchor, setLocation}) => {
 
+const MarkdownView: React.FC<MarkdownViewProps> = ({pageItem}) => {
+  const { nav } = React.useContext(ShellContext);
+  const classes = useStyles();
+      
   const anchorRefs: AnchorRef[] = React.useMemo(() => [], []);
   const createAnchorRef = (name: string): React.RefObject<HTMLSpanElement> => {
     const alreadyCreated = anchorRefs.filter(a => a.name === name);
@@ -29,36 +44,42 @@ const MarkdownView: React.FC<MarkdownViewProps> = ({source, anchor, setLocation}
     anchorRefs.push({name, value});
     return value;
   };
+  
   const onAnchorClick = (anchor: string) => {
-    setLocation({from: source, to: anchor});
+    nav.handleOpen({from: pageItem, to: anchor});
   };
   
-  // Scroll to 
+  // Scroll to when markdown is loaded
   React.useEffect(() => {
-    if(anchor) {
-      const found: AnchorRef[] = anchorRefs.filter(r => r.name === `{#${anchor}}`);
+    if(nav.current.anchor) {
+      const found: AnchorRef[] = anchorRefs.filter(r => r.name === `{#${nav.current.anchor}}`);
       if(found.length > 0) {
         found[0].value.current?.scrollIntoView({behavior: "smooth", block: "start"})
       } else {
-        console.log("md not loaded yet", source.markdown);
+        console.log("md not loaded yet", pageItem.markdown);
       }
     }
-  }, [anchor, anchorRefs, source.markdown])
+  }, [nav, anchorRefs, pageItem.markdown])
  
   
-  if(!source.markdown) {
-    return <div>Loading...</div>;
-  }
-  
   return (<div>
-    <ReactMarkdown 
-      source={source.markdown}
-      plugins={[Renderers.ViewPlugin]} 
-      renderers={{ 
-        image: Renderers.Image,
-        link: (props) => Renderers.Link(onAnchorClick, props),
-        text: (props) => Renderers.Text(createAnchorRef, props) 
-      }}/>
+    <div className={classes.root}>
+      <Fade in={!pageItem.markdown}>
+      <LinearProgress color="secondary" />
+      </Fade>
+    </div>
+  
+    { pageItem.markdown ? (<ReactMarkdown 
+        source={pageItem.markdown}
+        plugins={[Renderers.ViewPlugin]} 
+        renderers={{ 
+          image: Renderers.Image,
+          link: (props) => Renderers.Link(onAnchorClick, props),
+          text: (props) => Renderers.Text(createAnchorRef, props) 
+        }}/>) :
+      undefined
+    }
+
   </div>);
 }
 

@@ -4,9 +4,9 @@ declare namespace Service {
   interface Content {
     findPages(): Page[];
     getPage(id: string): Page;
+    findPageItem(id?: string): PageItem | undefined;
     getPageItem(id: string): PageItem;
     search(keyword: string): SearchResult[];
-    
     setMarkdown(item: PageItem, markdown: string): Service.Content;
 	}
 	

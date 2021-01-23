@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router, Route } from "react-router-dom";
+import { createHashHistory, History } from 'history';
 
 import App from './App';
 import { DefaultTheme, DrawerTheme } from './themes';
-import { createMarkdownService, Service, ShellContext, ShellContextProvider } from './core'
+import { ShellContextProvider } from './core'
+
 
 import reportWebVitals from './reportWebVitals';
-
 
 interface RequireContext {
   keys(): string[];
@@ -14,17 +16,17 @@ interface RequireContext {
 }
 
 const requireModule: RequireContext = require.context("./markdown/", true, /\.md$/)
-const nodeModules = requireModule.keys()
+const requireMarkdowns = requireModule
+  .keys()
   .map((fileName: string) => ({
     url: requireModule(fileName).default, 
-    value: fileName 
+    name: fileName 
   }));
 
-const service: Service.Content = createMarkdownService(nodeModules);
-
+const history: History = createHashHistory();
 
 const config = {
-  folder: 'markdown',
+  markdown: requireMarkdowns,
   theme: {
     primary: DefaultTheme,
     secondary: DrawerTheme
@@ -32,9 +34,14 @@ const config = {
 }
 
 ReactDOM.render( 
-  <ShellContextProvider config={config}>
-    <App init={service} />
-  </ShellContextProvider> 
+  <Router history={history}>
+    <Route path="/:page?/:pageItem?/:anchor?" render={(props) => (
+      
+      <ShellContextProvider config={config} route={props.match.params} history={history}>
+        <App />
+      </ShellContextProvider>        
+    )} />
+  </Router> 
   ,
   document.getElementById('root')
 );

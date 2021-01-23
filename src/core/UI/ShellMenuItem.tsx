@@ -10,7 +10,7 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Divider from '@material-ui/core/Divider';
 
-import { Service } from '../Service';
+import { Service, ShellContext } from '../';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -30,15 +30,16 @@ const useStyles = makeStyles((theme) => ({
 
 interface ShellMenuItemProps {
   page: Service.Page;
-  open: boolean;
-  onOpen: (target: Service.NewLocation) => void;
 }
 
-const ShellMenuItem: React.FC<ShellMenuItemProps> = ({page, open, onOpen}) => {
+const ShellMenuItem: React.FC<ShellMenuItemProps> = ({page}) => {
   const classes = useStyles();
+  const { nav } = React.useContext(ShellContext);
+  const open = nav.current.page === page.id;
+
 
   return (<React.Fragment>
-    <ListItem button onClick={() => onOpen({to: open ? undefined : page})} className={classes.nested}>
+    <ListItem button onClick={() => nav.handleOpen({to: open ? undefined : page})} className={classes.nested}>
       <ListItemText>
         <span className={classes.primaryText}>{page.name}</span>
       </ListItemText>
@@ -51,7 +52,7 @@ const ShellMenuItem: React.FC<ShellMenuItemProps> = ({page, open, onOpen}) => {
           <ListItem button 
             key={pageItem.id}
             className={classes.nested} 
-            onClick={() => onOpen({from: page, to: pageItem})}>
+            onClick={() => nav.handleOpen({from: page, to: pageItem})}>
             <ListItemText>
               <span className={classes.secondaryText}>{pageItem.name}</span>
             </ListItemText>

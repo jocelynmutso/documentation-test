@@ -20,16 +20,26 @@ class ImmutableContent implements Service.Content {
     throw new Error(`Can't get page with id: ${id}'!`);
   }
   getPageItem(id: string): Service.PageItem {
+    const result = this.findPageItem(id);
+    if(result) {
+      return result;
+    }
+    throw new Error(`Can't get page items with id: ${id}'!`);
+  }
+  
+  findPageItem(id?: string): Service.PageItem | undefined {
+    if(!id) {
+      return undefined;
+    }
     const result = this._items.filter(p => p.id === id);
     if(result.length === 1) {
       return result[0];  
     }
-    throw new Error(`Can't get page items with id: ${id}'!`);
+    return undefined;
   }
   search(keyword: string): Service.SearchResult[] {
     return [];
   }
-  
   setMarkdown(oldItem: Service.PageItem, markdown: string): Service.Content {
     const newPages: Service.Page[] = [];
     const newItems: Service.PageItem[] = [];
