@@ -1,5 +1,6 @@
 import React from 'react';
 import { Theme } from '@material-ui/core/styles';
+import { ShellContext } from './core';
 
 import {
   HashRouter as Router,
@@ -26,11 +27,14 @@ const getCurrentLocation = (match: boolean, params: any): Service.Location => {
 }
 
 interface AppProps {
-  theme: { primary: Theme, secondary?: Theme };
   init: Service.Content;
 }
 
-const App: React.FC<AppProps> = ({init, theme}) => {
+const App: React.FC<AppProps> = ({init}) => {
+  
+  const {config} = React.useContext(ShellContext);
+  console.log(config);
+  
   const [service, setService] = React.useState<Service.Content>(init);
   
   //const [location, setLocation] = useLocation();
@@ -58,7 +62,7 @@ const App: React.FC<AppProps> = ({init, theme}) => {
   }
   
   return (<Router>
-    <Shell theme={theme} service={service}
+    <Shell service={service}
       loadPageItem={loadPageItem}
       location={{current, onClick: setNewLocation}} />
   </Router>);

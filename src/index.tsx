@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 import { DefaultTheme, DrawerTheme } from './themes';
-import { createMarkdownService, Service } from './core'
+import { createMarkdownService, Service, ShellContext, ShellContextProvider } from './core'
 
 import reportWebVitals from './reportWebVitals';
 
@@ -22,11 +22,19 @@ const nodeModules = requireModule.keys()
 
 const service: Service.Content = createMarkdownService(nodeModules);
 
+
+const config = {
+  folder: 'markdown',
+  theme: {
+    primary: DefaultTheme,
+    secondary: DrawerTheme
+  }
+}
+
 ReactDOM.render( 
-  <App init={service} theme={{
-      primary: DefaultTheme, 
-      secondary: DrawerTheme
-    }}/>
+  <ShellContextProvider config={config}>
+    <App init={service} />
+  </ShellContextProvider> 
   ,
   document.getElementById('root')
 );

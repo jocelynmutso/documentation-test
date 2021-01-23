@@ -4,6 +4,7 @@ import React from 'react';
 import { Theme, ThemeProvider } from '@material-ui/core/styles';
 //import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
 
+import { ShellContext } from './';
 
 import { Service } from './';
 import { MarkdownView } from './Markdown';
@@ -22,7 +23,6 @@ const isPageItem = (value: any): value is Service.PageItem => {
 const drawerWidth = 260;
 
 interface ShellProps {
-  theme: { primary: Theme, secondary?: Theme };
   
   service: Service.Content;
   loadPageItem: (item: Service.PageItem) => void,
@@ -38,9 +38,9 @@ interface ShellProps {
 const Shell: React.FC<ShellProps> = ({
   service, 
   loadPageItem,
-  location, theme, //width
+  location, //width
 }) => {
-  
+  const {config} = React.useContext(ShellContext);
   const [drawerOpen, setDrawerOpen] = React.useState(false || location.current.page ? true : false);
   const [activeMenu, setActiveMenu] = React.useState<Service.Location | undefined>(location.current);
   
@@ -115,7 +115,7 @@ const Shell: React.FC<ShellProps> = ({
 
   // all left menus
   const menus = (
-    <ThemeProvider theme={(outer) => ({...outer, ...theme.secondary})}>
+    <ThemeProvider theme={(outer) => ({...outer, ...config.theme.secondary})}>
       <ShellDrawer drawer={drawer}>
         {service.findPages().map((page, index) => (
           <ShellMenuItem key={index} page={page} onOpen={onNavigate} open={activeMenu?.page === page.id}/>
@@ -124,7 +124,7 @@ const Shell: React.FC<ShellProps> = ({
     </ThemeProvider>);
 
   return (
-    <ThemeProvider theme={theme.primary}> 
+    <ThemeProvider theme={config.theme.primary}> 
       <ShellBody appBar={appBar} menus={{
         width: drawer.width, 
         open: drawer.open, 
