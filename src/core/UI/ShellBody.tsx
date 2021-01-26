@@ -45,10 +45,10 @@ const useStyles = (drawerWidth: number) => makeStyles((theme: Theme) =>
 interface ShellBodyProps {
   appBar: React.ReactNode;
   menus: {
-    width: number;
-    open: boolean;
-    value: React.ReactNode
-  };
+    width: number,
+    open: boolean,
+    value: React.ReactNode,
+  },
   children: React.ReactNode;
 }
 

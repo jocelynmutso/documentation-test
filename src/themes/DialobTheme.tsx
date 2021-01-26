@@ -57,7 +57,7 @@ const typography: TypographyOptions = {
 const palette: PaletteOptions = {
   type: 'light',
   primary: {
-    main: '#114B8E',
+    main: '#26173a',
   },
   secondary: {
     main: '#ff8600',
@@ -68,7 +68,7 @@ const palette: PaletteOptions = {
   },
 }
 
-const DefaultTheme = createMuiTheme({
+const PrimaryTheme = createMuiTheme({
   typography: typography,
   palette: palette,
 
@@ -84,7 +84,7 @@ const DefaultTheme = createMuiTheme({
   }
 })
 
-const DrawerTheme = createMuiTheme({
+const SecondaryTheme = createMuiTheme({
   palette: {
     type: 'dark',
     primary: {
@@ -102,7 +102,7 @@ const DrawerTheme = createMuiTheme({
 
     MuiPaper: {
       root: {
-        backgroundColor: '#4d2f75', //dialob purple
+        backgroundColor: '#26173a', // #4d2f75 dialob purple
       }
     },
 
@@ -114,4 +114,8 @@ const DrawerTheme = createMuiTheme({
   }
 })
 
-export {DefaultTheme, DrawerTheme};
+const DialobTheme = {
+  primary: PrimaryTheme,
+  secondary: SecondaryTheme
+};;
+export default DialobTheme;

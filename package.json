@@ -51,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "@jocelynmutso/dandy-doc": "^1.0.5",
     "@types/node": "^12.19.9",
     "@types/webpack-env": "^1.16.0",
     "gh-pages": "^3.1.0"

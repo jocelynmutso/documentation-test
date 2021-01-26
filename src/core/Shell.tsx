@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import withWidth from '@material-ui/core/withWidth';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
@@ -23,7 +24,7 @@ const Shell: React.FC<ShellProps> = ({
   
   console.log(width);
   
-  const {config, service, nav} = React.useContext(ShellContext);
+  const {service, nav} = React.useContext(ShellContext);
   const [drawerOpen, setDrawerOpen] = React.useState(true);
   const pageItem = service.findPageItem(nav.current.pageItem);
     
@@ -41,8 +42,8 @@ const Shell: React.FC<ShellProps> = ({
     </ShellAppBar>);
 
   // all left menus
-  const menus = (
-    <ThemeProvider theme={(outer) => ({...outer, ...config.theme.secondary})}>
+  const leftBar = (
+    <ThemeProvider theme={(outer) => ({...outer, ...nav.theme.secondary})}>
       <ShellDrawer drawer={drawer}>
         {service.findPages().map((page, index) => (
           <ShellMenuItem key={index} page={page} />
@@ -51,12 +52,12 @@ const Shell: React.FC<ShellProps> = ({
     </ThemeProvider>);
 
   return (
-    <ThemeProvider theme={config.theme.primary}> 
+    <ThemeProvider theme={nav.theme.primary}> 
       <ShellBody appBar={appBar} 
         menus={{
           width: drawer.width, 
           open: drawer.open, 
-          value: menus
+          value: leftBar
         }}>
         
         {pageItem ? <MarkdownView pageItem={pageItem}/> : null}

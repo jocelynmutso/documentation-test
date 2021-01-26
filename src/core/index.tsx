@@ -1,6 +1,6 @@
 import { Service, createMarkdownService } from './Service';
 
-import { ShellContext, ShellContextProvider } from './UI';
+import { ShellContext, ShellContextProvider, ShellTheme } from './UI';
 
-export type { Service };
+export type { Service, ShellTheme };
 export { createMarkdownService, ShellContext, ShellContextProvider };

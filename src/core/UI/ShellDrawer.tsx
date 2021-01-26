@@ -7,7 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Divider from '@material-ui/core/Divider';
-
+import ShellThemeMenu from './ShellThemeMenu';
 
 
 const useStyles = (drawerWidth: number) => makeStyles((theme: Theme) =>
@@ -61,7 +61,10 @@ const ShellDrawer: React.FC<ShellDrawerProps> = ({drawer, children}) => {
         </IconButton>
       </div>      
       <Divider />
-      <List component="nav" className={classes.list}>{children}</List>
+      <List component="nav" className={classes.list}>
+        {children}
+        <ShellThemeMenu />
+      </List>
     </Drawer>);
 }
 

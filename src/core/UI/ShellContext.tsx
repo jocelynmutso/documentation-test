@@ -3,20 +3,26 @@ import { Theme, createMuiTheme } from '@material-ui/core/styles';
 import { createMarkdownService, Service } from '../';
 import { History } from 'history';
 
+
+
 interface ShellContextConfig {
   markdown: {
     url: string,
     name: string,
   }[],
-  theme: {
+  theme: ShellTheme,
+  themeCollection: ShellTheme[]
+} //config will have seed values from where everything starts, to be used when provider initialises (ex: themes)
+
+interface ShellTheme {
     primary: Theme,
     secondary: Theme
   }
-} //config will have seed values from where everything starts, to be used when provider initialises (ex: themes)
-
 
 interface ShellNav { //provides current location, and handles changing current to new location
   current: Service.Location; // 
+  theme: ShellTheme;
+  handleThemeChange: (newTheme: ShellTheme) => void;
   handleOpen: (target: Service.NewLocation) => void;
 }
 
@@ -37,7 +43,9 @@ const theme = createMuiTheme({});
 
 const ShellContext = React.createContext<ShellContextType>({  //fill out the context, give initial values to make it shut up
   service: createMarkdownService([]),
-  nav: { 
+  nav: {
+    theme: { primary: theme, secondary: theme},
+    handleThemeChange: () => {},
     current: {},
     handleOpen: (target) => { console.log(target) }
   },
@@ -46,21 +54,24 @@ const ShellContext = React.createContext<ShellContextType>({  //fill out the con
     theme: {
       primary: theme,
       secondary: theme,
-    }
+    },
+    themeCollection: []
   }
 });
 
 interface ShellState {
   service: Service.Content,
   location: Service.Location,
+  theme: ShellTheme,
 }
 
 
 
 interface ShellAction {
-  type: "setLocation" | "setMarkdown",
+  type: "setLocation" | "setMarkdown" | "setNewTheme",
   markdown?: {item: Service.PageItem, text: string},
   newLocation?: Service.NewLocation,
+  theme?: ShellTheme,
 }
 
 const isPage = (value: any): value is Service.Page => {
@@ -72,7 +83,14 @@ const isPageItem = (value: any): value is Service.PageItem => {
 }
 
 const reducer = (oldState: ShellState, action: ShellAction): ShellState => {
-  if(action.type === "setLocation") {
+  if(action.type === "setNewTheme") {
+      return { 
+        service: oldState.service,
+        location: oldState.location,
+        theme: action.theme ? action.theme : oldState.theme
+      };
+    
+  } else if(action.type === "setLocation") {
  
      // location not defined
     if(!action.newLocation) {
@@ -86,7 +104,8 @@ const reducer = (oldState: ShellState, action: ShellAction): ShellState => {
     if(!location.to) {
       return { 
         service: oldState.service,
-        location: {}
+        location: {},
+        theme: oldState.theme
       };
     }
     
@@ -107,7 +126,8 @@ const reducer = (oldState: ShellState, action: ShellAction): ShellState => {
     
       return { 
         service: oldState.service,
-        location: newLocation
+        location: newLocation,
+        theme: oldState.theme
       };
     }
     
@@ -117,7 +137,8 @@ const reducer = (oldState: ShellState, action: ShellAction): ShellState => {
       const newLocation: Service.Location = { page: page.id };
       return { 
         service: oldState.service,
-        location: newLocation
+        location: newLocation,
+        theme: oldState.theme
       };
     }
     
@@ -126,7 +147,8 @@ const reducer = (oldState: ShellState, action: ShellAction): ShellState => {
       const newLocation: Service.Location = { page: item.pageId, pageItem: item.id };
       return { 
         service: oldState.service,
-        location: newLocation
+        location: newLocation,
+        theme: oldState.theme
       };
     }
     
@@ -140,7 +162,8 @@ const reducer = (oldState: ShellState, action: ShellAction): ShellState => {
     
     return {
       service: oldState.service.setMarkdown(action.markdown.item, action.markdown.text),
-      location: oldState.location
+      location: oldState.location,
+      theme: oldState.theme
     }
   }
   return oldState;
@@ -167,12 +190,20 @@ const ShellContextProvider: React.FC<ShellContextProviderProps> = ({children, co
 
   // link reducer to react hook with initial state
   const [state, dispatch] = React.useReducer(reducer, {
+    theme: config.theme,
     location: React.useMemo(() => parseRoute(route), [route]),
     service: React.useMemo(() => createMarkdownService(config.markdown), [config.markdown]) // create new markdown service from config
   });
 
   // determine initial navigation location
   const nav: ShellNav = {
+    theme: state.theme,
+    handleThemeChange: (newTheme: ShellTheme) => {
+      // Change the UI theme
+      
+      const action: ShellAction = { type: "setNewTheme", theme: newTheme }
+      dispatch(action);
+    },
     current: state.location,
     handleOpen: (target: Service.NewLocation) => {
       // Change the UI location
@@ -257,4 +288,5 @@ const ShellContextProvider: React.FC<ShellContextProviderProps> = ({children, co
   );
 }
 
+export type { ShellTheme }
 export {ShellContextProvider, ShellContext};

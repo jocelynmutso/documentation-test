@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route } from "react-router-dom";
+
+
 import { createHashHistory, History } from 'history';
 
 import App from './App';
-import { DefaultTheme, DrawerTheme } from './themes';
+import { DialobTheme, TestTheme1, TestTheme2 } from './themes';
 import { ShellContextProvider } from './core'
 
 
@@ -27,10 +29,9 @@ const history: History = createHashHistory();
 
 const config = {
   markdown: requireMarkdowns,
-  theme: {
-    primary: DefaultTheme,
-    secondary: DrawerTheme
-  }
+  theme: DialobTheme,
+  themeCollection: [DialobTheme, TestTheme1, TestTheme2]
+  
 }
 
 ReactDOM.render( 

@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(4),
+    color: theme.palette.primary.main
   },
   title: {
     flexGrow: 1,
@@ -59,8 +60,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   inputRoot: {
     // backgroundColor: theme.palette.text.secondary,
-    // borderColor: theme.palette.text.primary,
-    // fontWeight: 'bold',
+    borderColor: theme.palette.text.primary,
+    fontWeight: 'bold',
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
@@ -91,7 +92,7 @@ const ShellToolsBar: React.FC<ShellToolsBarProps> = ({drawer}) => {
   return (<div className={classes.root}>    
     <Toolbar>
       <IconButton
-        color="inherit"
+        //color="inherit"
         aria-label="open drawer"
         onClick={drawer.onOpen}
         edge="start"
