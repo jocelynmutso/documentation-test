@@ -53,7 +53,7 @@ const ShellMenuItem: React.FC<ShellMenuItemProps> = ({page}) => {
             key={pageItem.id}
             className={classes.nested} 
             onClick={() => nav.handleOpen({from: page, to: pageItem})}>
-            <ListItemText>
+            <ListItemText> 
               <span className={classes.secondaryText}>{pageItem.name}</span>
             </ListItemText>
           </ListItem>

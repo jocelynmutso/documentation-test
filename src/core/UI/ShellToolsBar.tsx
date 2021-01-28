@@ -20,13 +20,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginRight: theme.spacing(4),
     color: theme.palette.primary.main
   },
-  title: {
-    flexGrow: 1,
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
-  },
   iconLink:{
     '&:hover': {
       cursor: 'pointer',
