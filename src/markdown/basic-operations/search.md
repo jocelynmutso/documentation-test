@@ -1,4 +1,4 @@
-# Preview mode: Testing the filling side
+# Search feature  TODO
 
 ## Quick Summary
 
@@ -18,5 +18,5 @@ To activate Preview Mode, simply click "Preview" in the upper right corner of th
 
 ---
 
-![Preview Mode](basicoperations/preview1.png)
+![Search](basicoperations/preview1.png)
 
