@@ -2,19 +2,21 @@
 
 ## Quick Summary
 
-* Forms can be live-tested at any time with the "Preview Mode" feature
-* Click Preview in the top right corner of the Composer window
-* Preview mode is not accessible if a form has errors
+
+TODO
+
+searches for items and variables
+for items, it looks for ID, label and description of selected language
+and for variables it looks for variable name
+
+
+https://git.resys.io/dialob/dialob-composer-v2/-/blob/master/src/components/SearchMenu.js#L36
 
 ---
 
 ## Overview  
 
-You can test your form live, at any time in the creation process.
-
-To activate Preview Mode, simply click "Preview" in the upper right corner of the Composer window.
-
-**NOTE**: Any existing errors will need to be resolved before you can utilise Preview Mode.
+TODO
 
 ---
 

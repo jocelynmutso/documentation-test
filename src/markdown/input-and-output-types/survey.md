@@ -3,6 +3,7 @@
 ## Quick Summary
 
 * A complete Survey response type is comprised of three parts: Survey group, survey options, and survey inputs
+* A Survey return type is a key
 * Survey buttons can be horizontally or vertically arranged
 * Follow the (visual) guide below to create a Survey response type.
 * Several typical validations associated with Survey types can be found at the bottom of this page
