@@ -149,47 +149,6 @@ Add item/Structure/Multi-Row Group
 
 ---
 
-### Working with _Survey_ type {#survey}
-
-Survey type uses radio buttons to collect input from users.
-
-_Survey type on the filling side_
-
-![Survey List Creation](/images/survey-filling-side.png)
-
-Survey types function a bit differently than other types.  For example, a text response type is located within a group which can contain any number of various response types, whereas a Survey response type is the group itself. A survey group can be thought of as the survey "question" itself, which contains the various survey options created via global or local lists. One survey group is the equivalent of one survey "whole".
-
-A Survey response type is created within a Survey Group or Survey Group (Vertical). 
-
-**To create a survey group:**  
-Add item/Structure/Survey Group or Survey Group (Vertical)
-
-![Survey Group](/images/survey-group.png)
-
-**Next, Survey values are needed to populate the Survey group. Create a list (Global or local) which will comprise your inputs.**
-
-![Survey List Creation](/images/survey-input-list.png)
-
-**Next, apply your list of survey values to a survey group**  
-
-Click the hamburger icon in the top-right corner of the survey group. Then, select the list you wish to apply.
-
-![Survey List Selection](/images/select-survey-input-list.png)
-
-**After that, create survey inputs by creating a survey input within the survey group**.
-
-![Survey List Creation](/images/create-survey-input.png)
-
-**Several typical validations you will use**:
-
-`question1 = "opt1"`  
-Evaluates true when the return value of question1 is opt1.
-
-`question1 in ("opt1", "opt3", "opt4")`  
-Evaluates true when the return value of question1 is one of the following: opt1, opt3 or opt5 possible *Survey* key values.
-
-`question1 not in ("opt1", "opt3", "opt4")`  
-Evaluates true when the return value of question1 is NOT one of the following: opt1, opt3 or opt4 possible *Survey* key values.
 
 ---
 

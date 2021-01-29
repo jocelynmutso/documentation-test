@@ -1,16 +1,27 @@
-Uploading CSV files is a quick and easy way to create list valuesets with localisations, using your CSV editor of choice.  The uploaded file can then populate an empty list created within Composer, which you can apply to individual questions just like any Composer-created list.  
- 
-You can also download any list valuesets as a CSV file.
+# Comma Separated Values (CSV)
 
-**NOTE**: If you plan to use CSV files for multi-language valueset creation, first check out [Important notes on list-building with localisations in CSV](#multilanguage)
+## Quick Summary
 
-##### What's on this page:
+* Create multi-language forms with the Translation feature
+* Built-in languages include English, Estonian, Finnish, and Swedish. Additional language support can be added according to your needs.
+* There are two creation modes: Create Empty and Copy from Active
+* Test your translations on the filling side by changing the active language either via the Translation window OR via the language dropdown in the Composer upper menu
 
 [What is a valueset?](#valueset)  
 [Required CSV format and notes](#format)  
 [Simple outline of steps to list-building with CSV](#outline)  
 [Step-by-step walkthrough: Build a single-language list with CSV](#walkthrough)  
-[Important notes on list-building with localisations in CSV](#multilanguage)
+[Important notes and troubleshooting multi-language list-building with CSV](#multilanguage)
+
+---
+
+## Overview
+
+Uploading CSV files is a quick and easy way to create list valuesets with localisations, using your CSV editor of choice.  The uploaded file can then populate an empty list created within Composer, which you can apply to individual questions just like any Composer-created list.  
+ 
+You can also download any list valuesets as a CSV file.
+
+**NOTE**: If you plan to use CSV files for multi-language valueset creation, first check out [Important notes on list-building with localisations in CSV](#multilanguage)
 
 ---
 
@@ -18,9 +29,9 @@ You can also download any list valuesets as a CSV file.
 
  A valueset is the key-value pair for a list item (unique id + item text/description). See this example from a list entitled "animals":
 
-![Value set](/images/valueset.png)
+![Value set](advancedoperations/valueset.png)
 
-Valuesets created via CSV files can be localised for a particular language, simply by adding additional columns with headers designating the language of that item using two-letter language codes. This localisation is explained in greater detail under [Required CSV format](#format)
+Valuesets created via CSV files can be localised for a particular language, simply by adding additional columns with headers designating the language of that item using two-letter language codes. This localisation is explained in greater detail in the next section: _Required CSV format_.
 
 ---
 
@@ -34,11 +45,11 @@ A CSV file must follow this format:
 * The first column of the content rows is item ID.
 * The rest of the content columns are the entries in the language corresponding to the two-letter language code in the column header.
 
-In the example below, we have two items. Each item has an ID (item1 and item2), a two-letter language code (English = en, Estonian = et), and corresponding English and Estonian localisations.
+The example below follows these rules. It contains two items (column B and C). Each item has an ID (item1 and item2), a two-letter language code (English = en, Estonian = et), and corresponding English and Estonian localisations.
 
-![CSV format](/images/csv-format-example.png)
+![CSV format](advancedoperations/csv-format-example.png)
 
-#### Notes
+#### Notes on CSV creation and uploading
 
 * Empty rows are ignored
 * The order of entries in the file is retained
@@ -47,9 +58,7 @@ In the example below, we have two items. Each item has an ID (item1 and item2), 
 _To avoid this issue, be sure to activate your desired languages via the Translations modal **before** uploading your CSV file._
 
 * All entry IDs are imported exactly how you wrote them in your CSV file. In the case of conflicts or other problems, error messages will be displayed, and you will need to resolve these as normal.
-
 * Valueset entries are downloaded as a CSV file in the same format as described above.
-
 * The following import modes are supported:
 
   * **Replace all**: Replaces all valueset entries with the values from the CSV file.
@@ -86,37 +95,37 @@ For this walkthrough, we will use a CSV file containing key-value pairs for anim
 
 Create your CSV file according to the guidelines for required CSV format above, and download it to your local machine.
 
-![CSV format](/images/csv-format-example2.png)
+![CSV format](advancedoperations/csv-format-example2.png)
 
 **2. Create a new list in Composer to hold your CSV values**
 
 Navigate to "Lists" in the top menu, and create a new list. Give the list a name, but do not fill in any list items.
 
-![Animals list](/images/animals1.png)
+![Animals list](advancedoperationsanimals1.png)
 
 **3. Upload your CSV file via the upload button in the Global Lists modal**
 
 Click the "Upload CSV" icon.
 
-![Uploading and downloading CSV](/images/upload-valueset2.png)
+![Uploading and downloading CSV](advancedoperations/upload-valueset2.png)
 
 Then, select your desired CSV file, followed by upload mode. For this example, we are going to select "Replace all" because we are dealing with a completely new list with no pre-existing values to edit or append to.
 
-![Uploading and downloading CSV](/images/upload-valueset1.png)
+![Uploading and downloading CSV](/advancedoperations/upload-valueset1.png)
 
 Once you have uploaded your CSV file, you will see that the list will automatically be populated with your valuesets, which appear in English because the form's active language is English and the two-letter language codes used in the second column of the table determined this content to be of language "en".
 
-![Uploading and downloading CSV](/images/upload-valueset3.png)
+![Uploading and downloading CSV](advancedoperations/upload-valueset3.png)
 
 **4. Test your new list**
 
 Append your list to a choice or multi-choice input type, write your question, and preview your form.
 
-![Filling side preview CSV](/images/animals-csv-preview.png)
+![Filling side preview CSV](/advancedoperations/animals-csv-preview.png)
 
 ---
 
-### Important notes on multi-language list-building with CSV {#multilanguage}
+### Important notes and troubleshooting multi-language list-building with CSV {#multilanguage}
 
 * To ensure that all of your CSV's languages are recognised and added to your form upon upload, supported form languages **must be created** via the [Translations](https://docs.dialob.io/introduction/translations/) feature **BEFORE** you upload your CSV file!  
 * This means the following: Composer will ignore the values of a CSV file associated with a language that has not been defined in Composer prior to CSV upload.  
