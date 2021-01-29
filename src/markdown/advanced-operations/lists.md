@@ -1,4 +1,12 @@
-##### What's on this page:
+# Lists
+
+## Quick Summary
+
+* Create multi-language forms with the Translation feature
+* Built-in languages include English, Estonian, Finnish, and Swedish. Additional language support can be added according to your needs.
+* There are two creation modes: Create Empty and Copy from Active
+* Test your translations on the filling side by changing the active language either via the Translation window OR via the language dropdown in the Composer upper menu
+
 
 [Use cases of lists](#use-cases)  
 [Creating a Global list](#creating-global-list)  
@@ -6,6 +14,17 @@
 [Setting list visibility rules](#list-visibility)  
 [Using a List in a Choice or Multi-Choice Response Field](#using-list-choice-multichoice)  
 [Using a List in a Survey Group or Survey Group (Vertical) Response Field](#using-list-survey-group)  
+---
+
+## Overview
+
+Lists are **key**-_value_ pairs (**id**-_listItem_) that are used to populate drop-down menus, choice selections, and create survey button options.  There are two types of lists in Dialob:
+
+**Global lists**: These lists exist independently from specific response fields, which means that they are not tied to any specific question and can easily be reused anywhere in the form. Any changes made to a global list will automatically be updated in all of the questions which use that list. Use a global list for drop-downs if the intent is to reuse the same list many times in different questions. For example, if a form requires the repeated reuse of a drop-down menu comprised of the same generic sports cars, a global list is the best choice.
+
+**Local lists**: These lists are bound to the response in which they are created. In fact, you can only create them from within the question/response where they will be used. Changes to local lists will be reflected only within the question where they were created. Use a local list if the goal is to simply create a one-time drop-down which is bound to a particular response field and will only apply to that particular question. For example, if a form requires one specific list of Italian sports cars and only one question will ask the user about these cars, a local list is the best choice.
+
+---
 
 ### Use cases of lists {#use-cases}
 
@@ -14,7 +33,9 @@
 
 A **global list** exists independently from specific response fields, which means that it is not tied to any specific question and can easily be reused. Any changes made to a global list will automatically be updated in all of the questions which use that list. Use a global list for drop-downs if the intent is to reuse the same list many times in different questions. For example, if a form requires the repeated reuse of a drop-down menu comprised of the same generic sports cars, a global list is the best choice.
 
-A **local list** is bound to the response in which it is created. Changes to local lists will be reflected only within the question where they were created. Use a local list if the goal is to simply create a one-time drop-down which is bound to a particular response field and will only apply to that particular question. For example, if a form requires one specific list of Italian sports cars and only one question will ask the user about these cars, a local list is the best choice.
+A **local list** is bound to the response in which it is created. Changes to local lists will be reflected only within the question where they were created. Use a local list if the goal is to simply to use it once and only in that particular question. For example, if a form requires one specific list of Italian sports cars and only one question will ask the user about these cars, a local list is the best choice.
+
+---
 
 ### Creating a global list {#creating-global-list}
 
@@ -27,6 +48,8 @@ A **local list** is bound to the response in which it is created. Changes to loc
 * **Key** is the request ID and must be manually created by the form creator (at this time, list keys are not auto-generated). Keys must follow the [Request ID rules](https://docs.dialob.io/dialob-expressions/#request-id-rules) for creation of IDs.
 * **Text** is the actual words / sentences / numbers that the form filler will see when selecting an item from the list.
 
+---
+
 ### Setting visibility rules for list items {#list-visibility}
 
 * To write a visibilty rule, click the "eye" icon to the left of the item's key. A gray eye indicates that no rule exists, whereas a black eye indicates that a rule does exist.
@@ -35,9 +58,11 @@ A **local list** is bound to the response in which it is created. Changes to loc
 
 For more information on writing visibility rules, see [Basic Logic Building and Rule Writing](https://docs.dialob.io/dialob-expressions/logic-building/)
 
-![List](/images/list-visibility1.png)
+![List](advancedoperations/list-visibility1.png)
 
 **NOTE:** Next to the list name, you can utilise the `Users` option as a quick way to see how many responses are using this list and to identify unused lists.
+
+---
 
 ### Creating a local list {#creating-local-list}
 
@@ -54,19 +79,29 @@ Click the hamburger icon in the top-right corner of the response editor. Then se
 ### Using a list in a Choice or Multi-Choice response field {#using-list-choice-multichoice}
 
 Lists used in combination with `Choice`or `Multi-choice` types must be inserted **at the response level**.  
-Lists used in combination with `Survey Group`or `Vertical Survey Group` must be inserted **at the group level**.
+Lists used in combination with `Survey Group` or `Vertical Survey Group` must be inserted **at the group level**.
 
+
+The following screenshots demonstrate how to use a list in a Choice or Multi-Choice response type:
+ 
 1. To use a list in a `Choice` or `Multi-choice` response, insert the list **at the response level**. Create a group, then create a response of type `Choice` or `Multi-choice` within that group.
 2. Click the hamburger icon in the top-right corner of the response editor. Then select Options. Select the desired list.
 3. Preview the filling side.
 
-![List 4](/images/list4.png)
 
-![List 5](/images/list5.png)
+![List 4](advancedoperations/list4.png)
 
-![List 6](/images/list6.png)
+**Click the hamburger icon in the top-right corner of the response editor. Then select Options. Select the desired list.**
 
-![List 7](/images/list7.png)
+![List 5](advancedoperations/list5.png)
+
+**Insert the list at the response level. Create a group, then create a response of type Choice or Multi-choice within that group.**
+
+![List 6](advancedoperations/list6.png)
+
+**Preview the filling side.**
+
+![List 7](advancedoperations/list7.png)
 
 **NOTE**: There is currently no external or visual indication that a response has a list attached to it. To check whether a response has a list bound to it, click the hamburger icon, then "Options".
 
@@ -82,7 +117,7 @@ A complete survey question is comprised of three basic parts:
 * `Survey item` input type to provide the survey questions within the survey group
 * A **global or local list** to provide the survey responses from which users can select
 
-In the following example, a survey about user opinions on car brands is created.  
+The following example follows these steps to create a survey about user opinions on car brands.  
 
 1. Create a survey group by selecting "Add item/Structure/Survey Group".
 2. Inside the survey group, create Survey Items. For this example, the Survey Items are the car brands we will ask opinions on.
@@ -90,12 +125,26 @@ In the following example, a survey about user opinions on car brands is created.
 4. Insert the list into the Survey Group by selecting the hamburger icon at the top-right of the **group**.
 5. Preview the filling side.
 
-![Survey](/images/survey3.png)
 
-![Survey](/images/survey5.png)
 
-![Survey](/images/survey2.png)
+**Create a survey group by selecting "Add item/Structure/Survey Group".**
 
-![Survey](/images/survey7.png)
+![Survey](advancedoperations/survey3.png)
 
-![Survey](/images/survey6.png)
+**Inside the survey group, create Survey Items. For this example, the Survey Items are the car brands we will ask opinions on.**
+
+![Survey](advancedoperations/survey5.png)
+
+
+ **Create the list to populate the Survey Responses. The list will comprise the range of opinion choices for the user to select.**
+
+![Survey](advancedoperations/survey2.png)
+
+**Insert the list into the Survey Group by selecting the hamburger icon at the top-right of the **group**.**
+
+
+![Survey](advancedoperations/survey7.png)
+
+**Preview the filling side.**
+
+![Survey](advancedoperations/survey6.png)

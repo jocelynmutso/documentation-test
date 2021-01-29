@@ -2,7 +2,7 @@
 
 ## Quick Summary
 
-* **Note** type is the only output type supported in dialob.
+* **Note** type is the only output type currently supported in Dialob.
 * Note type is used to provide additional information on the filling side
 * Note type has no return value
 
