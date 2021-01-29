@@ -53,8 +53,10 @@ const MarkdownView: React.FC<MarkdownViewProps> = ({pageItem}) => {
   React.useEffect(() => {
     if(nav.current.anchor) {
       const found: AnchorRef[] = anchorRefs.filter(r => r.name === `{#${nav.current.anchor}}`);
-      if(found.length > 0) {
-        found[0].value.current?.scrollIntoView({behavior: "smooth", block: "start"})
+      if(found.length > 0 && found[0].value.current) {
+        const current = found[0].value.current;
+        const top = current.getBoundingClientRect().top;
+        window.scrollTo({top: top-80, behavior: "smooth"});
       } else {
         console.log("md not loaded yet", pageItem.markdown);
       }

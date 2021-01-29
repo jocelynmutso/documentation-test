@@ -19,12 +19,15 @@ const typography: TypographyOptions = {
     lineHeight: 1.5,
     fontFamily: '"Mulish", sans-serif',
     fontWeight: 900,
+    scrollMarginTop: '-500px',
   },
   h3: {
     fontSize: "1.5rem",
     lineHeight: 1.5,
     fontFamily: '"Mulish", sans-serif',
     fontWeight: 900,
+    paddingTop: 900,
+    scrollMarginTop: '-500px',
   },
   h4: {
     fontSize: "1.2rem",
@@ -51,7 +54,7 @@ const typography: TypographyOptions = {
     fontWeight: 400,
     fontSize: '1rem',
     paddingBottom: 20,
-  }
+  },
 }
 
 const palette: PaletteOptions = {
