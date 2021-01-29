@@ -94,39 +94,6 @@ To validate the right number of choices within a given multi-choice request, use
 
 ---
 
-### Working with _Choice_ type {#choice}  
-
-Choice type allows users the option of selecting only one option from a list.
-
-**To create a Choice type, follow the steps of creating a multi-choice input type:**
-
-**First:** Add item/Structure/Group
-
-**Next:** Add item/Inputs/Choice
-
-Go to the hamburger icon in the top right corner of the question window and select `Options`. You will then be given the option to apply a global list or create a local list.
-
-To write rules to evaluate choice responses, write the ID of the choice question you wish to evaluate against, followed by the `=` operator, ending with the ID of the response in `" "`.  
-
-Example: `question = "id1"`
-
-To evaluate against multiple different choice responses, write the ID of the choice question followed by the `in` keyword and the IDs to evaluate against, in parenthesis and surrounded by quotation marks:  
-
-Example: `question in ("id1" , "id2").`  
-
-![](/images/choice1.png)
-
-**Several typical validations you will use**:
-
-`question1 = "opt1"`  
-Evaluates true when the return value of question1 is opt1.
-
-`question1 in ("opt1, "opt3", "opt4")`  
-Evaluates true when the return value of question1 is one of the following: opt1, opt3 or opt4 possible *Choice* key values.
-
-`question1 not in ("opt1", "opt3", "opt4")`
-Evaluates true when the return value of question1 is NOT one of the following opt1, opt3 or opt4 possible *Choice* key values.
-
 ---
 
 ### Working with _Multi-row_ type {#multi-row}
@@ -182,19 +149,6 @@ This validation expression will trigger our validation message when a user selec
 
 ---
 
-### Working with _Time_ type {#time}
-
-Time type creates a time picker on the filling side:
-
-![time picker](/images/time-picker.png)
-
-Creating a new Time type works in the same way as other types:
-
-**First:** Add item/Structure/Group  
-
-**Next:** Add item/Inputs/Time
-
-[More examples with Date and Time reserved keywords](https://docs.dialob.io/dialob-expressions/del-functions-reserved-words/#time-date)
 
 ---
 

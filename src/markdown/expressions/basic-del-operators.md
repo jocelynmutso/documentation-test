@@ -20,6 +20,11 @@ Below is an explanation of the basic DEL operators, which includes comparison op
 
 * **not in**: Checks if a given set of unique key(s) are found in the list to which it is compared. Valid Response types are Choice and Multi-choice
 
+
+
+
+TODO --> SPLIT THIS
+
 ### Advanced Logical Operators
 
 * **is answered**: Checks if a given request has a response.  Useful in cases where visibility of a particular question is based on whether a previous question has been answered on the filling side.
