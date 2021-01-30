@@ -55,4 +55,6 @@ As an example, if a question requires that a user enter a first name, the type c
 
 * **Multi-Choice**: Return type will be a set of an ID of selected rows from the list
 
+* **Multi-Row**: Return type will be TODO
+
 Detailed information on working with types can be found in input-and-output-types.

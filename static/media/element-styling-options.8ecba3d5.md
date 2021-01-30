@@ -52,7 +52,7 @@ Some examples of the differences between unstyled and styled fields are below.
 
 **This is the same Group Description and question-level additional information styled with Markdown.**
 
-![Markdown after](optionsandsettingss/markdown-after.png)
+![Markdown after](optionsandsettings/markdown-after.png)
 
 
 ---
