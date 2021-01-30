@@ -23,7 +23,6 @@ On the Composer side, they both look the same:
 ![Text and Text Box](types/text-textbox1.png)
 
 
-
 But on the filling side, the rendering difference is visible:
 
 ![Text and Text Box](types/text-textbox.png)

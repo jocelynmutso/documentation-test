@@ -96,56 +96,7 @@ To validate the right number of choices within a given multi-choice request, use
 
 ---
 
-### Working with _Multi-row_ type {#multi-row}
 
-Multi-row creates an inline row of any number of input fields. The number of input fields created will determine how many rows the multi-row input will consist of.  
-
-_Multi-row on the filling side_
-
-![Multi-row filling side](/images/multirow3.png)
-
-**To create a multi-row group:**
-
-Add item/Structure/Multi-Row Group
-
-![Multi-row](/images/multirow1.png)
-
-**Next, create the name of the multi-row group, which will serve as the prompt for the user on the filling side. Now, create the input fields: The number of input fields created here will be the number of fields visibile on the filling side.**
-
-![Multi-row filling side](/images/multirow2.png)
-
----
-
-
----
-
-### Working with _Date_ type {#date}
-
-Date type creates a date picker in the form of a calendar on the filling side:
-
-![date picker](/images/date-picker.png)
-
-Creating a new Date type works in the same way as other types:
-
-**First:** Add item/Structure/Group  
-
-**Next:** Add item/Inputs/Date
-
-A typical use case for Date type is verification that a user-selected date is **not** in the past. This operation can be accomplished with the `today()` function and the following DEL notation entered into the date response type validation field:
-
-`responseId < today()`
-
-In the following case, our response id is `date1`, and the expression is validating whether `date1` is **earlier** than today's date:
-
-`date1 < today()`
-
-![date validation one](/images/date-in-past1.png)
-
-This validation expression will trigger our validation message when a user selects a date in 1995:
-
-![date validation two](/images/date-in-past2.png)
-
-[More examples with Date and Time reserved keywords](https://docs.dialob.io/dialob-expressions/del-functions-reserved-words/#time-date)
 
 ---
 

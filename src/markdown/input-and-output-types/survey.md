@@ -31,7 +31,7 @@ In summary, one survey group is the equivalent of one survey "whole" encompassin
 
 ---
 
-## Creating a survey group
+## Creating a survey response
 
 A Survey response type is created as a Survey Group or Survey Group (Vertical). 
 
@@ -68,7 +68,9 @@ Click the hamburger icon in the top-right corner of the survey group. Then, sele
 
 ![Survey List Creation](types/create-survey-input.png)
 
-**Several typical validations you will use**:
+---
+
+## Several typical validations you will use
 
 `question1 = "opt1"`  
 Evaluates true when the return value of question1 is opt1.

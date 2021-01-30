@@ -20,7 +20,8 @@ Time type creates a time picker on the filling side:
 
 Creating a new Time type works in the same way as other types:
 
-**First:** Add item/Structure/Group  
+1. Select "Add item" --> "Structure" --> "Group" 
+2. Select "Add item" --> "Inputs" --> "Time"
 
 **Next:** Add item/Inputs/Time
 

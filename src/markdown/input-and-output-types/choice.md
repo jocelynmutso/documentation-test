@@ -16,22 +16,22 @@ Choice type utilises a global or local list to populate a single-choice selectio
 
 ---
 
-### Creating a Choice response type 
+### Creating a Choice response 
 
 
 **To create a Choice type, follow the steps of creating a multi-choice input type:**
 
-1. Select "Add item" --> "Structure" --> "Group"
-2. Select "Add item" --> "Inputs" --> "Choice"
-3. Select the hamburger icon in the top right corner of the question window and select "Options". You will then be given the option to apply a global list or create a local list.
+1. Create a group to contain your choice response: Select "Add item" --> "Structure" --> "Group"
+2. Create the choice input item: Select "Add item" --> "Inputs" --> "Choice"
+3. Create or apply global or local list which will form the individual choice items: Select the hamburger icon in the top right corner of the question window and select "Options". You will then be given the option to apply a global list or create a local list.
 
-Below is an example of a created choice type. The choice list has four items, and their associated IDs are `opt1`, `opt2`, `opt3`, `opt4`.
+Below is an example of a choice type on the filling side. The choice list has four items, and their associated IDs are `opt1`, `opt2`, `opt3`, `opt4`.
 
 ![](types/choice1.png)
 
 ---
 
-**Several typical validations you will use**:
+## Several typical validations you will use
 
 `question1 = "opt1"`  
 Evaluates true when the return value of question1 is opt1.
