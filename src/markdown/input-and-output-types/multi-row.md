@@ -5,6 +5,8 @@
 * Multi-row creates an inline row of any number of input fields
 * Multi-row response type: TODO
 * The number of rows in a multi-row element directly corresponds to the number of input fields created.
+* Typical validation example can be seen at the bottom of this page TODO
+
 
 ---
 
@@ -49,6 +51,6 @@ Note the "Add new" button. This will add as many identical rows as needed.
 
 ---
 
-## Several typical validations you will use
+## Typical validation example
 
 TODO

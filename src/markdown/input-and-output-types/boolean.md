@@ -2,17 +2,23 @@
 
 ## Quick Summary
 
-* Input types are the different kinds of values that can be returned by a response.
- 
+* Boolean is used for yes/no or true/false questions.
+* Return type will be a boolean value: `true` or `false`. 
 
 ---
 
 ## Overview
 
-Data is comprised of multiple types, such as numbers, texts, true/false information, time, etc.  To collect this information, we use input/response types. 
+Boolean responses are used for true/false situations. When you create a Boolean response, a button will be rendered on the filling side with YES/NO selection options. See example:
 
-When you design a form, you decide what type of information to collect, from names to birthdates to decimal values. This is where input/response types come in. As you build your form and create your questions, you specify, using types, what kind of data you are collecting and accordingly, the form of that data that will be returned by Dialob.
-
-As an example, if a question requires that a user enter a first name, the type capable of capturing and returning text is called a "string".  To collect decimal values, you will use the corresponding `decimal` type.
+![Boolean Example](types/boolean-example.png)
 
 ---
+
+## Creating a new Boolean response
+
+Creating a new Boolean response works in the same way as other types:
+
+1. Select "Add item" --> "Structure" --> "Group"
+2. Select "Add item" --> "Inputs" --> "Boolean"
+

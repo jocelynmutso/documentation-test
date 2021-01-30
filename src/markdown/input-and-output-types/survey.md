@@ -6,7 +6,7 @@
 * A Survey return type is a key
 * Survey buttons can be horizontally or vertically arranged
 * Follow the (visual) guide below to create a Survey response type.
-* Several typical validations associated with Survey types can be found at the bottom of this page
+* Typical validation examples can be seen at the bottom of this page
 
 ---
 
@@ -31,7 +31,7 @@ In summary, one survey group is the equivalent of one survey "whole" encompassin
 
 ---
 
-## Creating a survey response
+## Creating a new survey response
 
 A Survey response type is created as a Survey Group or Survey Group (Vertical). 
 
@@ -70,7 +70,7 @@ Click the hamburger icon in the top-right corner of the survey group. Then, sele
 
 ---
 
-## Several typical validations you will use
+## Typical validation example
 
 `question1 = "opt1"`  
 Evaluates true when the return value of question1 is opt1.

@@ -6,7 +6,7 @@
 * A multi-choice return type will be a set of an ID of selected rows from the list
 * It allows users to choose one or more items from the list
 * Creating a Choice and a Multi-choice type follows the same process
-* Several typical validations associated with multi-choice types can be found at the bottom of this page
+* Typical validation examples can be seen at the bottom of this page
 
 ---
 
@@ -21,7 +21,7 @@ Below is an example of a multi-choice type on the filling side:
 
 ---
 
-## Creating a multi-choice response
+## Creating a new multi-choice response
 
 
 **To create a multi-choice response, follow the steps of creating a choice response:**
@@ -54,7 +54,7 @@ Below is an example of a multi-choice type on the filling side:
 
 ---
 
-## Several typical validations you will use
+## Typical validation example
 
 To write rules to evaluate multi-choice responses, use the ID of the question you wish to evaluate against, followed by the `in` keyword, and then the ID of the multichoice question.
 

@@ -2,21 +2,26 @@
 
 ## TODO
 
-* Add react-router for navigation 
 * Add responsive views
-* Fix markdown loading (each .md file loads 3x per button click)
 * Create/restructure new content for all empty .md pages
-* Deprecate Expressions section and integrate content with Logic section. Separate documentation into logical chunks according to sub-topic.
-* Deprecate Response Types section and integrate content with Basic Operations section.
-* Complete typescript migration
 * Implement search feature
-* Remove Button component from Page title and replace with clickable logo icon
 * Fix all broken images
-* Fix anchor links
 * MUI Styles updates for various components
+* Create landing page
 
 ---
-## v2.5 (2020-01-28)
+
+## v1.0.5 (2020-01-29
+
+## Added
+
+* Support for correct anchor link navigation on markdown pages
+* Images and content (markdown)
+* Logo is now clickable and takes user to main page
+
+---
+
+## v1.0.4 (2020-01-28)
 
 ### Added
 
@@ -26,7 +31,7 @@
 
 ---
 
-## v2.0 (2020-01-21)
+## v1.0.3 (2020-01-21)
 
 ### Added
 
@@ -36,7 +41,7 @@
 
 ---
 
-## v.1.5 (2021-01-17)
+## v.1.0.2 (2021-01-17)
 
 ### Added
 
@@ -44,7 +49,7 @@
 
 ---
 
-## 1.0 (2021-01-12)
+## 1.0.0 (2021-01-12)
 
 ### Added
 

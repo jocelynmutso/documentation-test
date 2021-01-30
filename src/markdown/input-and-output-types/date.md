@@ -4,6 +4,7 @@
 
 * Date type creates a date picker on the filling side
 * Date type returns a date in the format of “yyyy-mm-dd”. See more ISO Date.(LINK)
+* Typical validation example can be seen at the bottom of this page
 
 ---
 
@@ -15,7 +16,7 @@ Date type creates a date picker in the form of a calendar on the filling side:
 
 ---
 
-## Creating a date response 
+## Creating a new date response 
 
 
 Creating a new Date response works in the same way as other types:
@@ -25,7 +26,7 @@ Creating a new Date response works in the same way as other types:
 
 ---
 
-## Several typical validations you will use
+## Typical validation example
 
 
 A typical use case for Date type is verification that a user-selected date is **not** in the past. This operation can be accomplished with the `today()` function and the following DEL notation entered into the date response type validation field:
@@ -36,11 +37,9 @@ In the following case, our response id is `date1`, and the expression is validat
 
 `date1 < today()`
 
-![date validation one](/images/date-in-past1.png)
+![date validation one](types/date-in-past1.png)
 
 This validation expression will trigger our validation message when a user selects a date in 1995:
 
-![date validation two](/images/date-in-past2.png)
-
-[More examples with Date and Time reserved keywords](https://docs.dialob.io/dialob-expressions/del-functions-reserved-words/#time-date)
+![date validation two](types/date-in-past2.png)
 
