@@ -1,4 +1,4 @@
-# Logic and Keyword example use cases
+# Logic and reserved words example use cases
 
 ## Quick Summary
 
