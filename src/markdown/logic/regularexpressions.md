@@ -1,10 +1,24 @@
-##### What's on this page:
+# Regular Expressions in validation and visibility logic
+
+## Quick Summary
+
+* Regex format in a logic rule is as follows:
+  * `answer not matches "regex"`
+  * `answer matches "regex"` 
+* Dialob supports Java Regex in any variable, validation, or visibility rule.
+* Regex can evaluate only the structure of Strings, Numbers, Dates, etc., but they cannot ensure that this data is factually valid.
+* Validation logic must evaluate to true in order to make validation message appear on the filling side. 
+  * Write helpful validation messages to assist users in correcting their input if it doesn't match the Regex-stipulated format
 
 [Java regular expressions and Dialob](#java-regex)  
-[How to input regex into Composer](#input-regex)  
+[Notes before you start using Regex](#input-regex)  
 [Important notes to remember about writing validations with regex](#important-notes)  
 [Example use cases](#use-cases)  
-[Validating regex against out-of-scope answers](#out-of-scope)  
+[Validating regex against out-of-scope answers](#out-of-scope) 
+
+---
+
+## Overview
 
 ### Java regular expressions and Dialob {#java-regex}
 
@@ -15,19 +29,18 @@ Dialob supports the use of Java regular expressions (regex) in any variable and 
 For more information on regular expressions: [Wikipedia](https://en.wikipedia.org/wiki/Regular_expression)  
 For Oracle Java regular expression patterns: [Oracle Documentation](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
 
-### How to input regex into Composer and notes on Validation rules {#input-regex}
+---
 
-* In the `Validation Rule` or `Visibility` field, preface regex with the following Dialob keywords: `answer matches` or `answer not matches`.
+### Notes before you start using Regex {#input-regex}
 
-**NOTE on writing visibility rules**: If a response field should be shown based on a previous answer, the visibility rule must be written to evaluate to `true`.  
+* **Preface Regex with keywords**: In the `Validation Rule` or `Visibility` field, write the following Dialob keywords _first_ : `answer matches` or `answer not matches`. Your Regex will then come _after_ these.
 
-**NOTE on writing validations**: The validation message field appears above the validation rule field. The validation message is helpful for the end user on the filling side, as it can be used to give additional information to the user to assist in completing a response accurately (if a user entered data in the wrong format, for example, the validation message can alert him/her to this).
+* **Ensure rule evaluates to true**: If a response field should be shown based on a previous answer, the rule must be written to evaluate to `true`. Keep in mind that validation messages will only appear on the filling side when a validation rule returns `true`. Therefore, if a form creator wishes the validation message to appear when the user enters incorrect information, validations must be written in a way so as to return true (i.e. `true` produces the validation message, `false` does not).  
 
-For example, on the filling side, if a response requires that a user enter his/her VAT number, the validation message can be set to appear if the VAT number is entered in an incorrect format. The message will inform the user that the data entered is incorrect and provide a model for him/her to follow to ensure that the response fulfils the validation rule for VAT number format.  
+* **Remember to create a validation message**: The validation message field appears above the validation rule field. The validation message is helpful for the end user on the filling side, as it can be used to give additional information to the user to assist in completing a response accurately (if a user entered data in the wrong format, for example, the validation message can alert him/her to this).  For example, on the filling side, if a response requires that a user enter his/her VAT number, the validation message can be set to appear if the VAT number is entered in an incorrect format. The message will inform the user that the data entered is incorrect and provide a model for him/her to follow to ensure that the response fulfils the validation rule for VAT number format.  
 
-It is important to note that validation messages will only appear on the filling side when a validation rule returns `true`. Therefore, if a form creator wishes the validation message to appear when the user enters incorrect information, validations must be written in a way so as to return true (i.e. `true` produces the validation message, `false` does not).  
 
-**Example:**
+### How to create a helpful validation message and ensure it appears when you need it
 
 **Question:** `Are you older than 25? Only those 25 and older may participate.`  
 
@@ -57,7 +70,7 @@ In this way, if a user enters his age is 18, and because 18 is less than 25, the
 
 ---
 
-### Example use cases {#use-cases}
+## How to input Regex into Composer with example use cases {#use-cases}
 
 * [Estonian VAT number validation](#estonian-vat)
 
@@ -81,11 +94,11 @@ The following regex will check that
 
 #### Composer side
 
-![Estonia VAT Validation Composer Side](/images/estonia-vat-validation.png)  
+![Estonia VAT Validation Composer Side](logic/estonia-vat-validation.png)  
 
 #### Filling side
 
-![Estonia VAT Validation Composer Side](/images/estonia-vat-validation-filling-side.png)  
+![Estonia VAT Validation Composer Side](logic/estonia-vat-validation-filling-side.png)  
 
 **NOTE on writing visibility rules**: If a response field should be shown based on a previous answer, the visibility rule must be written to evaluate to `true`.  
 
@@ -105,11 +118,11 @@ Next, Composer will validate that the user-entered social security number is of 
 
 #### Composer side  
 
-![Finnish social security number](/images/national-id.png)
+![Finnish social security number](logic/national-id.png)
 
 #### Filling side
 
-![Finnish social security number filling side](/images/national-id-filling-side.png) 
+![Finnish social security number filling side](logic/national-id-filling-side.png) 
 
 ---  
 
@@ -148,11 +161,11 @@ Next, Composer will check that the country code provided matches the country of 
 
 #### Composer side 
 
-![Country Code Validation](/images/country-code-validation.png)  
+![Country Code Validation](logic/country-code-validation.png)  
 
 #### Filling side  
 
-![Country Code on Filling Side](/images/country-code-filling-side.png)
+![Country Code on Filling Side](logic/country-code-filling-side.png)
 
 ---
 
@@ -172,11 +185,11 @@ The following regex will check that
 
 **Composer side**
 
-![Email validation](/images/email-validation.png)
+![Email validation](logic/email-validation.png)
 
 **Filling side**
 
-![Email validation](/images/email-validation-filling-side.png)
+![Email validation](logic/email-validation-filling-side.png)
 
 ---
 
@@ -186,6 +199,6 @@ It is easy to validate regex against previous inputs. Simply replace `answer` wi
 
 In this example, we are validating that two user-input emails match.
 
-![Email validation](/images/email-match1.png)
-![Email validation](/images/email-match2.png)
-![Email validation](/images/email-match3.png)
+![Email validation](logic/email-match1.png)
+![Email validation](logic/email-match2.png)
+![Email validation](logic/email-match3.png)

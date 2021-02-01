@@ -3,7 +3,7 @@
 ## Quick Summary
 
 * Dialob supports two kinds of tagging: Linear and Branching
-* Dialog forms created via branching will not appear in Version History
+* Dialob forms created via branching will not appear in Version History
 * Multiple users editing the same dialog session simultaneously will result in unpredictable Dialob behaviour
 
 [Examples of tagging: Linear and Branching](#examples)  

@@ -32,8 +32,8 @@ Language specification is written into the visibility or required fields as an e
 
 A form has two languages for the filling side: Finnish and English, depending on the client/user needs. Depending on the currently-displayed language of the form, note outputs will appear in Finnish or English.
 
-![](functionsandreservedwords/language-fi.png)
+![](logic/language-fi.png)
 
 On the filling side, the note specified to appear if the form language is set to Finnish is displayed.
 
-![](functionsandreservedwords/languages-visibility.png)
+![](logic/languages-visibility.png)

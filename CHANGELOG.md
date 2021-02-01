@@ -8,6 +8,8 @@
 * Fix all broken images
 * MUI Styles updates for various components
 * Create landing page
+* Create organisation structure for pages and menu items
+* Write funcationality for menu items to have capital letters
 
 ---
 
