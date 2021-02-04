@@ -13,7 +13,9 @@
 [Creating a Local list](#creating-local-list)  
 [Setting list visibility rules](#list-visibility)  
 [Using a List in a Choice or Multi-Choice Response Field](#using-list-choice-multichoice)  
-[Using a List in a Survey Group or Survey Group (Vertical) Response Field](#using-list-survey-group)  
+[Using a List in a Survey Group or Survey Group (Vertical) 
+Response Field](#using-list-survey-group)  
+
 ---
 
 ## Overview
@@ -141,7 +143,6 @@ The following example follows these steps to create a survey about user opinions
 ![Survey](advancedoperations/survey2.png)
 
 **Insert the list into the Survey Group by selecting the hamburger icon at the top-right of the **group**.**
-
 
 ![Survey](advancedoperations/survey7.png)
 
