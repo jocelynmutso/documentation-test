@@ -13,14 +13,23 @@
 
 ## Overview
 
-DEL is a powerful and expressive language which puts many of Dialob's most powerful features at your command through the writing of rules and expressions. Using DEL is straightforward, even for users with no programming experience, and learning to use it unlocks a range of dialog behaviors resulting in a rich end-user experience.  
+DEL creates the logic to control the behavior of a dialog via three main control elements (rules): **Visibility**, **Validation**, and **Requirement**.  Combined with Request IDs, DEL logic rules will determine the complexity of the end-user filling experience.
 
 There are three basic types of DEL rules:
 
-* **Visibility Rules**: Show or hide questions based on previous answers or other conditions
-* **Requirement Rules**: Require that a question be answered before form can be completed
-* **Validation Rules**: Check that input on the filling side conforms to the stipulated format
-  * Validation can be done either with DEL logic or Java regex
+* **Visibility logic**: Defines if a given form element (unique request, group of requests or set of groups) is available in a given dialog when compared against a set of user inputs.  
+In other words, visibility logic can be used to decide whether to show or to hide a certain question or group of questions based on a previous answer: E.g. If a user specifies that his/her age is 15, then visibility rules can be set to hide questions about spousal income, and these will not be asked.
+
+* **Required logic**: Defines if a response (user interaction) is required for a given Request. The request must be visible.  
+Required logic can be used in situations where, for example, a question about total household income can be required to be answered if a user's previous answer indicates that he/she is married and both partners work.  
+
+* **Validation logic**: Validates that the user response (user interaction) for a given Request is valid. The request must be visible.
+The current state of Required and Validations is also "monitored" across all visible requests and the online rendering application (UI) is made "aware" if there are Required and / or Validation violations within a visible set of Requests.  
+  * As a basic example, validation logic can be used to require a user to answer a question about his/her age with numbers only. If the user enters a short text or series of letters in the "age" field, the validation logic will catch this mistake and require the user to enter input in the specified correct format: Integer.  Validations are highly-customizable and can be written in a rich and complex manner.
+  * Validation logic can also be written with Java Regular Expressions
+
+**NOTE: There is ONLY one outcome of logic written with elements: True. If the expressions do not evaulate to true, then Visibility, Required, Validation form control elements will do nothing and they will not exist in the form context!**
+
 
 ---
 
@@ -43,5 +52,4 @@ On the actual response level, Requirement and Validation rules are read-only.
 See example:
 
 ![Rule editor](expressions/rule-editor.png)
-
 

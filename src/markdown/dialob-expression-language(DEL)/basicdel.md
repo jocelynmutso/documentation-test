@@ -1,6 +1,25 @@
 # Basics of DEL
 
-### Dialob Expression Language for non-programmers
+## Quick Summary
+
+* DEL expressions resemble traditional grammar and have a subject (Request ID), verb (operator or function), and condition (elements or values to compare against or evaulate against).
+* DEL reserved words operate similarly to verbs (is answered, is not answered, is valid, etc.) or connecting words (and, or).
+* Functions are actions. Functions are reserved words followed by parenthesis. The thing you want to perform the action on goes into the parenthesis. Not all functions require inputs in the parenthesis. 
+* A String type is the same as a "text" type, which includes letters, numbers, and punctuation.
+* DEL expressions do not end in any punctuation such as full stops or semi-colons.
+* DEL expressions are if/then statements, where the **if** part is written by the user, and the **then** part is handled and evaluated by Dialob Manager
+
+---
+
+## Overview: Introduction to Dialob Expression Language (DEL)
+
+* **DEL: Dialob Expression Language** was designed for use with Dialob Composer
+  * It is used to powerfully yet simply define the control logic of online forms. 
+* DEL is continuously enhanced and improved with new features to cover more complex cases and extend its usability to new areas.
+
+---
+
+### Concepts of DEL in linguistic terms
 
 Let's think about DEL in terms of simple grammar. All sentences have a subject and a verb.
 
@@ -120,13 +139,4 @@ Now, our function will perform the action of wash on the object of laundry.  Fun
 Not all functions need to have anything entered into the parenthesis. For example, the function `now()` will simply fetch the current system time.  
 
 For more information and examples of DEL's functions, [click here](https://docs.dialob.io/dialob-expressions/del-functions-reserved-words/#existing-functions)
-
-### Summary
-
-* DEL expressions resemble traditional grammar and have a subject (Request ID), verb (operator or function), and condition (elements or values to compare against or evaulate against).
-* DEL reserved words operate similarly to verbs (is answered, is not answered, is valid, etc.) or connecting words (and, or).
-* Functions are actions. Functions are reserved words followed by parenthesis. The thing you want to perform the action on goes into the parenthesis. Not all functions require inputs in the parenthesis. 
-* A String type is the same as a "text" type, which includes letters, numbers, and punctuation.
-* DEL expressions do not end in any punctuation such as full stops or semi-colons.
-* DEL expressions are if/then statements, where the **if** part is written by the user, and the **then** part is handled and evaluated by Dialob Manager
 
