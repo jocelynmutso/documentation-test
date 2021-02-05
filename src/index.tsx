@@ -1,16 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route } from "react-router-dom";
+import Dandy from '@jocelynmutso/dandy-doc/build/src';
 
-
-import { createHashHistory, History } from 'history';
-
-import App from './App';
-import { DialobTheme, TestTheme1, TestTheme2 } from './themes';
-import { ShellContextProvider } from './core'
-
-
+import { DialobTheme } from './themes';
 import reportWebVitals from './reportWebVitals';
+import Logo from '../public/images/logo.png';
+
+
 
 interface RequireContext {
   keys(): string[];
@@ -25,24 +21,9 @@ const requireMarkdowns = requireModule
     name: fileName 
   }));
 
-const history: History = createHashHistory();
-
-const config = {
-  markdown: requireMarkdowns,
-  theme: DialobTheme,
-  themeCollection: [DialobTheme, TestTheme1, TestTheme2]
-  
-}
 
 ReactDOM.render( 
-  <Router history={history}>
-    <Route path="/:page?/:pageItem?/:anchor?" render={(props) => (
-      
-      <ShellContextProvider config={config} route={props.match.params} history={history}>
-        <App />
-      </ShellContextProvider>        
-    )} />
-  </Router> 
+  <Dandy theme={DialobTheme} md={{files: requireMarkdowns}} brand={{title: "Dialob"}} />
   ,
   document.getElementById('root')
 );
