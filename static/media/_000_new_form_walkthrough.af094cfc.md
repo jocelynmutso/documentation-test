@@ -1,4 +1,4 @@
-# New User Guide
+# New form walkthrough 
 
 Welcome to Dialob! In this guide, you will use Dialob Composer and learn how to create a simple dialog using structures, inputs, and response types. You will create a basic input validation, learn how to show/hide fields, and write a requirement rule for a question, all using Composer's built-in features and Dialob Expression Language, **DEL**.
 
