@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/documentation-test/static/js/main.9f225304.chunk.js",
-    "main.js.map": "/documentation-test/static/js/main.9f225304.chunk.js.map",
-    "runtime-main.js": "/documentation-test/static/js/runtime-main.d0de7a7c.js",
-    "runtime-main.js.map": "/documentation-test/static/js/runtime-main.d0de7a7c.js.map",
-    "static/js/2.e8a21ab5.chunk.js": "/documentation-test/static/js/2.e8a21ab5.chunk.js",
-    "static/js/2.e8a21ab5.chunk.js.map": "/documentation-test/static/js/2.e8a21ab5.chunk.js.map",
-    "static/js/3.93e59d9b.chunk.js": "/documentation-test/static/js/3.93e59d9b.chunk.js",
-    "static/js/3.93e59d9b.chunk.js.map": "/documentation-test/static/js/3.93e59d9b.chunk.js.map",
+    "main.js": "/documentation-test/static/js/main.72289ae0.chunk.js",
+    "main.js.map": "/documentation-test/static/js/main.72289ae0.chunk.js.map",
+    "runtime-main.js": "/documentation-test/static/js/runtime-main.ca20990c.js",
+    "runtime-main.js.map": "/documentation-test/static/js/runtime-main.ca20990c.js.map",
+    "static/js/2.06694ae0.chunk.js": "/documentation-test/static/js/2.06694ae0.chunk.js",
+    "static/js/2.06694ae0.chunk.js.map": "/documentation-test/static/js/2.06694ae0.chunk.js.map",
+    "static/js/3.8500c7e4.chunk.js": "/documentation-test/static/js/3.8500c7e4.chunk.js",
+    "static/js/3.8500c7e4.chunk.js.map": "/documentation-test/static/js/3.8500c7e4.chunk.js.map",
     "index.html": "/documentation-test/index.html",
-    "static/js/2.e8a21ab5.chunk.js.LICENSE.txt": "/documentation-test/static/js/2.e8a21ab5.chunk.js.LICENSE.txt",
+    "static/js/2.06694ae0.chunk.js.LICENSE.txt": "/documentation-test/static/js/2.06694ae0.chunk.js.LICENSE.txt",
     "static/media/_000_basic_del.md": "/documentation-test/static/media/_000_basic_del.da6766b3.md",
     "static/media/_000_introduction.md": "/documentation-test/static/media/_000_introduction.4c97adcd.md",
     "static/media/_000_lists.md": "/documentation-test/static/media/_000_lists.691d6a5b.md",
@@ -40,11 +40,12 @@
     "static/media/_004_overview:_functions_and_reserved_words.md": "/documentation-test/static/media/_004_overview:_functions_and_reserved_words.caa93dd8.md",
     "static/media/_004_regular_expressions.md": "/documentation-test/static/media/_004_regular_expressions.59a32ef2.md",
     "static/media/_005_choice.md": "/documentation-test/static/media/_005_choice.c379e19d.md",
+    "static/media/_005_custom_variables.md": "/documentation-test/static/media/_005_custom_variables.4e84407d.md",
     "static/media/_005_output_types.md": "/documentation-test/static/media/_005_output_types.20a4af7f.md",
     "static/media/_005_validation.md": "/documentation-test/static/media/_005_validation.b9dd2b7f.md",
-    "static/media/_005_variables.md": "/documentation-test/static/media/_005_variables.6dd93b8c.md",
     "static/media/_006_multi-choice.md": "/documentation-test/static/media/_006_multi-choice.0bdda4b0.md",
     "static/media/_006_reordering.md": "/documentation-test/static/media/_006_reordering.ae2a0964.md",
+    "static/media/_006_using_custom_variables.md": "/documentation-test/static/media/_006_using_custom_variables.e6af5a32.md",
     "static/media/_006_visibility_and_required.md": "/documentation-test/static/media/_006_visibility_and_required.384d9250.md",
     "static/media/_007_ids.md": "/documentation-test/static/media/_007_ids.d1c5ea37.md",
     "static/media/_007_multi-row.md": "/documentation-test/static/media/_007_multi-row.34e237d5.md",
@@ -55,8 +56,8 @@
     "static/media/intro.md": "/documentation-test/static/media/intro.50bcdb30.md"
   },
   "entrypoints": [
-    "static/js/runtime-main.d0de7a7c.js",
-    "static/js/2.e8a21ab5.chunk.js",
-    "static/js/main.9f225304.chunk.js"
+    "static/js/runtime-main.ca20990c.js",
+    "static/js/2.06694ae0.chunk.js",
+    "static/js/main.72289ae0.chunk.js"
   ]
 }
