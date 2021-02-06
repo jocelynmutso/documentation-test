@@ -4,7 +4,7 @@ import Dandy from '@jocelynmutso/dandy-doc/build/src';
 
 import { DialobTheme } from './themes';
 import reportWebVitals from './reportWebVitals';
-import Logo from '../public/images/logo.png';
+import logo from './logo.png';
 
 
 
@@ -22,8 +22,10 @@ const requireMarkdowns = requireModule
   }));
 
 
+const brandImage = <img src={logo} alt="logo"/>;
+
 ReactDOM.render( 
-  <Dandy theme={DialobTheme} md={{files: requireMarkdowns}} brand={{title: "Dialob"}} />
+  <Dandy theme={DialobTheme} md={{files: requireMarkdowns}} brand={{logo: brandImage}} />
   ,
   document.getElementById('root')
 );
