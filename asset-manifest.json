@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/documentation-test/static/js/main.f3f89d02.chunk.js",
-    "main.js.map": "/documentation-test/static/js/main.f3f89d02.chunk.js.map",
+    "main.js": "/documentation-test/static/js/main.dfd8b265.chunk.js",
+    "main.js.map": "/documentation-test/static/js/main.dfd8b265.chunk.js.map",
     "runtime-main.js": "/documentation-test/static/js/runtime-main.ca20990c.js",
     "runtime-main.js.map": "/documentation-test/static/js/runtime-main.ca20990c.js.map",
     "static/js/2.9a844a48.chunk.js": "/documentation-test/static/js/2.9a844a48.chunk.js",
@@ -37,7 +37,7 @@
     "static/media/004_date.md": "/documentation-test/static/media/004_date.71667ecd.md",
     "static/media/004_downloading_json.md": "/documentation-test/static/media/004_downloading_json.187d31ea.md",
     "static/media/004_input_types.md": "/documentation-test/static/media/004_input_types.9ec33a3b.md",
-    "static/media/004_overview:_functions_and_reserved_words.md": "/documentation-test/static/media/004_overview:_functions_and_reserved_words.caa93dd8.md",
+    "static/media/004_overview-_functions_and_reserved_words.md": "/documentation-test/static/media/004_overview-_functions_and_reserved_words.caa93dd8.md",
     "static/media/004_regular_expressions.md": "/documentation-test/static/media/004_regular_expressions.59a32ef2.md",
     "static/media/005_choice.md": "/documentation-test/static/media/005_choice.c379e19d.md",
     "static/media/005_custom_variables.md": "/documentation-test/static/media/005_custom_variables.4e84407d.md",
@@ -58,6 +58,6 @@
   "entrypoints": [
     "static/js/runtime-main.ca20990c.js",
     "static/js/2.9a844a48.chunk.js",
-    "static/js/main.f3f89d02.chunk.js"
+    "static/js/main.dfd8b265.chunk.js"
   ]
 }
