@@ -30,6 +30,7 @@ The current state of Required and Validations is also "monitored" across all vis
 
 **NOTE: There is ONLY one outcome of logic written with elements: True. If the expressions do not evaulate to true, then Visibility, Required, Validation form control elements will do nothing and they will not exist in the form context!**
 
+**REMINDER**: _Rules for visibility and requirement are read-only within the question itself. They can be edited by clicking inside a question to make it active and then editing them in the field editor window located at the bottom of the screen. For more information, see_ [Basic Logic Building: Where to write rules](https://docs.dialob.io/dialob-expressions/logic-building/#where)
 
 ---
 

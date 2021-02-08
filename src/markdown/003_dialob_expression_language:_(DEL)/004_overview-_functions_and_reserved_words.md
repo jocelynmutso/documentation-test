@@ -32,8 +32,6 @@
 
 **NOTE**: Although the list of inbuilt functions can be extended via Java or Groovy, users should consider using service requests instead as an alternative to functions. This especially true in cases where the scope of functions is growing larger and more complex.  
 
-**REMINDER**: _Rules for visibility and requirement are read-only within the question itself. They can be edited by clicking inside a question to make it active and then editing them in the field editor window located at the bottom of the screen. For more information, see_ [Basic Logic Building: Where to write rules](https://docs.dialob.io/dialob-expressions/logic-building/#where)
-
 ---
 
 ### DEL reserved words summary table

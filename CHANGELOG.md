@@ -3,14 +3,12 @@
 ## TODO
 
 * Add responsive views
-* Create/restructure new content for all empty .md pages
 * Implement search feature
-* Fix all broken images
-* MUI Styles updates for various components
 * Create landing page
-* Create organisation structure for pages and menu items
-* Write funcationality for menu items to have capital letters
-
+* Add Reference md files
+  * Troubleshooting error messages
+  * Glossary of Dialob terminology with links to relevant pages of explanation
+  
 ---
 
 ## v1.0.5 (2020-01-29
