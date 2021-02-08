@@ -11,3 +11,12 @@ Viewable here: https://jocelynmutso.github.io/documentation-test/
 ## Deploy
 * branch: gh-pages
 * npm run deploy
+
+
+---
+
+##  Naming quirks
+
+### Use of colons
+* In a topic (folder) name, using colons is supported
+* In a subtopic name (markdown file), using colons in the file name will cause build failure
