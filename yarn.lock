@@ -1374,10 +1374,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@jocelynmutso/dandy-doc@^1.0.12":
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/@jocelynmutso/dandy-doc/-/dandy-doc-1.0.12.tgz#b92bc0bf2e5b860d5bd68f51944ea53bc4e6c715"
-  integrity sha512-902OGkrBAkGpiivFxFWC3Hx3nNSK5vU6gsfO9n6ovJfMJE+Jp8wHEQL5XlVFaIzZPdSSKPM3lKE0revUSHRwEw==
+"@jocelynmutso/dandy-doc@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@jocelynmutso/dandy-doc/-/dandy-doc-1.0.14.tgz#ea7bf0675f49a7e4af2d98b4f8b1c65820a6e03d"
+  integrity sha512-WZdQwcR9/TZxr/V+7q95Cktagn4HHGtTrZnVgZ30tEFPvZBLqLBiYlOQGeqe42OzkUiIpCLFfDuwl5Uqk6fvPA==
 
 "@material-ui/core@^4.11.2":
   version "4.11.3"
