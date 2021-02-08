@@ -16,7 +16,7 @@
 
 Managing the Dialob Lifecycle is simple with tagging. Creating a tag can be thought of as assigning a name to represent the state of a dialog at a certain point in time. This tag can then be referred back to at any time, and previously-created dialogs can be recalled and used whenever needed. Dialogs can be continually refined and managed in this way, with the tagging history providing a list of each tag, its creation date, and the ability to revisit/reactive previous tags. 
 
-When making a new tag, Dialob Manager will save the dialog in its current state and create a "latest version", which is an exact copy of the newly-tagged version. In this way, new versions can be built on top of old versions, using the older tags as a "starting off point" for the "latest versions".  
+When making a new tag, Dialob Manager will save the dialog in its current state, which will then become immutable. Then, Dialob will create an exact copy of this dialog, which it will tag as the "latest version". Only the "latest version" can be edited. In this way, new versions can be built on top of old versions, using the older tags as a "starting off point" for the "latest versions".  
 
 Dialob currently supports two forms of versioning: **Linear** and **Branching**. 
 
@@ -47,7 +47,7 @@ Possible use case: Create multiple different forms based on the same core elemen
 
 _Result: Using one core set of questions, multiple different forms can be created, each sharing similarities of the original core._
 
-In summary, creating version tags via the `Version` menu creates dialogs that are versioned in a straight line as a continuous process, which means, in practice, that the newer version is based on the version that came immediately before it.
+In summary, creating version tags via the "Version" menu creates dialogs that are tagged in a straight line as a continuous process, which means, in practice, that the newer version is an evolution based on the version that came immediately before it.
 
 Branching, on the other hand, produces "lateral" versions based on the same original copy. It works simply by copying the original version and creating a duplicate.  
 
@@ -57,13 +57,13 @@ Branching, on the other hand, produces "lateral" versions based on the same orig
 
 **Linear tags** are created via the "Version" menu in the Composer window.
 
-1. Navigate to the `Version` menu. To the right of `Version`, the current dialog's version tag in will be displayed. If the active dialog is the latest version, "Latest Version" will be displayed. If the active dialog of is a previous version, that version's tag will be displayed.
+1. Navigate to the "Version" menu. To the right of "Version", the current dialog's version tag in will be displayed. If the active dialog is the latest version, "Latest Version" will be displayed. If the active dialog of is a previous version, that version's tag will be displayed.
 
-2. To create a new tag, navigate to `Version` / `Create version tag` and enter desired tag name.
+2. To create a new tag, navigate to "Version" / "Create version tag" and enter desired tag name.
 
-3. When navigating back to `Version` / `Manage versions`, a list of all tags and the dates at which they were created is displayed. Select `Activate` for a previous version.
+3. When navigating back to "Version" / "Manage versions", a list of all tags and the dates at which they were created is displayed. Select "Activate" for a previous version.
 
-**Branches** are created by copying the original version to create a duplicate to be edited. The branching functionality is not currently available in the `Version` menu, and branched versions will not appear in Version history.
+**Branches** are created by copying the original version to create a duplicate to be edited. The branching functionality is not currently available in the "Version" menu, and branched versions will not appear in Version history.
 
 ---
 

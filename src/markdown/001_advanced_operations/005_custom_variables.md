@@ -28,7 +28,7 @@ Context variables and expression variables can be a combination of existing vari
 **In terms of a dialog session, a context variable is a static variable: it is immutable in the dialog session and is available across the entire session.**  
 
 * A context variable has an ID, a type, and a default value.  
-* A context variable can be called with its ID surrounded by curly braces. For example: `{contextId}`.
+* A context variable can be called with its ID surrounded by curly braces. For example: ` {contextId}`.
 * A context variable's value is set outside of the context of the given dialog session and is not tied to any specific request ID. It works like a "hidden field", and typically, it is used to preload a given dialog session with data, such as preloading CRM data of an identified user, which is known before launching the session.  
 * A context variable  can also be any existing response ID in the current session. For example, if you have a Text type response with ID `myName`, you can output the value of `myName` in a `Note` type. Just surround the response ID with curley braces `{ }` from inside the `Note`. So, as a response ID: `myName` but as a context variable being called: `{myName}`.  
 
@@ -55,4 +55,4 @@ Below are some examples to demonstrate what expression variables can look like.
 
 **NOTE**: **Requests, expression variables or context variables** are *ONLY* available when their values are set. This means that if the value is not set, then they will not be not present in the given dialog context.  In other words, in **DEL**, there is no such thing in as a NULL as value for a variable.
 
-The next page will go over how to work with context and expression variables.
+The next page outline the use of context and expression variables.

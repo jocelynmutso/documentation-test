@@ -27,8 +27,26 @@ Creating a new Number response works in the same way as other types:
 
 ---
 
-## Typical validation example
+## Typical validation example TODO
+
+### Ensuring a number falls within a specified range
+
+In this example, we create a response where the user is required to enter a number between 1 and 10. If a response is not within that range, our validation message will appear. This example shows a situation where the input does not match the validation requirements.
+
+Validation expression: `answer < 1 or answer > 10`
+
+Validation message: "Number must be between 1 and 10, and your number doesn't fall in this range!"
+
+Expected result: The user is going to enter a response of 15. This will fall outside of the acceptable range and cause the validation message to appear. 
+
+**Example screenshots**
+
+Composer side
+
+![Number Validation](types/number-validation1.png)
 
 
-TODO
+Filling side
+
+![Number Validation](types/number-validation2.png)
 

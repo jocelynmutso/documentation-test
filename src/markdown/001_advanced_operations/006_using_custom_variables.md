@@ -8,7 +8,7 @@
   * Initialising a form filling session with prefilled data
   * Creation of custom functions
 * It is recommended to leave custom variables' "Published" value unselected as per default, unless special implementation is required
-* A custom variable built using *question input data* becomes active only after all of its questions have been asked. This means that it must "wait" to receive input data before it can start working.
+* A custom variable built using *question input data* becomes active only after all of its questions have been asked. This means that it must "wait" to receive input data before it can start working
 
 
 [Example basic use cases](#basic-use-cases)  
@@ -25,7 +25,7 @@ Context variables and expression variables can be created in the "Variables" men
 
 ![variables menu](/advancedoperations/variables-menu.png)
 
-Selecting the "Variables" menu option will present you with the variables modal window. From here, you can choose to create context or expression variables via the tabs.
+Selecting the "Variables" menu option will present you with the variables window. From here, you can choose to create context or expression variables via the tabs.
 
 ![variables menu](/advancedoperations/variables-menu2.png)
 
@@ -43,7 +43,7 @@ It is recommended that, unless required by a specific implementation, the "Publi
 
 ---
 
-#### General example of creating and injecting a custom variable into a dialog
+### General example of creating and injecting a custom variable into a dialog
 
 For this example, we create a custom variable called `{age}` which will be of type `Number` and will have a default value of 15. This variable will be used in a Boolean response field and will prompt the user on the filling side with the following:
 
@@ -54,13 +54,15 @@ We begin by creating our context variable.
 
 ![age context variable](/advancedoperations/age3.png)
 
-Now that we have a variable created, we want to put it to use by inserting it into a response field. To do this, the we take the variable ID and surround it with curly braces`{ }`. So, the variable's ID is `age`, but when used in a response field, we must refer to it as `{age}`.  
+Now that we have a variable created, we want to put it to use by inserting it into a response field. To do this, the we take the variable ID, surround it with curly braces`{ }`, and insert it in the field where we want to use it. In this case, it is in the "Label" field of ageQuestion1. 
 
-In this next step, we create a boolean response field and place our context variable inside, remembering to surround it with curley braces: `{age}`. This boolean response field will ask the user if his/her age is equivalent to the default value set by the context variable, which we set to 15.  We then preview the variable on the filling side:
+So, the variable's ID is `age`, but when used in a response field, we must refer to it as `{age}`.  
+
+In this next step, we create a boolean response field and place our context variable inside, remembering to surround it with curly braces: `{age}`. This boolean response field will ask the user if his/her age is equivalent to the default value set by the context variable, which we set to 15.  We then preview the variable on the filling side:
 
 ![Age context variable](/advancedoperations/age-context-variable-preview1.png)
 
-Before you can actually preview the form, it is important to remember that, whenever context variables are exist in a dialog, whether or not they are being used at the time, you will need to declare or check their default values before the filling side preview mode can be shown. This means that, after you click Preview but before you see your form, you will be presented with the Context Variable Preview Modal window as seen below. This window will show you your context variables and any default values you have given them.
+Before you can actually preview the form, it is important to remember that, whenever context variables are exist in a dialog, whether or not they are being used at the time, you will need to declare or check their default values before the filling side preview mode can be shown. This means that, after you click Preview but before you see your form, you will be presented with the Context Variable Preview window as seen below. This window will show you your context variables and any default values you have given them.
 
 In the example below, you can see here that a value of 15, which we set for our `{age}` context variable, shows up as the default value. This value will appear on the filling side unless we type in a different value.
 
@@ -70,7 +72,9 @@ Finally, on the filling side, this is the output:
 
 ![Age context variable](/advancedoperations/is-your-age3.png)
 
-### Example basic use cases {#basic-use-cases}
+---
+
+## Example basic use cases {#basic-use-cases}
 
 [Using context variables to pre-fill default data in a question](#pre-fill)  
 [Using context variables to initialise a filling session with pre-defined data](#initialise-session)  
@@ -105,8 +109,6 @@ Create your response field and enter the context variable, surrounded by curly b
 ### Using context variables to initialise the filling session with pre-filled data {#initialise-session}
 
 Similarly to setting default values with context variables, DEL also supports a way to initialize the filling session with predefined data already prepared. This is done by declaring a set of attributes via context variables that are passed to the dialog as the filling session is started.
-
-<!--The initialization of a dialog is done by providing a set of attributes at the start of the dialog session. -->
 
 In the same way as the previous example, you need to declare or confirm the values of the context variables on the Composer side before you can preview the form on the filling side. 
 
@@ -187,6 +189,7 @@ And in Composer, they look like this:
 Create a new output type: `note` in your group and enter the following:
 
 ```markdown
+
 The sum after adding is: {add}.  
 
 The remainder after subtracting is: {subtract}.  

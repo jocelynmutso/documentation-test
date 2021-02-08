@@ -2,10 +2,12 @@
 
 ## Quick Summary
 
-* Create multi-language forms with the Translation feature
-* Built-in languages include English, Estonian, Finnish, and Swedish. Additional language support can be added according to your needs.
-* There are two creation modes: Create Empty and Copy from Active
-* Test your translations on the filling side by changing the active language either via the Translation window OR via the language dropdown in the Composer upper menu
+* Lists
+  * are **key**-_value_ pairs (**id**-_listItem_) 
+  * are used to populate drop-down menus, choice selections, and create survey button options
+  * can have visibility rules, which are created via the Lists window
+  * used in combination with Choice or Multi-choice types must be inserted **at the response level**.
+  * used in combination with Survey Group or Vertical Survey Group must be inserted **at the group level**.
 
 
 [Use cases of lists](#use-cases)  
@@ -14,7 +16,7 @@
 [Setting list visibility rules](#list-visibility)  
 [Using a List in a Choice or Multi-Choice Response Field](#using-list-choice-multichoice)  
 [Using a List in a Survey Group or Survey Group (Vertical) 
-Response Field](#using-list-survey-group)  
+[Response Field](#using-list-survey-group)  
 
 ---
 
@@ -43,8 +45,8 @@ A **local list** is bound to the response in which it is created. Changes to loc
 
 1. Select "Lists" option from the top menu of the Composer screen.
 2. Create a new list by selecting "Add new list".
-3. Give the list a name
-4. Give the list items their keys and texts
+3. Give the list a name.
+4. Give the list items their keys and texts.
 
 * **Name** is the name of the list itself and is used by the form creator on the Composer side to identify the list.
 * **Key** is the request ID and must be manually created by the form creator (at this time, list keys are not auto-generated). Keys must follow the [Request ID rules](https://docs.dialob.io/dialob-expressions/#request-id-rules) for creation of IDs.
@@ -54,15 +56,15 @@ A **local list** is bound to the response in which it is created. Changes to loc
 
 ### Setting visibility rules for list items {#list-visibility}
 
-* To write a visibilty rule, click the "eye" icon to the left of the item's key. A gray eye indicates that no rule exists, whereas a black eye indicates that a rule does exist.
-* The rule is edited at the bottom of the list modal.
+* To write a visibility rule, click the "eye" icon to the left of the item's key. A gray eye indicates that no rule exists, whereas a black eye indicates that a rule does exist.
+* The rule is edited at the bottom of the list window.
 * Visibility rules can refer to ANY response ID in the Dialog except for attributes inside of a multi-row element.
 
 For more information on writing visibility rules, see [Basic Logic Building and Rule Writing](https://docs.dialob.io/dialob-expressions/logic-building/)
 
 ![List](advancedoperations/list-visibility1.png)
 
-**NOTE:** Next to the list name, you can utilise the `Users` option as a quick way to see how many responses are using this list and to identify unused lists.
+**NOTE:** Next to the list name, you can utilise the "Users" option as a quick way to see how many responses are using this list and to identify unused lists.
 
 ---
 
@@ -74,13 +76,13 @@ Local lists are created **at the response level** or **at the group level**.
 
 * `Survey Group` and  `Survey Group (Vertical)` local lists are created at the group level.
 
-Click the hamburger icon in the top-right corner of the response editor. Then select "Options". Select "Create new local list".  The process of creating a local list creation is identical to that of a global list.  The new local list will automatically be inserted into the question once "OK" is selected.
+Click the hamburger icon in the top-right corner of the response editor. Then select "Options". Select "Create new local list".  The process of creating a local list is identical to that of a global list.  The new local list will automatically be inserted into the question once "OK" is selected.
 
 ---
 
 ### Using a list in a Choice or Multi-Choice response field {#using-list-choice-multichoice}
 
-Lists used in combination with `Choice`or `Multi-choice` types must be inserted **at the response level**.  
+Lists used in combination with `Choice` or `Multi-choice` types must be inserted **at the response level**.  
 Lists used in combination with `Survey Group` or `Vertical Survey Group` must be inserted **at the group level**.
 
 
@@ -97,7 +99,7 @@ The following screenshots demonstrate how to use a list in a Choice or Multi-Cho
 
 ![List 5](advancedoperations/list5.png)
 
-**Insert the list at the response level. Create a group, then create a response of type Choice or Multi-choice within that group.**
+**Insert the list at the response level. To do this, create a group, then create a response of type Choice or Multi-choice within that group. Finally, select and insert the list.**
 
 ![List 6](advancedoperations/list6.png)
 
@@ -111,7 +113,7 @@ The following screenshots demonstrate how to use a list in a Choice or Multi-Cho
 
 ### Using a list in a Survey Group or Survey Group (Vertical) response field {#using-list-survey-group}
 
-Creating a survey question is done at the **group level** through the creation of a `Survey Group` or `Survey Group (Vertical)`.  
+Creating a survey question is done at the **group level** through the creation of a "Survey Group" or "Survey Group (Vertical)".  
 
 A complete survey question is comprised of three basic parts:
 
@@ -136,7 +138,6 @@ The following example follows these steps to create a survey about user opinions
 **Inside the survey group, create Survey Items. For this example, the Survey Items are the car brands we will ask opinions on.**
 
 ![Survey](advancedoperations/survey5.png)
-
 
  **Create the list to populate the Survey Responses. The list will comprise the range of opinion choices for the user to select.**
 

@@ -5,7 +5,7 @@
 * Multi-row creates an inline row of any number of input fields
 * Multi-row response type: TODO
 * The number of rows in a multi-row element directly corresponds to the number of input fields created.
-* Typical validation example can be seen at the bottom of this page TODO
+* A visibility-logic example can be seen at the bottom of this page
 
 
 ---
@@ -51,6 +51,39 @@ Note the "Add new" button. This will add as many identical rows as needed.
 
 ---
 
-## Typical validation example
+## Visibility-logic example
 
-TODO
+In this example, we create a multi-row group with three default input fields. We write a visibility rule to show a fourth field, a choice menu, based on the user's response to a boolean.
+If the user answers "Yes" to `boolean1`, then the fourth input field, `list1`, will be shown.
+
+
+
+`text2`: First Name  
+`text4`: Last Name  
+`boolean1`: Do you wish to be added to our mailing list?  
+
+...if the user answers "yes".... then show
+
+`list1`: Please select the topic you are most interested in.  
+Visibility rule: `boolean1 = true`  
+
+**Example screenshots**
+
+Composer side
+
+![Rowgroup visibility](types/rowgroup-visibility1.png)
+
+Filling side
+
+![Rowgroup visibility](types/rowgroup-visibility2.png)
+
+
+
+
+
+
+
+
+
+
+
