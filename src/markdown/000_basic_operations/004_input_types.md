@@ -2,11 +2,11 @@
 
 ## Quick Summary
 
-* Input types are the different kinds of values that can be returned by a response.
+* A Response is akin to a question: We create a Response on the Composer side, and a user fills out that Response, or question, on the filling side.
+* An Input type is one of the different kinds of values that can be returned by a response. 
   * Example: An input such as a text field or text box will return a text value (string response type). An input of type "number" has a `number` response type.
 * Dialob supports a variety of different input/response types that cover basic data collection needs.
 * Additional types can be added to suit your needs.
-
 
 ---
 
@@ -16,7 +16,7 @@ Data is comprised of multiple types, such as numbers, texts, true/false informat
 
 When you design a form, you decide what type of information to collect, from names to birthdates to decimal values. This is where input/response types come in. As you build your form and create your questions, you specify, using types, what kind of data you are collecting and accordingly, the form of that data that will be returned by Dialob.
 
-As an example, if a question requires that a user enter a first name, the type capable of capturing and returning text is called a "string".  To collect decimal values, you will use the corresponding `decimal` type.
+As an example, if a question requires that a user enter a first name, the type capable of capturing and returning text is called a "string".  To collect decimal values, you will use the corresponding "decimal" type.
 
 ---
 
@@ -57,4 +57,3 @@ As an example, if a question requires that a user enter a first name, the type c
 
 * **Multi-Row**: Return type will be TODO
 
-Detailed information on working with types can be found in input-and-output-types.

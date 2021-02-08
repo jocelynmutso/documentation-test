@@ -3,8 +3,8 @@
 ## Quick Summary
 
 * **Note** type is the only output type currently supported in Dialob.
-* Note type is used to provide additional information on the filling side
-* Note type has no return value
+  * It is used to provide additional information on the filling side
+  * It has no return value
 
 ---
 
@@ -14,7 +14,7 @@ Note is an output type which is used to provide additional / general information
 
 There is no return value to note type.
 
-Note text can be styled with Markdown. *Link to markdown syntax guide*
+Note text can be styled with Markdown. [Link to Markdown Syntax Guide](https://www.markdownguide.org/)
 
 ---
 

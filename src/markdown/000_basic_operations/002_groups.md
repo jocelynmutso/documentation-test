@@ -28,7 +28,7 @@ Only visibility logic rules can be applied to groups
 
 ---
 
-## Group Use Cases
+## Group Types
 
 ### Group (general)
 
@@ -44,7 +44,7 @@ A vertical survey group is used to create survey-style questions.  A vertical su
 
 ### Multi-row Group
 
-This type of group is used when multiple inputs are required, for example, when collecting a client's first, middle, and last names as independent inputs. 
+This type of group is used when multiple inputs are required, for example, when collecting a client's first, middle, and last names as separate inputs. On the filling side, a multi-row group will be rendered as a row containing a group of input fields. The number of fields rendered within the group is determined by the number of input fields created within that group on the Composer side.
 
 A multi-row group can contain any combination of different inputs.  
 

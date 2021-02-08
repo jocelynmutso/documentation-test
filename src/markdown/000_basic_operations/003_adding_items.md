@@ -2,7 +2,7 @@
 
 ## Quick Summary
 
-* There are two ways to add new items: Via the hamburger icon + 'Insert New' in the top right, or 'Add Item' button on the bottom left.
+* There are two ways to add new items: Via the hamburger icon + "Insert New" in the top right of an element, or "Add Item" button on the bottom left.
 * Adding an item via the hamburger icon creates the item outside of a group.
 * Adding an item via the 'Add Item' button creates the item within the active group.
 
@@ -14,8 +14,8 @@ Items consist of structures (groups), inputs, and outputs.
 
 There are two ways to add a new item:
 
-1. **To create a new item WITHIN a group**: Use the 'Add Item' button in the bottom left corner of a group1. 
-2. **To create a new item OUTSIDE of a group**: Use the hamburger icon in the top right corner of a page or group and selecting 'Insert new'
+1. **To create a new item WITHIN a group**: Use the "Add Item" button in the bottom left corner of a group1. 
+2. **To create a new item OUTSIDE of a group**: Use the hamburger icon in the top right corner of a page or group and select "Insert new"
 
 ---
 
@@ -23,7 +23,6 @@ There are two ways to add a new item:
 
 Using the 'Add Item' button at the bottom left corner of a group will create a new item within that particular group. See example below:
 
-Click the 'Add Item' button within the group.
 
 ![Add new item](basicoperations/add-item.png)
 
@@ -39,7 +38,7 @@ On the filling side, we see that our text input with the label "I am inside grou
 
 ## Creating a new item OUTSIDE of a group: Use the hamburger icon + 'Insert New'
 
-Creating a new item with the hamburger icon + 'Insert New' from **within a group** will create a new item **below and outside** of the group. See example below:
+Creating a new item with the hamburger icon + "Insert New" from **within a group** will create a new item **below and outside** of the group. See example below:
 
 First, we add an input of type `text`.
 

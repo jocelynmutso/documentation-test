@@ -10,11 +10,9 @@
 
 ## Overview  
 
-The order of items can easily be changed via the tree view on the left side of the Composer screen.
-
 Tree view shows you the current hierarchy of items as they appear both on the Composer side and on the filling side.  
 
-To rearrange the items, simply click on them in the tree view, and then drag and drop them in the desired location.
+To rearrange your form items, simply click on them in the tree view, and then drag and drop them in the desired location.
 
 ---
 
