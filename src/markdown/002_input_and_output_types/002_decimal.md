@@ -4,7 +4,7 @@
 
 * Decimal responses may be entered as whole numbers and as decimal values
 * Decimal return type is a decimal number 
-* Typical validation example can be seen at the bottom of this page TODO
+* Typical validation example can be seen at the bottom of this page
 
 ---
 
@@ -29,24 +29,25 @@ Creating a new Number response works in the same way as other types:
 
 ## Typical validation example TODO
 
-### Ensuring a number falls within a specified range
+### Checking that a decimal value is greater than or less than zero
 
-In this example, we create a response where the user is required to enter a number between 1 and 10. If a response is not within that range, our validation message will appear. This example shows a situation where the input does not match the validation requirements.
+In this example, we are going to validate that a user enters a decimal value greater than zero. If the input is less than or equal to zero, we will trigger a validation message.
 
-Validation expression: `answer < 1 or answer > 10`
+Validation expression: `answer <= 0`
+Another version of a valid expression: `decimal1 <= 0`
 
-Validation message: "Number must be between 1 and 10, and your number doesn't fall in this range!"
+Validation message: "You cannot add 0 or less to your account!"
 
-Expected result: The user is going to enter a response of 15. This will fall outside of the acceptable range and cause the validation message to appear. 
+Expected result: The user is going to enter a response of -5. This will fall outside of the acceptable range and cause the validation message to appear. 
 
 **Example screenshots**
 
 Composer side
 
-![Number Validation](types/number-validation1.png)
+![Decimal Validation](types/decimal-validation1.png)
 
 
 Filling side
 
-![Number Validation](types/number-validation2.png)
+![Decimal Validation](types/decimal-validation2.png)
 

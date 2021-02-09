@@ -24,7 +24,7 @@ The left menu is populated by Topics and their Subtopics.
 
 Currrently, this menu system supports nesting up to TWO levels deep. This means that there can be a Topic and its Subtopic, but there can not be a Sub-subtopic.
 
-**Topic**: A folder name. The left menu is populated by rendering Folder names as Topics. The names of your folders which contain your Markdown files will be rendered as Topic names in the left menu.  
+**Topic**: A folder name. The left menu is populated by rendering Folder names as Topics; i.e., the names of your folders which contain your Markdown files will be rendered as Topic names in the left menu.  
 
 **Subtopic**: A Markdown file name. The left menu renders Markdown file names as subtopics. 
 

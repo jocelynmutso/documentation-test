@@ -4,7 +4,7 @@
 
 * Date type creates a date picker on the filling side
 * Date type returns a date in the format of “yyyy-mm-dd”. See more ISO Date.(LINK)
-* Typical validation example can be seen at the bottom of this page
+* Two typical validation examples can be seen at the bottom of this page
 
 ---
 
@@ -26,8 +26,9 @@ Creating a new Date response works in the same way as other types:
 
 ---
 
-## Typical validation example
+## Two typical validation examples
 
+### Example A: A date is not in the past
 
 A typical use case for Date type is verification that a user-selected date is **not** in the past. This operation can be accomplished with the `today()` function and the following DEL notation entered into the date response type validation field:
 
@@ -43,3 +44,31 @@ This validation expression will trigger our validation message when a user selec
 
 ![date validation two](types/date-in-past2.png)
 
+
+### Example B: A date is not in the past, not in the future, and a time limit applies to the situation
+
+Another typical use case builds on the first example. In the context of an insurance claim, we want to ensure three things:
+
+1. A user-entered date is not in the past
+2. The claim data cannot be in the future
+3. If the incident happened more than 30 days ago, the claim is no longer valid
+
+
+**Validation message**: "Incident date cannot be in the future, and incident date cannot be more than 30 days in the past. Please check entered dates for these criteria."  
+**Validation expression**: `incidentDate > today() or incidentDate < today() -30 days`
+
+In plain language, this Validation expression says   
+
+_"incidentDate cannot be later than today, and incidentDate cannot be earlier than 30 days before today"_
+
+**Expected result**: The user is going to enter a date which is more than 30 days in the past. This will trigger the validation message. 
+
+
+On the Composer side:
+
+![date validation one](types/date-validation1.png)
+
+
+On the filling side: 
+
+![date validation one](types/date-validation2.png)
