@@ -6,7 +6,7 @@
 * A Survey return type is a key
 * Survey buttons can be horizontally or vertically arranged
 * Follow the (visual) guide below to create a Survey response type.
-* Typical validation examples can be seen at the bottom of this page
+* Syntax for Survey type logic writing and a typical usage example can be seen at the bottom of this page
 
 ---
 
@@ -70,13 +70,43 @@ Click the hamburger icon in the top-right corner of the survey group. Then, sele
 
 ---
 
-## Typical validation example
+## Syntax for Survey type logic writing
 
+When matching a single item:  
 `question1 = "opt1"`  
 Evaluates true when the return value of question1 is opt1.
 
+When matching multiple items:  
 `question1 in ("opt1", "opt3", "opt4")`  
 Evaluates true when the return value of question1 is one of the following: opt1, opt3 or opt5 possible *Survey* key values.
 
+When matching multiple items:  
 `question1 not in ("opt1", "opt3", "opt4")`  
 Evaluates true when the return value of question1 is NOT one of the following: opt1, opt3 or opt4 possible *Survey* key values.
+
+## Typical visibility-logic example
+
+For this situation, we create a customer satisfaction survey. The survey has three survey options, created with a local list, describing the quality of service:
+
+* `opt1` :  poor
+* `opt2` :  average
+* `opt3` :  good
+
+If the user selects "poor", we want to trigger a text input to appear so that we can collect additional information on how to improve in that area of service.
+
+We create a survey group, a list with our three options, and three survey inputs:
+
+* Friendliness of staff
+* Response time for service inquiries
+* Quality of solution to my problem
+
+**Visibility rule**: `survey1 = "opt1"`
+
+On the Composer side:
+
+![Survey Example](types/survey-example1.png)
+
+On the filling side:
+
+![Survey Example](types/survey-example2.png)
+

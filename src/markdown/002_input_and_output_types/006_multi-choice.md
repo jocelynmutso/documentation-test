@@ -54,7 +54,7 @@ Below is an example of a multi-choice type on the filling side:
 
 ---
 
-## Syntax for Choice type logic writing
+## Syntax for Multi-choice type logic writing
 
 To write rules to evaluate Multi-choice responses, use the ID of the question you wish to evaluate against, followed by the `in` keyword, and then the ID of the Multi-choice question.
 

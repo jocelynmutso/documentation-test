@@ -53,10 +53,14 @@ Note the "Add new" button. This will add as many identical rows as needed.
 
 ## Visibility-logic example
 
-In this example, we create a multi-row group with three default input fields. We write a visibility rule to show a fourth field, a choice menu, based on the user's response to a boolean.
-If the user answers "Yes" to `boolean1`, then the fourth input field, `list1`, will be shown.
+### Showing an additional field within a multi-row type depending on a previous answer 
 
+In this example, we want to show a particular field within a multi-row item only if the user selects a particular boolean value.
 
+* We create a multi-row group with three input fields (two text fields and one boolean). 
+* We write a visibility rule to trigger the visibility of a fourth field (`list1`, a choice menu), if the user answers "Yes" to `boolean1`. 
+
+Our items are as follows: 
 
 `text2`: First Name  
 `text4`: Last Name  
