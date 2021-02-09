@@ -86,20 +86,23 @@ Evaluates true when the return value of question1 is NOT one of the following: o
 
 ## Typical visibility-logic example
 
-For this situation, we create a customer satisfaction survey. The survey has three survey options, created with a local list, describing the quality of service:
+For this situation, we create a customer satisfaction survey. If the user indicates via a survey item that a service was "poor", we want to trigger a text input to appear so that we can collect additional information on how to improve in that area of service.
 
-* `opt1` :  poor
-* `opt2` :  average
-* `opt3` :  good
-
-If the user selects "poor", we want to trigger a text input to appear so that we can collect additional information on how to improve in that area of service.
-
-We create a survey group, a list with our three options, and three survey inputs:
+We create a survey group and three survey inputs:
 
 * Friendliness of staff
 * Response time for service inquiries
 * Quality of solution to my problem
 
+We create three survey options via a local list. These options describe the quality of service:
+
+* `opt1` :  poor
+* `opt2` :  average
+* `opt3` :  good
+
+We add a visibility rule to a text field inside the survey group that will appear on the filling side if a user selects `opt1: poor` and to describe "Staff Friendliness".
+
+**Text input**: "Please tell us how we can improve our staff friendliness"
 **Visibility rule**: `survey1 = "opt1"`
 
 On the Composer side:
