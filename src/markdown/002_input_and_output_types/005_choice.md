@@ -6,7 +6,7 @@
 * A Choice return type will be an ID of selected row in the list
 * It allows users to choose only one option from the list
 * Creating a Choice and a Multi-choice type follows the same process
-* Typical validation examples can be seen at the bottom of this page
+* Syntax for Choice type logic writing and a typical usage example can be seen at the bottom of this page
 
 
 ---
@@ -32,21 +32,37 @@ Below is an example of a choice type on the filling side. The choice list has fo
 
 ---
 
-## Typical validation example
+## Syntax for Choice type logic writing
 
-`question1 = "opt1"`  
+When using logic with Choice type, the syntax is as following:
+
+When matching a single item: `responseId = "listItemId"`  
 Evaluates true when the return value of question1 is opt1.
 
-`question1 in ("opt1, "opt3", "opt4")`  
-Evaluates true when the return value of question1 is one of the following: opt1, opt3 or opt4 possible *Choice* key values.
+When matching multiple items: `responseId in ("listItemId1", "listItemId2", "listItemId3")`  
+This evaluates true when the return value of question1 is one of the following: opt1, opt3 or opt4 possible *Choice* key values.  
 
-`question1 not in ("opt1", "opt3", "opt4")`
-Evaluates true when the return value of question1 is NOT one of the following opt1, opt3 or opt4 possible *Choice* key values.
+When matching multiple items: `responseId not in ("listItemId1", "listItemId2", "listItemId3")`  
+This evaluates true when the return value of question1 is NOT one of the following opt1, opt3 or opt4 possible *Choice* key values.
 
-To write rules to evaluate choice responses, write the ID of the choice question you wish to evaluate against, followed by the `=` operator, ending with the ID of the response in `" "`.  
+---
 
-Example: `question = "id1"`
+## Typical validation example
 
-To evaluate against multiple different choice responses, write the ID of the choice question followed by the `in` keyword and the IDs to evaluate against, in parenthesis and surrounded by quotation marks:  
+In this example, we want to evaluate against a single choice option. Depending on this choice, a corresponding note output will be displayed.
 
-Example: `question in ("id1" , "id2").`
+To do this, we create a group with a Choice type. The Choice type has a local list attached to it with three values. We have two note outputs. We write visibility rules for the note outputs and set them to be shown depending on which option the user selects from the Choice list.
+
+**Note visibility expression**: `list2 = "countryside`  
+
+**Expected behaviour**: When a client selects "Rural Countryside" from the Choice list, the Note output visibility rule will be triggered, and note content will be output.
+
+On the Composer side:
+
+![Choice example](types/choice-example1.png)
+
+
+On the filling side:
+
+![Choice example](types/choice-example2.png)
+

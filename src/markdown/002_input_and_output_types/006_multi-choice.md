@@ -6,7 +6,7 @@
 * A multi-choice return type will be a set of an ID of selected rows from the list
 * It allows users to choose one or more items from the list
 * Creating a Choice and a Multi-choice type follows the same process
-* Typical validation examples can be seen at the bottom of this page
+* Syntax for Multi-choice type logic writing and a typical usage example can be seen at the bottom of this page
 
 ---
 
@@ -54,26 +54,49 @@ Below is an example of a multi-choice type on the filling side:
 
 ---
 
-## Typical validation example
+## Syntax for Choice type logic writing
 
-To write rules to evaluate multi-choice responses, use the ID of the question you wish to evaluate against, followed by the `in` keyword, and then the ID of the multichoice question.
+To write rules to evaluate Multi-choice responses, use the ID of the question you wish to evaluate against, followed by the `in` keyword, and then the ID of the Multi-choice question.
 
 Example: `"id1" in multichoice1`
 
-`"opt1" in multichoice2 `  
+More examples: 
 
-Evaluates true when opt1 has been selected in multichoice2. In this case, Porsche corresponds with opt1.
+When matching a single item: `"responseId1" in multichoiceId1`  
+Evaluates true when `responseId1` is selected from `multichoiceId1`
 
-`"opt1" not in question1 `  
+When matching a single item: `"responseId1" not in multichoiceId1`  
+Evaluates true when `responseId1` is **not** selected from `multichoiceId1`
 
-Evaluates true when opt1 has NOT been selected in multichoice2.
+When matching multiple items within the same multi-choice response: `"responseId1" not in multichoiceId1 or "responseId2" not in multichoiceId1`  
+Evaluates true when `responseId1` and `responseId2` are **not** selected from `multichoiceId1`
 
-`"opt1" not in question1 and "opt3" in multichoice2`  
+---
 
-Evaluates true when "opt1" has not been selected and "opt3" is selected in multichoice2. Note the value of "opt2" can be either one as it is NOT evaluated in this case.
+## Typical validation example
 
-![Multi-choice](types/multi-choice4.png)
+### Specifying the number of selections a user must make
 
-To validate/specify the number of choices within a given multi-choice request, use the `count( )` function and create validation logic to fit your needs.  The rule below will require the user to select no more than two options from the list.
+To validate/specify the number of choices within a given multi-choice request, use the `count( )` function and create validation logic to fit your needs.  
+
+The example below shows a situation where the user is not permitted to choose nothing, and they are required to select at least two choices. 
+
+On the Composer side:
 
 ![Multi-choice](types/multi-choice-validation.png)
+
+On the filling side, **before** a choice is made:
+
+![Multi-choice](types/multi-choice-validation2.png)
+
+On the filling side, **after** the correct number of choices is made:
+
+![Multi-choice](types/multi-choice-validation3.png)
+
+
+
+
+
+
+
+
