@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.js": "/documentation-test/static/js/main.fc1edf20.chunk.js",
-    "main.js.map": "/documentation-test/static/js/main.fc1edf20.chunk.js.map",
-    "runtime-main.js": "/documentation-test/static/js/runtime-main.84e6712e.js",
-    "runtime-main.js.map": "/documentation-test/static/js/runtime-main.84e6712e.js.map",
-    "static/js/2.66c0934a.chunk.js": "/documentation-test/static/js/2.66c0934a.chunk.js",
-    "static/js/2.66c0934a.chunk.js.map": "/documentation-test/static/js/2.66c0934a.chunk.js.map",
-    "static/js/3.bf1af3a6.chunk.js": "/documentation-test/static/js/3.bf1af3a6.chunk.js",
-    "static/js/3.bf1af3a6.chunk.js.map": "/documentation-test/static/js/3.bf1af3a6.chunk.js.map",
+    "main.js": "/documentation-test/static/js/main.a1cc0ec6.chunk.js",
+    "main.js.map": "/documentation-test/static/js/main.a1cc0ec6.chunk.js.map",
+    "runtime-main.js": "/documentation-test/static/js/runtime-main.0124c625.js",
+    "runtime-main.js.map": "/documentation-test/static/js/runtime-main.0124c625.js.map",
+    "static/js/2.e9eaa73c.chunk.js": "/documentation-test/static/js/2.e9eaa73c.chunk.js",
+    "static/js/2.e9eaa73c.chunk.js.map": "/documentation-test/static/js/2.e9eaa73c.chunk.js.map",
+    "static/js/3.35d22430.chunk.js": "/documentation-test/static/js/3.35d22430.chunk.js",
+    "static/js/3.35d22430.chunk.js.map": "/documentation-test/static/js/3.35d22430.chunk.js.map",
     "index.html": "/documentation-test/index.html",
-    "static/js/2.66c0934a.chunk.js.LICENSE.txt": "/documentation-test/static/js/2.66c0934a.chunk.js.LICENSE.txt",
+    "static/js/2.e9eaa73c.chunk.js.LICENSE.txt": "/documentation-test/static/js/2.e9eaa73c.chunk.js.LICENSE.txt",
     "static/media/000_basic_del.md": "/documentation-test/static/media/000_basic_del.da6766b3.md",
+    "static/media/000_intro.md": "/documentation-test/static/media/000_intro.2c452ebe.md",
     "static/media/000_introduction.md": "/documentation-test/static/media/000_introduction.4c97adcd.md",
     "static/media/000_lists.md": "/documentation-test/static/media/000_lists.9d7884b4.md",
     "static/media/000_logic_rules_overview.md": "/documentation-test/static/media/000_logic_rules_overview.83fbe42b.md",
@@ -51,12 +52,11 @@
     "static/media/008_survey.md": "/documentation-test/static/media/008_survey.43ac4001.md",
     "static/media/008_testing.md": "/documentation-test/static/media/008_testing.1e23e54d.md",
     "static/media/009_time.md": "/documentation-test/static/media/009_time.43348bec.md",
-    "static/media/intro.md": "/documentation-test/static/media/intro.2c452ebe.md",
     "static/media/logo.ce6d8abd.svg": "/documentation-test/static/media/logo.ce6d8abd.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.84e6712e.js",
-    "static/js/2.66c0934a.chunk.js",
-    "static/js/main.fc1edf20.chunk.js"
+    "static/js/runtime-main.0124c625.js",
+    "static/js/2.e9eaa73c.chunk.js",
+    "static/js/main.a1cc0ec6.chunk.js"
   ]
 }
