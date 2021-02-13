@@ -8,24 +8,43 @@ import logo from './logo.svg';
 
 
 
-interface RequireContext {
-  keys(): string[];
-  (id: string): { default: string};
+let compiledSite: DandyMD[] | undefined;
+try {
+  compiledSite = JSON.parse(process.env.REACT_APP_SITE ? process.env.REACT_APP_SITE : "");
+} catch (err) {
+  console.log("failed to load compiled site: " + err);
+  compiledSite = undefined;
 }
 
-const requireModule: RequireContext = require.context("./markdown/", true, /\.md$/)
-const requireMarkdowns = requireModule
-  .keys()
-  .map((fileName: string) => ({
-    url: requireModule(fileName).default, 
-    name: fileName 
-  }));
+interface DandyMD {
+  url: string;
+  name: string;
+  content?: string;
+}
+
+let md: DandyMD[];
+if(compiledSite) {
+  md = compiledSite;
+  console.log("compiled site");
+} else {
+  console.log("uncompiled site");
+  interface RequireContext {
+    keys(): string[];
+    (id: string): { default: string};
+  }
+  const requireModule: RequireContext = require.context("./markdown/", true, /\.md$/)
+  md = requireModule
+    .keys()
+    .map((fileName: string) => ({
+      url: requireModule(fileName).default, 
+      name: fileName 
+    }));
+}
 
 
 const brandImage = <img src={logo} style={{height: 45, width: 200}} alt="logo"/>;
-
 ReactDOM.render( 
-  <Dandy theme={DialobTheme} md={{files: requireMarkdowns}} brand={{logo: brandImage}} />
+  <Dandy theme={DialobTheme} md={{files: md}} brand={{logo: brandImage}} />
   ,
   document.getElementById('root')
 );
