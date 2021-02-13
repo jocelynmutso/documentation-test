@@ -1,3 +1,41 @@
+
+# About Dialob
+
+**Dialob** is a platform for creating and testing responsive dialogs and publishing them online. In the context of the Dialob platform, a dialog is both a form and a process. Creating with Dialob is a dynamic process wherein the word “dialog” is a representation of the constant communication between user inputs on the front-end and Dialob’s back-end processes, resulting in a constant “dialogue” between the system and the user throughout the creation process.  In this way, Dialob constantly updates and saves user inputs on the back-end side and reflects those changes in near real time. The product and end result of the dialog process is a highly customizable form with validations, versioning, translation, and security built in, all tailored to a specific end-user requirement.
+
+The Dialob platform comes with a comprehensive set of tools targeted at non-technical users to enable the creation, testing, and deployment of responsive forms.  
+
+The image below represents the Dialob structural hierarchy:
+
+![](/aboutDialob/picture_1.png)
+
+* **Dialob Composer**: This is the main environment for creating, changing and testing on-line dialogs. It is powered by Dialob Expression Language (DEL), a powerful, custom-made logic-building language which is easy to learn and use even for non-technical users.  Dialob Composer is available as a cloud service, so there is no need to download anything before use. New users need only create a new account to get started.
+
+* **Dialob Manager**: This is the runtime backend service that executes dialogs developed via Dialob Composer. Dialob Manager is an open-source-distributed package, available either as a Docker-image or via source code. Dialob Manager comes with:
+
+ * **REST API**: Simple API for online UI front end to interact with Dialob manager. See reference implementation.
+
+ * **Dialog repository**: Repository where dialogs and associated visibility rules are stored so that they can be fetched by the engine at run time.
+
+ * **Dialog session repository**: Repository that tracks all the changes, dialog requests, and responses, of each unique dialog session. The gathered data provides a full audit trace of each dialog session and thus provides the baseline for further optimization of the online dialogs.
+
+The image below represents the Dialob logical architecture:
+
+![](/aboutDialob/picture_2.png)
+
+**Dialob R&D** is continuously evaluating new technologies as potential additions to Dialob for the purpose of improving its online dialog creation capabilities.
+
+The Dialob dialog lifecycle management concept is described below:
+
+![](/aboutDialob/picture_3.png)
+
+
+Learn more on [dialob.io](http://www.dialob.io).
+
+
+
+---
+
 ### Custom features can be added per client request to Dialob's ever-growing list of out-of-the-box features
 
 * **Logic-building**: Form creators can use rich yet simple logic-building expressions using _Dialob Expression Language (DEL)_ to control the flow of dialogs and, in turn, create a highly configurable end-user filling side.
