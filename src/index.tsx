@@ -7,22 +7,31 @@ import reportWebVitals from './reportWebVitals';
 import logo from './logo.svg';
 
 
-
-let compiledSite: DandyMD[] | undefined;
-try {
-  compiledSite = JSON.parse(process.env.REACT_APP_SITE ? process.env.REACT_APP_SITE : "");
-} catch (err) {
-  console.log("failed to load compiled site: " + err);
-  compiledSite = undefined;
+interface DandySite {
+  build?: number, 
+  files: DandyMD[]
 }
 
 interface DandyMD {
   url: string;
   name: string;
   content?: string;
+  build?: {modified: number, created: number}
 }
 
-let md: DandyMD[];
+let compiledSite: DandySite | undefined;
+try {
+  const envSite = process.env.REACT_APP_SITE ? process.env.REACT_APP_SITE : "";
+  const start = envSite.indexOf("{");
+  if(start > -1) {
+    compiledSite = JSON.parse(envSite.substring(start));
+  }
+} catch (err) {
+  console.log("failed to load compiled site: JSON: " + err, process.env.REACT_APP_SITE);
+  compiledSite = undefined;
+}
+
+let md: DandySite;
 if(compiledSite) {
   md = compiledSite;
   console.log("compiled site");
@@ -33,18 +42,20 @@ if(compiledSite) {
     (id: string): { default: string};
   }
   const requireModule: RequireContext = require.context("./markdown/", true, /\.md$/)
-  md = requireModule
+  const files = requireModule
     .keys()
     .map((fileName: string) => ({
       url: requireModule(fileName).default, 
       name: fileName 
     }));
+    
+    md = { files };
 }
 
 
 const brandImage = <img src={logo} style={{height: 45, width: 200}} alt="logo"/>;
 ReactDOM.render( 
-  <Dandy theme={DialobTheme} md={{files: md}} brand={{logo: brandImage}} />
+  <Dandy theme={DialobTheme} md={md} brand={{logo: brandImage}} />
   ,
   document.getElementById('root')
 );

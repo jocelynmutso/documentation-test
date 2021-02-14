@@ -1,8 +1,7 @@
 #!/usr/bin/env ts-node-script
 import * as fs from 'fs'
 import * as util  from 'util';
-
-
+import gitDateExtractor from 'git-date-extractor';
 
 /*
 <script>
@@ -11,12 +10,36 @@ import * as util  from 'util';
     
 */
 
+interface MdFiles {
+  build?: number,
+  files: Markdown[],
+}
+
+interface Markdown {
+  url: string, 
+  name: string, 
+  content: string,
+  build: GitDates
+}
+
+interface GitDates {
+  created: number,
+  modified: number
+}
+
+
 const readdir: (dirName: string) => Promise<string[]> = (dirName) => {
   return util.promisify(fs.readdir)(dirName);
 };
 
 async function load(rootDir: string) {
-  const content: { url: string, name: string, content: string }[] = [];
+  
+  const stamps: Record<string, GitDates> = await gitDateExtractor.getStamps({
+    outputToFile: false,
+    projectRootPath: __dirname
+  }) as Record<string, GitDates>;
+  
+  const files: Markdown[] = [];
   
   const topicsDirs = await readdir(rootDir)
     .then(next => next.map(n => rootDir + "/" + n));
@@ -27,10 +50,19 @@ async function load(rootDir: string) {
         .map(n => topicDir + "/" + n));
      
     topics.forEach(name => {
-      content.push({url: name, name: name.substring(rootDir.length+1), content: fs.readFileSync(name, "UTF-8")});      
+      
+      // add build and push it into result
+      files.push({
+        build: {modified: 0, created: 0},
+        url: name, 
+        name: name.substring(rootDir.length+1), 
+        content: fs.readFileSync(name, "UTF-8")
+      });    
+      
+        
     });
   }
-  return content;
+  return files;
 }
 
 let result;
@@ -47,4 +79,9 @@ while(result === undefined) {
   require('deasync').runLoopOnce();
 }
 
-console.log(JSON.stringify(result));
+const site = {
+  build: Math.floor(Date.now()/1000),
+  files: result
+};
+
+console.log(JSON.stringify(site));
