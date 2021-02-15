@@ -15,8 +15,7 @@
 [Creating a Local list](#creating-local-list)  
 [Setting list visibility rules](#list-visibility)  
 [Using a List in a Choice or Multi-Choice Response Field](#using-list-choice-multichoice)  
-[Using a List in a Survey Group or Survey Group (Vertical) 
-[Response Field](#using-list-survey-group)  
+[Using a List in a Survey Group or Survey Group Response Field](Vertical)  
 
 ---
 

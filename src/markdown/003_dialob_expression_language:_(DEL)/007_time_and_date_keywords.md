@@ -1,3 +1,21 @@
+# Time and Date: Keywords and functions
+
+## Quick Summary
+
+* Time and date types can be used to calculate durations, perform mathematical operations on time, and validate times in relation to each other
+* Example use cases of Time and Date keywords and functions can be found on this page.
+  * [Calculating a time duration in hours, minutes, seconds](#time)
+  * [Returning the difference between different times in hours and minutes](#time-workday)
+  * [Checking that one time is earlier or later than another time](#time-earlier)
+  * [Calculating a time duration in years, months, days](#date)
+  * [Building logic to add or subtract years, months, or days](#add-subtract)
+  * [Validating that one date has occurred before or after another date](#date-before)
+
+---
+
+## Overview  
+
+
 **Time and date keywords** can be used to write logic connected to the following:
 
 * [**Time durations**](#time) (time in hours, minutes, seconds)
@@ -9,7 +27,9 @@
 The `today()` function returns the system date in MM/DD/YY format.  
 The `now()` function returns the system time in 12-hour format (hh:mm AM/PM): For example 8:58 AM.
 
-#### Time and date keywords and functions overview table {#time-date}
+---
+
+### Time and date keywords and functions overview table {#time-date}
 
 | Time in Years, Months, Weeks, Days    |  Time in Hours, Minutes, Seconds  |
 |---------------------------------------|-----------------------------------|
@@ -22,10 +42,9 @@ The `now()` function returns the system time in 12-hour format (hh:mm AM/PM): Fo
 | `today()`                             |  `now()`                          |
 
 
-<!--For example use cases, see [Working With Response Types and Structures](/content/response-types/working-with-types.md)-->
 ---
 
-#### _Time_ type reserved words {#time}
+### Time type reserved words {#time}
 
 Time type reserved keywords work in the same way as Date type reserved words; accordingly, they can be used for the following functionalities:
 
@@ -48,7 +67,7 @@ Date type words are frequently used in combination with the `now()` function.
 
 * [Time] **-** or **+** [Duration] => [time]. The outcome of time format is "hh:mm:ss"
 
-For example, the following will return the difference between two times, `time1` and `time2`, in Hours, Minutes, and Seconds in the PT**hh**H**mm**M**ss**S format:
+For example, we will calculate the duration of a workday. The following will return the difference between two times, `time1` and `time2`, in Hours, Minutes, and Seconds in the PT**hh**H**mm**M**ss**S format: {#time-workday}
 
 **Expression variable ID**: `{durationOfWorkday}`  
 **Expression variable value**: `time2 - time1`  
@@ -61,7 +80,7 @@ For example, the following will return the difference between two times, `time1`
 **Time duration** can be used also to build logic with the following notation:  
 `8 hours + 30 minutes + 22 seconds`
 
-Using **Time** type examples:
+Using **Time** type examples: {#time-earlier}
 
 `question1 > "05:00"`  
 Is true if *question1* is later than "05:00" (5 am).
@@ -73,7 +92,7 @@ Is true if *question1* is no earlier than "17:00".
 
 ---
 
-#### _Date_ type reserved words {#date}
+### Date type reserved words {#date}
 
 Date type reserved keywords can be used for the following functionalities:
 
@@ -85,7 +104,7 @@ Date type reserved keywords can be used for the following functionalities:
 
 Date type words are frequently used in combination with the `today()` function.
 
-##### Calculating date periods
+## Calculating date periods
 
 **Basic operations**:  
 
@@ -108,12 +127,12 @@ For example, the following will return the difference between two dates, `date1`
 
 *In other words, this return value says that the time difference between these two dates is a **Period** of 15 **Y**ears, 5 **M**onths, and 13 **D**ays.*
 
-##### Building logic to add or subtract years, months, or days
+### Building logic to add or subtract years, months, or days {#add-subtract}
 
 **Date period** can also be used to build logic with the following notation:  
  `1 years + 3 months + 14 days`
 
-##### Validating that one date has occured before or after another date
+### Validating that one date has occurred before or after another date {#date-before}
 
 `question1 > "2005-01-01" `  
 Is true if question1 is later than the 1st of January, 2005.
@@ -145,9 +164,9 @@ Possibility to sell product to this customer is {isOver18}.
 
 4. Preview behviour on filling side
 
-![date expression variable](/images/date-expression-variable2.png)
+![date expression variable](/expressions/date-expression-variable2.png)
 
-![date expression variable](/images/date-expression-variable1.png)
+![date expression variable](/expressions/date-expression-variable1.png)
 
 **Example 2**: Validating that an entered date is both in the past and one day ago (checking for yesterday's date)
 
@@ -159,9 +178,11 @@ Possibility to sell product to this customer is {isOver18}.
 
 3. Preview and test.
 
-![Date validation](/images/date-validation.png)
+Composer side
 
-Form preview
-![Date validation](/images/date-validation2.png)
+![Date validation](/expressions/date-validation.png)
 
----
+Filling side preview
+
+![Date validation](/expressions/date-validation2.png)
+

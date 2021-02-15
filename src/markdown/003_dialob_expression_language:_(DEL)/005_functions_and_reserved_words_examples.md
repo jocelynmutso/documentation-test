@@ -1,9 +1,9 @@
-# Logic and reserved words example use cases
+# Functions and reserved words example use cases
 
 ## Quick Summary
 
-* DEL keywords are a powerful and simple way to build logic rules
-* This page will give several examples of common use cases of keywords in logic-building
+* DEL built-in functions and keywords are a powerful and simple way to build logic rules
+* This page will give several examples of common use cases of these keywords in logic-building
 
 ---
 

@@ -3,7 +3,7 @@
 ## Quick Summary
 
 * Date type creates a date picker on the filling side
-* Date type returns a date in the format of “yyyy-mm-dd”. See more ISO Date.(LINK)
+* Date type returns a date in the format of “yyyy-mm-dd”. [See more on ISO Date](https://www.w3.org/QA/Tips/iso-date)
 * Two typical validation examples can be seen at the bottom of this page
 
 ---

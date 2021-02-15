@@ -6,6 +6,7 @@
 * Requirement rules determine whether a question must be answered before proceeding to the next page or completing the form.
 * Each page, group, list item, and question can have maximum of **one** visibility rule.
 * Each page, group, list item, and question can have **multiple** requirement rules.
+* For further examples of visibility rules in a list, see [Setting visibility rules for list items](/001_advanced_operations/000_lists/list-visibility)
 
 ---
 
@@ -50,3 +51,5 @@ When considering how to write visibility and requirement rules to be triggered a
 ![Boolean and Visibility](logic/required-rule1.png)
 
 In this case, text2 will only be a required field if the response to boolean1 in the previous field is `true`. 
+
+See more about visibility rules in a list: [Setting visibility rules for list items](001_advanced_operations/000_lists/list-visibility)

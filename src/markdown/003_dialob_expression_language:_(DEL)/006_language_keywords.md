@@ -1,4 +1,4 @@
-# Language Keywords  TODO
+# Language Keywords
 
 ## Quick Summary
 
@@ -10,10 +10,7 @@
 
 It is possible to show and/or hide different language fields and note outputs on the filling side based on the currently active language of a filling session. For example, you may want certain inputs to appear based on the form user's active language: If a client is using the English version of a form, but the client's active language is Finnish, it is possible to set outputs to appear, in Finnish. These Finnish outputs will only appear for Finnish-language users of this form and will be invisible to everyone else.
 
-
-?? TODO
 Using the ISO 639-1 standard, two-character language codes can be specified, which store the language that the current Dialob session is using. The `language` keyword can be used to write logic rules based on language. A list of two-character language codes [can be found here](https://www.wikimass.com/html/language-code).
-
 
 ---
 
