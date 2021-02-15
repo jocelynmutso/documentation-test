@@ -14,7 +14,7 @@ Items consist of structures (groups), inputs, and outputs.
 
 There are two ways to add a new item:
 
-1. **To create a new item WITHIN a group**: Use the "Add Item" button in the bottom left corner of a group1. 
+1. **To create a new item WITHIN a group**: Use the "Add Item" button in the bottom left corner of a group. 
 2. **To create a new item OUTSIDE of a group**: Use the hamburger icon in the top right corner of a page or group and select "Insert new"
 
 ---
@@ -48,7 +48,7 @@ We add a label to `text1`.
 
 ![Insert new](basicoperations/insert-new2.png)
 
-On the filling side, we see that the `text1` with the label "I am outside of group 1" appears outside of Group1.
+On the filling side, we see that the `text1` with the label "I am outside of group 1" appears outside of Group1 but still inside Page1.
 
 ![Insert new Preview](basicoperations/insert-new3.png)
 

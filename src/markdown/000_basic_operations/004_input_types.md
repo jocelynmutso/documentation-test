@@ -2,10 +2,10 @@
 
 ## Quick Summary
 
-* A Response is akin to a question: We create a Response on the Composer side, and a user fills out that Response, or question, on the filling side.
-* An Input type is one of the different kinds of values that can be returned by a response. 
+* A Response is akin to a question: We create a Response on the Composer side, and a user completes that Response on the filling side.
+* An Input type is the particular kind of value that can be returned by a response. 
   * Example: An input such as a text field or text box will return a text value (string response type). An input of type "number" has a `number` response type.
-* Dialob supports a variety of different input/response types that cover basic data collection needs.
+* Dialob supports a variety of different input/response types that comprehensively cover most data collection needs.
 * Additional types can be added to suit your needs.
 
 ---
@@ -20,18 +20,7 @@ As an example, if a question requires that a user enter a first name, the type c
 
 ---
 
-
-
 ### Supported response types
-
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-
 
 * **Survey item**: Return type will be a key
 
@@ -47,7 +36,7 @@ As an example, if a question requires that a user enter a first name, the type c
 
 * **Boolean**: Return type will be a Boolean value (true / false)
 
-* **Date**: Return type will be a date in the format of "yyyy-mm-dd". [See more on ISO dates](http;//ISO Date](https://en.wikipedia.org/wiki/ISO_8601).
+* **Date**: Return type will be a date in the format of "yyyy-mm-dd". [See more on ISO dates](https://en.wikipedia.org/wiki/ISO_8601).
 
 * **Time**: Return type will be a time in the format of "hh:mm:ss"
 
@@ -55,5 +44,4 @@ As an example, if a question requires that a user enter a first name, the type c
 
 * **Multi-Choice**: Return type will be a set of an ID of selected rows from the list
 
-* **Multi-Row**: Return type will be TODO
 

@@ -3,7 +3,7 @@
 ## Quick Summary
 
 * Groups exist within pages
-* Only visibility logic rules can be applied to groups
+* Group logic can contain only visibility rules.
 * Groups can be nested
 * Inputs can exist outside groups
 * Groups are created with the 'Add Item / Structure' buttons
@@ -13,7 +13,7 @@
 
 ## Overview
 
-Groups exist within pages. They serve to organise different types of questions into logical groups and have slightly different functionalities depending on their type.
+Groups exist within pages. They serve to organise different types of questions into logical sets and have slightly different functionalities depending on their type.
 
 There are four types of groups:
 
@@ -36,11 +36,11 @@ This is the most basic type of group. It can be used to nest other groups or sim
 
 ### Survey Group
 
-A survey group is used to create survey-style questions.  It usually contains **Survey Items** and a **List**.  In this type of group, survey radio buttons are arranged horozontally across the screen on the filling side.
+A survey group is used to create survey-style questions.  It contains **Survey Items** and a **List**.  In this type of group, survey radio buttons are arranged horozontally across the screen on the filling side.
 
 ### Survey Group (vertical)
 
-A vertical survey group is used to create survey-style questions.  A vertical survey group can contain **Survey Items** and a **List**.  In this type of group, survey radio buttons are arranged vertically across the screen on the filling side.
+A vertical survey group is used to create survey-style questions.  A vertical survey group contains **Survey Items** and a **List**.  In this type of group, survey radio buttons are arranged vertically across the screen on the filling side.
 
 ### Multi-row Group
 

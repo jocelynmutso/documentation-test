@@ -4,7 +4,7 @@
 
 * Pages are the main containers for all Dialob elements
 * All forms need to have at least one page
-* Only visibility logic rules can be applied to pages
+* Page logic can contain only visibility rules
 
 ---
 
@@ -18,6 +18,8 @@ Below is a simple diagram of Pages and their child elements:
   * Group
     * Question (Response)
       * Logic Rules
+      
+Note that page logic can contain only visibility rules.
 
 ---
 

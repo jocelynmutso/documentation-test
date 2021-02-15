@@ -3,7 +3,7 @@
 
 ## Quick Summary
 
-* The left-hand tree view shows you the current order of present form items
+* The tree view on the left side of the Composer window shows you the current order of present form items
 * To rearrange items, drag and drop them within the tree
 
 ---

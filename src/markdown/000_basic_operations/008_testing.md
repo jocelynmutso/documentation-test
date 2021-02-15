@@ -2,8 +2,8 @@
 
 ## Quick Summary
 
-* Forms can be live-tested at any time with the "Preview Mode" feature
-* Click "Preview" in the top right corner of the Composer window
+* Forms can be live-tested at any time with the "Preview" feature
+* Preview is located in the top right corner of the Composer window
 * Preview mode is not accessible if a form has errors
 
 ---
