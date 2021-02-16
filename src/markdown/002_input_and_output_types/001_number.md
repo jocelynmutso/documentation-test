@@ -4,7 +4,7 @@
 
 * Number responses may only be whole numbers
 * Number return type is `Integer`
-* Typical validation example can be seen at the bottom of this page
+* [Validation example: Ensuring a number falls within a specified range](#number-validation)
 
 ---
 
@@ -25,7 +25,7 @@ Creating a new Number response works in the same way as other types:
 
 ---
 
-## Typical validation example
+## Validation example {#number-validation}
 
 ### Ensuring a number falls within a specified range
 

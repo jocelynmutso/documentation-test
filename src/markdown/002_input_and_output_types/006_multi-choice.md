@@ -3,10 +3,12 @@
 ## Quick Summary
 
 * Multi-choice type functions with an attached list
+* It allows users to choose **one or more** items from the list
 * A multi-choice return type will be a set of an ID of selected rows from the list
-* It allows users to choose one or more items from the list
 * Creating a Choice and a Multi-choice type follows the same process
-* Syntax for Multi-choice type logic writing and a typical usage example can be seen at the bottom of this page
+* [Syntax for Multi-choice logic writing: Validating against one and/or many items](#syntax-multi-choice)
+* [Validation example: Specifying the number of selections a user must make](#evaluating-multi-choice)
+
 
 ---
 
@@ -54,7 +56,7 @@ Below is an example of a multi-choice type on the filling side:
 
 ---
 
-## Syntax for Multi-choice type logic writing
+## Syntax for Multi-choice type logic writing {#syntax-multi-choice}
 
 To write rules to evaluate Multi-choice responses, use the ID of the question you wish to evaluate against, followed by the `in` keyword, and then the ID of the Multi-choice question.
 
@@ -73,9 +75,9 @@ Evaluates true when `responseId1` and `responseId2` are **not** selected from `m
 
 ---
 
-## Typical validation example
+## Validation example {#validating-multi-choice}
 
-### Specifying the number of selections a user must make
+### Specifying the number of selections a user must make 
 
 To validate/specify the number of choices within a given multi-choice request, use the `count( )` function and create validation logic to fit your needs.  
 

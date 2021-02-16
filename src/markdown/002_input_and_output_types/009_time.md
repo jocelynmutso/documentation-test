@@ -4,7 +4,7 @@
 
 * Time type returns a time in the format of "hh:mm:ss".
 * Time type appears as a time picker on the filling side.
-* Example of validating time type can be seen at the bottom of this page.
+* [Validation example: Checking that one time is earlier than another time](#validating-time)
 
 ---
 
@@ -22,7 +22,7 @@ Time type creates a time picker on the filling side:
 2. Select "Add item" --> "Inputs" --> "Time"
 
 
-## Validating Time type
+## Validating Time type {#validating-time}
 
 Logical operators can be used to determine the relation of different time values to each other.
 

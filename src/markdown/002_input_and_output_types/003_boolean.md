@@ -1,4 +1,4 @@
-# Boolean type TODO
+# Boolean type
 
 ## Quick Summary
 

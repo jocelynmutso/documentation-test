@@ -3,10 +3,11 @@
 ## Quick Summary
 
 * Multi-row creates an inline row of any number of input fields
-* Multi-row response type: TODO
 * The number of rows in a multi-row element directly corresponds to the number of input fields created.
-* A visibility-logic example can be seen at the bottom of this page
-
+* [Multi-row-specific operations](#multi-row-operations): `sum of`, `min of`, `max of`, `any of`, `all of`
+  * [Boolean operations](#boolean)
+  * [Mathematical operations](#math)
+* [Visibility-logic example: Showing an additional field within a multi-row type depending on a previous answer](#validating-multirow)
 
 ---
 
@@ -51,7 +52,95 @@ Note the "Add new" button. This will add as many identical rows as needed.
 
 ---
 
-## Visibility-logic example
+## Multi-row-specific operations {#multi-row-operations}
+
+There are a number of DEL keywords that are specific to multi-row and perform various functions on multi-row elements:
+
+Mathematical operations: Applicable only to `number` and `decimal` types
+
+* `sum of`: Returns the sum of multi-row fields 
+* `max of`: Returns the highest value of multi-row fields
+* `min of`: Returns the lowest value of multi-row fields
+
+
+Boolean operations: Applicable only to `boolean` types
+
+* `any of`: Returns `true` if any boolean value in multi-row elements is selected `true`
+* `all of`: Returns `true` only when **all** boolean values in multi-row elements are selected `true`
+
+---
+
+## Using multi-row-specific operations
+
+
+### Boolean operations {#boolean}
+
+This example demonstrates `any of` and `all of` in action.  To create this example, we need to do several things:
+
+1. Create a multirow group
+2. Create two multirow elements of type `Boolean`. The input IDs are `boolean1` and `boolean2`. 
+3. Create two Expression Variables which will contain our `any of` and `all of` operations
+4. Create two Note type outputs to provide additional information on the filling side
+
+#### Steps 1 and 2: Create a multi-row group with two boolean inputs: boolean1 and boolean2
+
+* id: `boolean1` field label text: Boolean1: I return true if any of my rows are true
+* id: `boolean2` field label text: Boolean2: I return true only when ALL of my rows are true
+
+![Multi-row booleans](types/multirow-bool1.png)
+
+
+#### Step 3: Create Expression Variables
+
+* id: `bool1` expression: `any of boolean1`
+* id: `bool2` expression: `all of boolean2`
+
+![Multi-row booleans](types/multirow-bool-variables.png)
+
+
+#### Step 4: Create Note outputs within which to call Expression Variables
+
+Create two different note outputs
+
+id: `note1` text: Boolean1: Are any of my rows true? {bool1}
+id: `note2` text: Boolean2: Are all of my rows true? {bool2}
+
+![Multi-row booleans](types/multirow-notes.png)
+
+
+#### Test
+
+After adding three rows, we select true/false and view our note output. 
+
+![Multi-row booleans](types/multirow-bool-filling.png)
+
+
+### Mathematical operations {#math}
+
+We can use `sum of`, `min of`, and `max of` with `number` and `decimal` types in the same way as we just did with Boolean types.
+
+The screenshots below were produced following the same steps as we took to produce the Boolean multirow screenshots. 
+
+Creating variables
+
+![Multi-row math](types/multirow-math-variables.png)
+
+Creating inputs
+
+![Multi-row math](types/multirow-math-variables2.png)
+
+Creating notes
+
+![Multi-row math](types/multirow-math-notes.png)
+
+Filling side test
+
+![Multi-row math filling side](types/multirow-math-filling.png)
+
+
+---
+
+## Visibility-logic example {#validating-multirow}
 
 ### Showing an additional field within a multi-row type depending on a previous answer 
 

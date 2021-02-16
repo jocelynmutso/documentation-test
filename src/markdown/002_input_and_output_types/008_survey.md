@@ -6,7 +6,8 @@
 * A Survey return type is a key
 * Survey buttons can be horizontally or vertically arranged
 * Follow the (visual) guide below to create a Survey response type.
-* Syntax for Survey type logic writing and a typical usage example can be seen at the bottom of this page
+* [Syntax for Survey type logic writing: Matching single and multiple items](#survey-syntax)
+* [Usage example: Triggering an input field to appear depending on a user's survey selection](#survey-use-example)
 
 ---
 
@@ -70,7 +71,7 @@ Click the hamburger icon in the top-right corner of the survey group. Then, sele
 
 ---
 
-## Syntax for Survey type logic writing
+## Syntax for Survey type logic writing: Matching single and multiple items {#survey-syntax}
 
 When matching a single item:  
 `question1 = "opt1"`  
@@ -84,7 +85,7 @@ When matching multiple items:
 `question1 not in ("opt1", "opt3", "opt4")`  
 Evaluates true when the return value of question1 is NOT one of the following: opt1, opt3 or opt4 possible *Survey* key values.
 
-## Typical visibility-logic example
+## Typical visibility-logic example {#survey-use-example}
 
 For this situation, we create a customer satisfaction survey. If the user indicates via a survey item that a service was "poor", we want to trigger a text input to appear so that we can collect additional information on how to improve in that area of service.
 

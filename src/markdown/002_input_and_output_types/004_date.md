@@ -4,7 +4,8 @@
 
 * Date type creates a date picker on the filling side
 * Date type returns a date in the format of “yyyy-mm-dd”. [See more on ISO Date](https://www.w3.org/QA/Tips/iso-date)
-* Two typical validation examples can be seen at the bottom of this page
+* [Validation example 1: A date is not in the past ](#validating-date1)
+* [Validation example 2: A date is not in the past, not in the future, and a time limit applies to the situation ](#validating-date2)
 
 ---
 
@@ -26,9 +27,9 @@ Creating a new Date response works in the same way as other types:
 
 ---
 
-## Two typical validation examples
+## Validation examples
 
-### Example A: A date is not in the past
+### Example A: A date is not in the past {#validating-date1}
 
 A typical use case for Date type is verification that a user-selected date is **not** in the past. This operation can be accomplished with the `today()` function and the following DEL notation entered into the date response type validation field:
 
@@ -45,7 +46,7 @@ This validation expression will trigger our validation message when a user selec
 ![date validation two](types/date-in-past2.png)
 
 
-### Example B: A date is not in the past, not in the future, and a time limit applies to the situation
+### Example B: A date is not in the past, not in the future, and a time limit applies to the situation {#validating-date2}
 
 Another typical use case builds on the first example. In the context of an insurance claim, we want to ensure three things:
 

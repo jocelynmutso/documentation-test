@@ -3,10 +3,11 @@
 ## Quick Summary
 
 * Choice type functions with an attached list
+* It allows users to choose **only one** option from the list
 * A Choice return type will be an ID of selected row in the list
-* It allows users to choose only one option from the list
 * Creating a Choice and a Multi-choice type follows the same process
-* Syntax for Choice type logic writing and a typical usage example can be seen at the bottom of this page
+* [Syntax for writing Choice type: Validating against one and/or many items](#syntax)
+* [Validation example: Writing an evaluation against a single choice option](#evaluating-choice)
 
 
 ---
@@ -32,7 +33,7 @@ Below is an example of a choice type on the filling side. The choice list has fo
 
 ---
 
-## Syntax for Choice type logic writing
+## Syntax for Choice type logic writing {#syntax}
 
 When using logic with Choice type, the syntax is as following:
 
@@ -47,7 +48,7 @@ This evaluates true when the return value of question1 is NOT one of the followi
 
 ---
 
-## Typical validation example
+##  Validation example {#evaluating-choice}
 
 In this example, we want to evaluate against a single choice option. Depending on this choice, a corresponding note output will be displayed.
 
