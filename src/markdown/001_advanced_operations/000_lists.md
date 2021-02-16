@@ -3,7 +3,7 @@
 ## Quick Summary
 
 * Lists
-  * are **key**-_value_ pairs (**id**-_listItem_) 
+  * are **key**-_value_ pairs (**id**-_list_Item_) 
   * are used to populate drop-down menus, choice selections, and create survey button options
   * can have visibility rules, which are created via the Lists window
   * used in combination with Choice or Multi-choice types must be inserted **at the response level**.
@@ -15,28 +15,18 @@
 [Creating a Local list](#creating-local-list)  
 [Setting list visibility rules](#list-visibility)  
 [Using a List in a Choice or Multi-Choice Response Field](#using-list-choice-multichoice)  
-[Using a List in a Survey Group or Survey Group Response Field](Vertical)  
+[Using a List in a Survey Group or Survey Group Vertical Response Field](#using-list-survey-group)
 
 ---
 
 ## Overview
 
-Lists are **key**-_value_ pairs (**id**-_listItem_) that are used to populate drop-down menus, choice selections, and create survey button options.  There are two types of lists in Dialob:
+Lists are **key**-_value_ pairs (**id**-_list_Item_) that are used to populate drop-down menus, choice selections, and create survey button options.  There are two types of lists in Dialob:
 
-**Global lists**: These lists exist independently from specific response fields, which means that they are not tied to any specific question and can easily be reused anywhere in the form. Any changes made to a global list will automatically be updated in all of the questions which use that list. Use a global list for drop-downs if the intent is to reuse the same list many times in different questions. For example, if a form requires the repeated reuse of a drop-down menu comprised of the same generic sports cars, a global list is the best choice.
 
-**Local lists**: These lists are bound to the response in which they are created. In fact, you can only create them from within the question/response where they will be used. Changes to local lists will be reflected only within the question where they were created. Use a local list if the goal is to simply create a one-time drop-down which is bound to a particular response field and will only apply to that particular question. For example, if a form requires one specific list of Italian sports cars and only one question will ask the user about these cars, a local list is the best choice.
+**Global lists**: These lists exist independently from specific response fields, which means that they are not tied to any specific question and can easily be reused anywhere in the form. Any changes made to a global list will automatically be updated in all of the questions which use that list. Use a global list for drop-downs if the intent is to reuse the same list many times in different questions. For example, if a form requires the repeated reuse of a drop-down menu comprised of the same generic cars, a global list is the best choice.
 
----
-
-### Use cases of lists {#use-cases}
-
-* Populate a drop-down menu
-* Create survey button options
-
-A **global list** exists independently from specific response fields, which means that it is not tied to any specific question and can easily be reused. Any changes made to a global list will automatically be updated in all of the questions which use that list. Use a global list for drop-downs if the intent is to reuse the same list many times in different questions. For example, if a form requires the repeated reuse of a drop-down menu comprised of the same generic sports cars, a global list is the best choice.
-
-A **local list** is bound to the response in which it is created. Changes to local lists will be reflected only within the question where they were created. Use a local list if the goal is to simply to use it once and only in that particular question. For example, if a form requires one specific list of Italian sports cars and only one question will ask the user about these cars, a local list is the best choice.
+**Local lists**: These lists are bound to the response in which they are created. In fact, you can only create them from within the question/response where they will be used. Changes to local lists will be reflected only within the question where they were created. Use a local list if the goal is simply a one-time use bound to a particular response field which will only apply to that particular question. For example, if a form requires one specific list of Italian sports cars and only one question will ask the user about these cars, a local list is the best choice.
 
 ---
 
@@ -48,7 +38,7 @@ A **local list** is bound to the response in which it is created. Changes to loc
 4. Give the list items their keys and texts.
 
 * **Name** is the name of the list itself and is used by the form creator on the Composer side to identify the list.
-* **Key** is the request ID and must be manually created by the form creator (at this time, list keys are not auto-generated). Keys must follow the [Request ID rules](https://docs.dialob.io/dialob-expressions/#request-id-rules) for creation of IDs.
+* **Key** is the request ID and must be manually created by the form creator (at this time, list keys are not auto-generated). Keys must follow the [Request ID rules](#000_basic_operations/007_ids) for creation of IDs.
 * **Text** is the actual words / sentences / numbers that the form filler will see when selecting an item from the list.
 
 ---
@@ -59,7 +49,8 @@ A **local list** is bound to the response in which it is created. Changes to loc
 * The rule is edited at the bottom of the list window.
 * Visibility rules can refer to ANY response ID in the Dialog except for attributes inside of a multi-row element.
 
-For more information on writing visibility rules, see [Basic Logic Building and Rule Writing](https://docs.dialob.io/dialob-expressions/logic-building/)
+For more information on writing visibility rules, see [Writing visibility and requirement rules](#003_dialob_expression_language:_DEL/010_writing_visibility_and_requirement_rules)
+
 
 ![List](advancedoperations/list-visibility1.png)
 
@@ -118,7 +109,7 @@ A complete survey question is comprised of three basic parts:
 
 * A survey group (general container for the survey question)
 * `Survey item` input type to provide the survey questions within the survey group
-* A **global or local list** to provide the survey responses from which users can select
+* A global or local list to provide the survey responses from which users can select
 
 The following example follows these steps to create a survey about user opinions on car brands.  
 

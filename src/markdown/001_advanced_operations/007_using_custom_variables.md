@@ -7,10 +7,11 @@
   * Pre-filling data on a question 
   * Initialising a form filling session with prefilled data
   * Creation of custom functions
+  * Use in logic rules and expressions
 * It is recommended to leave custom variables' "Published" value unselected as per default, unless special implementation is required
 * A custom variable built using *question input data* becomes active only after all of its questions have been asked. This means that it must "wait" to receive input data before it can start working
 
-
+[How to call custom variables within a Note, Response field, and logic rule/expression](#calling-variables)  
 [Example basic use cases](#basic-use-cases)  
 [Using context variables to pre-fill default data in a question](#pre-fill)  
 [Using context variables to initialise a filling session with pre-defined data](#initialise-session)  
@@ -71,6 +72,15 @@ In the example below, you can see here that a value of 15, which we set for our 
 Finally, on the filling side, this is the output:
 
 ![Age context variable](/advancedoperations/is-your-age3.png)
+
+---
+
+## How to call and use custom variables {#calling-variables}
+
+* To use a variable within a note: ID must be surrounded by curly braces. For example: ` {addAges}`
+* To use a variable within a response field: ID must be surrounded by curly braces. For example: ` {addAges}`
+* To use a variable within a logic rule/expression: Write variable name without curly braces. For example: `addAges`
+
 
 ---
 

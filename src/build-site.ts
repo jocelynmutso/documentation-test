@@ -53,7 +53,7 @@ async function load(rootDir: string) {
       
       // add build and push it into result
       files.push({
-        build: {modified: 0, created: 0},
+        build: stamps[name.substring(6)],
         url: name, 
         name: name.substring(rootDir.length+1), 
         content: fs.readFileSync(name, "UTF-8")
@@ -79,7 +79,7 @@ while(result === undefined) {
   require('deasync').runLoopOnce();
 }
 
-const site = {
+const site: MdFiles = {
   build: Math.floor(Date.now()/1000),
   files: result
 };

@@ -23,12 +23,15 @@ Context variables and expression variables can be a combination of existing vari
 
 ---
 
-## Context variables
+## Context variables 
 
 **In terms of a dialog session, a context variable is a static variable: it is immutable in the dialog session and is available across the entire session.**  
 
 * A context variable has an ID, a type, and a default value.  
-* A context variable can be called with its ID surrounded by curly braces. For example: ` {contextId}`.
+* A context variable can be called by using its ID.
+  * Using a variable within a note: ID must be surrounded by curly braces. For example: ` {contextId}`.
+  * Using a variable within a response field: ID must be surrounded by curly braces. For example: ` {contextId}`.
+  * Using a variable within a logic rule/expression: Write variable name without curly braces. For example: `contextId`
 * A context variable's value is set outside of the context of the given dialog session and is not tied to any specific request ID. It works like a "hidden field", and typically, it is used to preload a given dialog session with data, such as preloading CRM data of an identified user, which is known before launching the session.  
 * A context variable  can also be any existing response ID in the current session. For example, if you have a Text type response with ID `myName`, you can output the value of `myName` in a `Note` type. Just surround the response ID with curley braces `{ }` from inside the `Note`. So, as a response ID: `myName` but as a context variable being called: `{myName}`.  
 
@@ -38,8 +41,7 @@ Below are some examples to demonstrate what context variables can look like.
 
 ---
 
-## Expression variables
-
+## Expression variables 
 **An expression variable is a user-defined function which is not coupled to any specific request ID. It can be used, for example, to find the sum of two request IDs of type `Number` or to validate a text input in multiple different responses.** 
 
 * An expression variable has an ID and an expression (function).

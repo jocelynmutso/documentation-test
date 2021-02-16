@@ -70,6 +70,17 @@ Subtopic name: `109_setting_ids:_first_steps.md` --> This will cause build failu
 
 To solve this problem, simply remove the colon from the markdown file name.
 
+### Linking
+
+Page link:
+
+[Page link](#100_basic_operations/001_groups)
+
+
+Page link with anchor:
+
+[Page and anchor link](#105_advanced_operations/csv/walkthrough)
+
 
 ## Theming
 

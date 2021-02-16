@@ -1394,10 +1394,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@jocelynmutso/dandy-doc@^1.0.21":
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/@jocelynmutso/dandy-doc/-/dandy-doc-1.0.21.tgz#edc1ce990c9f9ae49f8a3d83687688954b268476"
-  integrity sha512-bG4wTVOqzIrZuF0HiBWqnl9wD8Jt4nubTBCynUuKkbstFgYbDj+bHYSlRdDglPm7/kCoYx7RVgvtz1ENMlwjwQ==
+"@jocelynmutso/dandy-doc@^1.0.25":
+  version "1.0.25"
+  resolved "https://registry.yarnpkg.com/@jocelynmutso/dandy-doc/-/dandy-doc-1.0.25.tgz#c5fb94d017b7ab77eab14d46abeafe5f8b6b06e2"
+  integrity sha512-5xzM7LM8e5R1t0sqf6usDLYIAEaHGSco3Z8W12P1WBw7JvtP1pTqpiK6DXSycAz+TQ+7DGyf8X25cBOqoryuLg==
   dependencies:
     moment "^2.29.1"
     react-markdown "^5.0.3"
