@@ -8,8 +8,7 @@
 
 ## Overview  
 
-* **DEL** comes with a set of inbuilt functions and keywords that help in the creation of dialog logic. 
-  * These functions are built via Java and Groovy and are automatically loaded into the dialog context when creating a new dialog.
+* **DEL** functions are built via Java and Groovy and are automatically loaded into the dialog context when creating a new dialog.
 * **DEL** function library is continuously being improved, and it is possible to extend it.
 
 ---

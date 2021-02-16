@@ -47,4 +47,3 @@ See these examples below:
 ![Personal code validation length](logic/personal-code-validation.png)
 ![Personal code validation length](logic/personal-code-validation2.png)
 
-For examples of validations with Regex, see [this section](https://docs.dialob.io/introduction/regular-expressions/#input-regex)

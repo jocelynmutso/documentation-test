@@ -2,7 +2,8 @@
 
 ## Quick Summary
 
-* Dialob Expression Language (DEL) comes with built-in functions and keywords to help create form logic
+* Dialob Expression Language (DEL) comes with built-in keywords to specify languages for localisation purposes
+* Languages can be specified by using this syntax: `language = 'fi'` (Language is Finnish), where `fi` is the two-letter language code
 
 ---
 
@@ -13,6 +14,8 @@ It is possible to show and/or hide different language fields and note outputs on
 Using the ISO 639-1 standard, two-character language codes can be specified, which store the language that the current Dialob session is using. The `language` keyword can be used to write logic rules based on language. A list of two-character language codes [can be found here](https://www.wikimass.com/html/language-code).
 
 ---
+
+## Example of the language keyword in use
 
 In DEL, a language is designated with the keyword `language` followed by **equal to** `=` operator  or **not equal to** `!=` operator and completed with the two-character abbreviation.
 

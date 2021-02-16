@@ -7,7 +7,7 @@
   * Validation rules
   * Visibility rules
   * Requirement rules
-* The location where you write a rule depends on what type of rule it is
+* Different types of rules are written [in different places in Composer](#where)
  
 ---
 

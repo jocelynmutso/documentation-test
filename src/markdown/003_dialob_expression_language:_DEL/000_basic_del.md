@@ -38,6 +38,8 @@ For one of our form questions, we need to validate that a customer is at least 2
 
 In this example, `customerAge` is the Request ID (subject), `>=` is the logical operator (verb), and "21" is the value that we are to validate against.  We will revisit these terms shortly.
 
+---
+
 ### Syntax of a DEL expression: Examples
 
 A DEL expression is basically an **If/Then statement**.  The "If" part is written by the user, and the "Then" part represents the result of the expression. The "then" part can evaluate to `true` or `false` based on how the user writes the "If" part.  For example, here we have two questions. The second question should only appear if the user specifies in the previous question that his/her age is greater than 25. 
@@ -55,10 +57,10 @@ Here, `question1 < 25` is the "if" part of the DEL expression. The "then" part i
 
 A DEL expression can have several basic parts:
 
-* [Request ID](https://docs.dialob.io/dialob-expressions/#what-is-request-id) or reference to a request ID (not required to be used in `Required` fields)
-* [Logical operator](https://docs.dialob.io/dialob-expressions/basic-del-operators/)
-* [Reserved word](https://docs.dialob.io/dialob-expressions/del-functions-reserved-words/)
-* [Function](https://docs.dialob.io/dialob-expressions/del-functions-reserved-words/)
+* [Request ID](#001_advanced_operations/005_requests_and_ids) or reference to a request ID (not required to be used in `Required` fields)
+* [Logical operator](#003_dialob_expression_language:_DEL/001_basic_del_operators)
+* [Reserved word](#/003_dialob_expression_language:_DEL/004_overview-_functions_and_reserved_words)
+* [Function](#/003_dialob_expression_language:_DEL/004_overview-_functions_and_reserved_words)
 
 In the following expression, we can see three of these elements:
 
@@ -79,6 +81,8 @@ Let's look at some more examples:
 In this expression, we have two Request IDs: `age` and `favouriteColour`. There are two logical operators: `>` and `and`.  There are also two predicate expressions: 25 and "green".
 
 This sentence can be "translated" into English as the following: "**If** age is greater than 25 and favourite color is green, **then**..."  
+
+---
 
 ### Response types and punctuation
 
@@ -102,7 +106,7 @@ In the examples above, you might have noticed that some elements were surrounded
 
 DEL expressions do not end with any punctuation like full stops or semi-colons.
 
-For more examples of writing DEL expressions with different response types like `Survey`, `Multi-choice`, `Choice`, etc., [click here](https://docs.dialob.io/dialob-response-types/working-with-types/)
+---
 
 ### Using reserved words
 
@@ -118,7 +122,7 @@ The next example shows a validation rule for multiple selections from a mult-cho
 
 `carsOwned in ("Opel", "Renault", "Audi")` **Translation**: If the question whose ID is carsOwned has been answered by the user, who selected either Opel, Renault, or Audi....  
 
-For a complete list of the current Dialob reserved words, [click here](https://docs.dialob.io/dialob-expressions/del-functions-reserved-words/#reserved-words)
+---
 
 ### Using functions
 
@@ -137,6 +141,4 @@ Now, our function will perform the action of wash on the object of laundry.  Fun
 `lengthOf(text1) > 5` **Translation**: This function will check that the length of text1 is greater than 5 characters.
 
 Not all functions need to have anything entered into the parenthesis. For example, the function `now()` will simply fetch the current system time.  
-
-For more information and examples of DEL's functions, [click here](https://docs.dialob.io/dialob-expressions/del-functions-reserved-words/#existing-functions)
 

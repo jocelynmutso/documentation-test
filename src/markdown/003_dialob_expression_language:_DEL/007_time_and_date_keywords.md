@@ -7,7 +7,7 @@
   * [Calculating a time duration in hours, minutes, seconds](#time)
   * [Returning the difference between different times in hours and minutes](#time-workday)
   * [Checking that one time is earlier or later than another time](#time-earlier)
-  * [Calculating a time duration in years, months, days](#date)
+  * [Calculating a date period in years, months, days](#date)
   * [Building logic to add or subtract years, months, or days](#add-subtract)
   * [Validating that one date has occurred before or after another date](#date-before)
 
